@@ -20,6 +20,7 @@ description = "long different strands"
 [919f8ef0-b767-4d1b-8516-6379d07fcb28]
 description = "disallow first strand longer"
 include = false
+comment = "Reimplemented by b9228bb1-465f-4141-b40f-1f99812de5a8 (same input, error message normalised to 'strands must be of equal length'). Already covered by test_disallow_first_strand_longer, whose partial match also accepts this older message; including it would generate a duplicate test name. Distinct from the track's 'no input' and 'invalid input' tests (wrong argument count) and 'expose subtle pattern bug' (equal-length strands)."
 
 [b9228bb1-465f-4141-b40f-1f99812de5a8]
 description = "disallow first strand longer"
@@ -27,6 +28,7 @@ description = "disallow first strand longer"
 [8a2d4ed0-ead5-4fdd-924d-27c4cf56e60e]
 description = "disallow second strand longer"
 include = false
+comment = "Reimplemented by dab38838-26bb-4fff-acbe-3b0a9bfeba2d (same input, error message normalised). Already covered by test_disallow_second_strand_longer; including it would generate a duplicate test name. Distinct from the track's 'no input' and 'invalid input' tests (wrong argument count) and 'expose subtle pattern bug' (equal-length strands)."
 
 [dab38838-26bb-4fff-acbe-3b0a9bfeba2d]
 description = "disallow second strand longer"
@@ -34,10 +36,12 @@ description = "disallow second strand longer"
 [5dce058b-28d4-4ca7-aa64-adfe4e17784c]
 description = "disallow left empty strand"
 include = false
+comment = "Original version; reimplemented by db92e77e-7c72-499d-8fe6-9354d2bfd504, which is in turn reimplemented by b764d47c-83ff-4de2-ab10-6cfe4b15c0f3. Expects 'left strand must not be empty', which example.sh does not produce (it only reports a length mismatch). The input is covered by test_disallow_empty_first_strand. Distinct from the track's 'no input' and 'invalid input' tests (wrong argument count) and 'expose subtle pattern bug'."
 
 [db92e77e-7c72-499d-8fe6-9354d2bfd504]
 description = "disallow left empty strand"
 include = false
+comment = "Reimplements 5dce058b-28d4-4ca7-aa64-adfe4e17784c; reimplemented by b764d47c-83ff-4de2-ab10-6cfe4b15c0f3 (error message normalised). Same input as test_disallow_empty_first_strand and shares its description with 5dce058b, so including it would generate a duplicate test name. Distinct from the track's 'no input' and 'invalid input' tests (wrong argument count) and 'expose subtle pattern bug'."
 
 [b764d47c-83ff-4de2-ab10-6cfe4b15c0f3]
 description = "disallow empty first strand"
@@ -45,10 +49,12 @@ description = "disallow empty first strand"
 [38826d4b-16fb-4639-ac3e-ba027dec8b5f]
 description = "disallow right empty strand"
 include = false
+comment = "Original version; reimplemented by 920cd6e3-18f4-4143-b6b8-74270bb8f8a3, which is in turn reimplemented by 9ab9262f-3521-4191-81f5-0ed184a5aa89. Expects 'right strand must not be empty', which example.sh does not produce (it only reports a length mismatch). The input is covered by test_disallow_empty_second_strand. Distinct from the track's 'no input' and 'invalid input' tests (wrong argument count) and 'expose subtle pattern bug'."
 
 [920cd6e3-18f4-4143-b6b8-74270bb8f8a3]
 description = "disallow right empty strand"
 include = false
+comment = "Reimplements 38826d4b-16fb-4639-ac3e-ba027dec8b5f; reimplemented by 9ab9262f-3521-4191-81f5-0ed184a5aa89 (error message normalised). Same input as test_disallow_empty_second_strand and shares its description with 38826d4b, so including it would generate a duplicate test name. Distinct from the track's 'no input' and 'invalid input' tests (wrong argument count) and 'expose subtle pattern bug'."
 
 [9ab9262f-3521-4191-81f5-0ed184a5aa89]
 description = "disallow empty second strand"
