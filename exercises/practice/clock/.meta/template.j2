@@ -77,3 +77,23 @@ test_non_numeric_delta_errors() { # @test
     assert_failure
     assert_output    # there is _some_ output
 }
+
+# A delta that is many days negative: the clock must keep wrapping until the
+# time is non-negative, not just once or twice.
+
+test_large_negative_delta_wraps_many_days() { # @test
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run bash clock.sh 10 0 - 100000
+    assert_success
+    assert_output "23:20"
+}
+
+# A delta that is many days negative: the clock must keep wrapping until the
+# time is non-negative, not just once or twice.
+
+test_large_negative_delta_wraps_many_days() { # @test
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run bash clock.sh 10 0 - 100000
+    assert_success
+    assert_output "23:20"
+}
