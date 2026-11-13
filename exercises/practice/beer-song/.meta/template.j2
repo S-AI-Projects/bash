@@ -1,0 +1,55 @@
+{#- Test names differ from the canonical descriptions, so they are mapped by uuid. -#}
+{%- set names = {
+    "5a02fd08-d336-4607-8006-246fe6fa9fb0": "first_generic_verse",
+    "77299ca6-545e-4217-a9cc-606b342e0187": "3rd_last_generic_verse",
+    "102cbca0-b197-40fd-b548-e99609b06428": "2nd_last_generic_verse",
+    "b8ef9fce-960e-4d85-a0c9-980a04ec1972": "penultimate_verse",
+    "c59d4076-f671-4ee3-baaa-d4966801f90d": "verse_with_zero_bottles",
+    "7e17c794-402d-4ca6-8f96-4d8f6ee1ec7e": "first_two_verses",
+    "949868e7-67e8-43d3-9bb4-69277fe020fb": "last_three_verses",
+    "bc220626-126c-4e72-8df4-fddfc0c3e458": "all_verses",
+} -%}
+#!/usr/bin/env bats
+load bats-extra
+
+# local version: 2.1.0.1
+{% for case in cases %}
+@test '{{ names.get(case.uuid, case.description | replace(" ", "_")) }}' {
+{%- if loop.first %}
+    #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+{%- else %}
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+{%- endif %}
+{%- set indent = "        " if case.input.takeDown == 3 else "    " %}
+{{ indent }}expected="{{ case.expected | join("\n") }}"{{ "\n" if case.input.takeDown > 2 else "" }}
+{%- if case.input.takeDown == 1 %}
+    run bash {{ solution }} {{ case.input.startBottles }}
+{%- else %}
+    run bash {{ solution }} {{ case.input.startBottles }} {{ case.input.startBottles - case.input.takeDown + 1 }}
+{%- endif %}
+    assert_success
+    assert_output "$expected"
+}
+{% endfor %}
+# bash-specific tests: Input validation
+
+@test 'no_arguments' {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run bash {{ solution }}
+    assert_failure
+    assert_output --partial "1 or 2 arguments expected"
+}
+
+@test 'too_many_arguments' {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run bash {{ solution }} 1 2 3
+    assert_failure
+    assert_output --partial "1 or 2 arguments expected"
+}
+
+@test 'wrong_order_arguments' {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run bash {{ solution }} 1 2
+    assert_failure
+    assert_output "Start must be greater than End"
+}
