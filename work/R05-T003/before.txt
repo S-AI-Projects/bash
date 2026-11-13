@@ -1,0 +1,17 @@
+control: example.sh passes all 58 tests
+
+m01_carry_two_hours          KILLED by 9 of 58 tests (e.g. test_create_a_new_clock_with_an_initial_time_negative_minutes)
+m02_wrap_23_hours            KILLED by 15 of 58 tests (e.g. test_create_a_new_clock_with_an_initial_time_midnight_is_zero_hours)
+m03_minutes_mod_59           KILLED by 31 of 58 tests (e.g. test_create_a_new_clock_with_an_initial_time_on_the_hour)
+m04_drop_hours_mod           KILLED by 3 of 58 tests (e.g. test_add_minutes_add_across_midnight)
+m05_negative_fix_once        KILLED by 1 of 58 tests (e.g. test_subtract_minutes_subtract_more_than_two_days)
+m06_negative_fix_max_2       SURVIVED (all 58 tests pass)
+m07_negative_fix_max_5       SURVIVED (all 58 tests pass)
+m08_negative_boundary        KILLED by 1 of 58 tests (e.g. test_subtract_minutes_subtract_across_midnight)
+m09_drop_negative_hours      KILLED by 7 of 58 tests (e.g. test_compare_two_clocks_for_equality_clocks_with_negative_hour)
+m10_drop_negative_mins       KILLED by 3 of 58 tests (e.g. test_compare_two_clocks_for_equality_clocks_with_negative_minute_that_wraps)
+m11_equal_inverted           KILLED by 16 of 58 tests (e.g. test_compare_two_clocks_for_equality_clocks_with_same_time)
+
+killed: 9   survived: 2
+survivor: m06_negative_fix_max_2
+survivor: m07_negative_fix_max_5
