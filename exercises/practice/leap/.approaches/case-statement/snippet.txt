@@ -1,0 +1,7 @@
+year=$1
+case "$(( year % 4 )),$(( year % 100 )),$(( year % 400 ))" in
+    0,0,0) echo true ;;
+    0,0,*) echo false ;;
+    0,*)   echo true ;;
+    *)     echo false ;;
+esac
