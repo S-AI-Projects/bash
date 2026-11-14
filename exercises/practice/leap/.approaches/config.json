@@ -35,6 +35,15 @@
       "authors": [
         "glennj"
       ]
+    },
+    {
+      "uuid": "09a97e28-a538-48ab-b7aa-cbda3a3faad6",
+      "slug": "case-statement",
+      "title": "Case statement",
+      "blurb": "Use a case statement to match on the remainders of the year.",
+      "authors": [
+        "ahaanshrivastava800"
+      ]
     }
   ]
 }

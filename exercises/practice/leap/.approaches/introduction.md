@@ -1,7 +1,8 @@
 # Introduction
 
 There are various idiomatic approaches to solve Leap.
-You can use a chain of Boolean expressions to test the conditions.
+You can use a chain of Boolean expressions to test the conditions,
+or match the remainders against the patterns of a `case` command.
 
 ## General guidance
 
@@ -34,6 +35,21 @@ fi
 
 For more information, check the [Ternary operator approach][approach-ternary-operator].
 
+## Approach: Case statement
+
+```bash
+year=$1
+case "$(( year % 4 )),$(( year % 100 )),$(( year % 400 ))" in
+    0,0,0) echo true ;;
+    0,0,*) echo false ;;
+    0,*)   echo true ;;
+    *)     echo false ;;
+esac
+```
+
+Build one word from the remainders for `4`, `100` and `400`, and let `case` pick the first pattern that matches it.
+For more information, see the [case statement approach][approach-case-statement].
+
 ## Approach: External tools
 
 Bash is naturally a "glue" language, making external tools easy to use.
@@ -55,9 +71,12 @@ For more information, see the [external tools approach][approach-external-tools]
 It has a maximum of three checks.
 It is the most efficient approach when testing a year that is not evenly divisible by `100` and is not a leap year, since the most likely outcome is eliminated first.
 - The ternary operator has a maximum of only two checks, but it starts from a less likely condition.
+- The `case` statement always calculates all three remainders, so it does a little more work than the chain of Boolean expressions.
+It lists the rules as patterns that read from top to bottom, and the order of the patterns matters.
 - Using external tools to do `datetime` addition may be considered a "cheat" for the exercise, and it will be slower than the other approaches.
 
 [modulo-operator]: https://www.gnu.org/software/bash/manual/bash.html#Shell-Arithmetic
 [approach-boolean-chain]: https://exercism.org/tracks/bash/exercises/leap/approaches/boolean-chain
 [approach-ternary-operator]: https://exercism.org/tracks/bash/exercises/leap/approaches/ternary-operator
+[approach-case-statement]: https://exercism.org/tracks/bash/exercises/leap/approaches/case-statement
 [approach-external-tools]: https://exercism.org/tracks/bash/exercises/leap/approaches/external-tools
