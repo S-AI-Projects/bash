@@ -8,7 +8,7 @@ declare -a vertices=()
 declare -i width
 
 main() {
-    local -i count=0
+    local -i count=0 i
 
     # read the incoming layout from stdin
     [[ -t 0 ]] || readarray -t rows
@@ -61,6 +61,7 @@ parse_vertex() {
 verts_to_right() {
     local vertex=$1
     local -i r c rr cc
+    local v
     parse_vertex "${vertex}" r c
     for v in "${vertices[@]}"; do
         parse_vertex "${v}" rr cc
@@ -71,6 +72,7 @@ verts_to_right() {
 verts_below() {
     local vertex=$1
     local -i r c rr cc
+    local v
     parse_vertex "${vertex}" r c
     for v in "${vertices[@]}"; do
         parse_vertex "${v}" rr cc
