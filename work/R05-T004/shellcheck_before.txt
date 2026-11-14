@@ -1,0 +1,201 @@
+
+In exercises/practice/rectangles/.meta/example.sh line 28:
+        for topR in $(verts_to_right $topL); do
+                                     ^---^ SC2086 (info): Double quote to prevent globbing and word splitting.
+                                     ^---^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+        for topR in $(verts_to_right "${topL}"); do
+
+
+In exercises/practice/rectangles/.meta/example.sh line 29:
+            for bottomL in $(verts_below $topL); do
+                                         ^---^ SC2086 (info): Double quote to prevent globbing and word splitting.
+                                         ^---^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+            for bottomL in $(verts_below "${topL}"); do
+
+
+In exercises/practice/rectangles/.meta/example.sh line 30:
+                parse_vertex $bottomL r1 c1
+                             ^------^ SC2086 (info): Double quote to prevent globbing and word splitting.
+                             ^------^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+                parse_vertex "${bottomL}" r1 c1
+
+
+In exercises/practice/rectangles/.meta/example.sh line 31:
+                parse_vertex $topR    r2 c2
+                             ^---^ SC2086 (info): Double quote to prevent globbing and word splitting.
+                             ^---^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+                parse_vertex "${topR}"    r2 c2
+
+
+In exercises/practice/rectangles/.meta/example.sh line 32:
+                bottomR="$r1,$c2"
+                         ^-^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+                             ^-^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+                bottomR="${r1},${c2}"
+
+
+In exercises/practice/rectangles/.meta/example.sh line 33:
+                if is_rectangle $topL $bottomR; then
+                                ^---^ SC2086 (info): Double quote to prevent globbing and word splitting.
+                                ^---^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+                                      ^------^ SC2248 (style): Prefer double quoting even when variables don't contain special characters.
+                                      ^------^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+                if is_rectangle "${topL}" "${bottomR}"; then
+
+
+In exercises/practice/rectangles/.meta/example.sh line 40:
+    echo $count
+         ^----^ SC2248 (style): Prefer double quoting even when variables don't contain special characters.
+         ^----^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+    echo "${count}"
+
+
+In exercises/practice/rectangles/.meta/example.sh line 48:
+                vertices+=( "$r,$c" )
+                             ^-- SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+                                ^-- SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+                vertices+=( "${r},${c}" )
+
+
+In exercises/practice/rectangles/.meta/example.sh line 64:
+    parse_vertex $vertex r c
+                 ^-----^ SC2086 (info): Double quote to prevent globbing and word splitting.
+                 ^-----^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+    parse_vertex "${vertex}" r c
+
+
+In exercises/practice/rectangles/.meta/example.sh line 66:
+        parse_vertex $v rr cc
+                     ^-- SC2086 (info): Double quote to prevent globbing and word splitting.
+                     ^-- SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+        parse_vertex "${v}" rr cc
+
+
+In exercises/practice/rectangles/.meta/example.sh line 67:
+        (( r == rr && c < cc )) && echo $v
+                                        ^-- SC2086 (info): Double quote to prevent globbing and word splitting.
+                                        ^-- SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+        (( r == rr && c < cc )) && echo "${v}"
+
+
+In exercises/practice/rectangles/.meta/example.sh line 74:
+    parse_vertex $1 r c
+                 ^-- SC2086 (info): Double quote to prevent globbing and word splitting.
+
+Did you mean:
+    parse_vertex "$1" r c
+
+
+In exercises/practice/rectangles/.meta/example.sh line 76:
+        parse_vertex $v rr cc
+                     ^-- SC2086 (info): Double quote to prevent globbing and word splitting.
+                     ^-- SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+        parse_vertex "${v}" rr cc
+
+
+In exercises/practice/rectangles/.meta/example.sh line 77:
+        (( c == cc && r < rr )) && echo $v
+                                        ^-- SC2086 (info): Double quote to prevent globbing and word splitting.
+                                        ^-- SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+        (( c == cc && r < rr )) && echo "${v}"
+
+
+In exercises/practice/rectangles/.meta/example.sh line 84:
+    parse_vertex $topL    r1 c1
+                 ^---^ SC2086 (info): Double quote to prevent globbing and word splitting.
+                 ^---^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+    parse_vertex "${topL}"    r1 c1
+
+
+In exercises/practice/rectangles/.meta/example.sh line 85:
+    parse_vertex $bottomR r2 c2
+                 ^------^ SC2086 (info): Double quote to prevent globbing and word splitting.
+                 ^------^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+    parse_vertex "${bottomR}" r2 c2
+
+
+In exercises/practice/rectangles/.meta/example.sh line 87:
+    horizontal_line $r1 $c1 $c2 &&
+                    ^-^ SC2248 (style): Prefer double quoting even when variables don't contain special characters.
+                    ^-^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+                        ^-^ SC2248 (style): Prefer double quoting even when variables don't contain special characters.
+                        ^-^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+                            ^-^ SC2248 (style): Prefer double quoting even when variables don't contain special characters.
+                            ^-^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+    horizontal_line "${r1}" "${c1}" "${c2}" &&
+
+
+In exercises/practice/rectangles/.meta/example.sh line 88:
+    horizontal_line $r2 $c1 $c2 &&
+                    ^-^ SC2248 (style): Prefer double quoting even when variables don't contain special characters.
+                    ^-^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+                        ^-^ SC2248 (style): Prefer double quoting even when variables don't contain special characters.
+                        ^-^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+                            ^-^ SC2248 (style): Prefer double quoting even when variables don't contain special characters.
+                            ^-^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+    horizontal_line "${r2}" "${c1}" "${c2}" &&
+
+
+In exercises/practice/rectangles/.meta/example.sh line 89:
+    vertical_line   $c1 $r1 $r2 &&
+                    ^-^ SC2248 (style): Prefer double quoting even when variables don't contain special characters.
+                    ^-^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+                        ^-^ SC2248 (style): Prefer double quoting even when variables don't contain special characters.
+                        ^-^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+                            ^-^ SC2248 (style): Prefer double quoting even when variables don't contain special characters.
+                            ^-^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+    vertical_line   "${c1}" "${r1}" "${r2}" &&
+
+
+In exercises/practice/rectangles/.meta/example.sh line 90:
+    vertical_line   $c2 $r1 $r2
+                    ^-^ SC2248 (style): Prefer double quoting even when variables don't contain special characters.
+                    ^-^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+                        ^-^ SC2248 (style): Prefer double quoting even when variables don't contain special characters.
+                        ^-^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+                            ^-^ SC2248 (style): Prefer double quoting even when variables don't contain special characters.
+                            ^-^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+    vertical_line   "${c2}" "${r1}" "${r2}"
+
+For more information:
+  https://www.shellcheck.net/wiki/SC2086 -- Double quote to prevent globbing ...
+  https://www.shellcheck.net/wiki/SC2248 -- Prefer double quoting even when v...
+  https://www.shellcheck.net/wiki/SC2250 -- Prefer putting braces around vari...
