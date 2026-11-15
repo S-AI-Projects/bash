@@ -787,7 +787,16 @@
         "uuid": "21b2a344-925e-427a-a2bb-69122df2ce61",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 4
+        "difficulty": 4,
+        "topics": [
+          "arrays",
+          "control_flow_conditionals",
+          "control_flow_loops",
+          "error_handling",
+          "regular_expressions",
+          "strings",
+          "text_formatting"
+        ]
       },
       {
         "slug": "swift-scheduling",
