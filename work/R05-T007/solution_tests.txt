@@ -1,108 +1,12 @@
 1..11
-not ok 1 test_returns_the_number_of_grains_on_the_square_grains_on_square_1
-# (from function `assert_output' in file bats-extra.bash, line 399,
-#  in test file grains.bats, line 10)
-#   `assert_output "1"' failed
-#
-# -- output differs --
-# expected : 1
-# actual   :
-# --
-#
-not ok 2 test_returns_the_number_of_grains_on_the_square_grains_on_square_2
-# (from function `assert_output' in file bats-extra.bash, line 399,
-#  in test file grains.bats, line 17)
-#   `assert_output "2"' failed
-#
-# -- output differs --
-# expected : 2
-# actual   :
-# --
-#
-not ok 3 test_returns_the_number_of_grains_on_the_square_grains_on_square_3
-# (from function `assert_output' in file bats-extra.bash, line 399,
-#  in test file grains.bats, line 24)
-#   `assert_output "4"' failed
-#
-# -- output differs --
-# expected : 4
-# actual   :
-# --
-#
-not ok 4 test_returns_the_number_of_grains_on_the_square_grains_on_square_4
-# (from function `assert_output' in file bats-extra.bash, line 399,
-#  in test file grains.bats, line 31)
-#   `assert_output "8"' failed
-#
-# -- output differs --
-# expected : 8
-# actual   :
-# --
-#
-not ok 5 test_returns_the_number_of_grains_on_the_square_grains_on_square_16
-# (from function `assert_output' in file bats-extra.bash, line 399,
-#  in test file grains.bats, line 38)
-#   `assert_output "32768"' failed
-#
-# -- output differs --
-# expected : 32768
-# actual   :
-# --
-#
-not ok 6 test_returns_the_number_of_grains_on_the_square_grains_on_square_32
-# (from function `assert_output' in file bats-extra.bash, line 399,
-#  in test file grains.bats, line 45)
-#   `assert_output "2147483648"' failed
-#
-# -- output differs --
-# expected : 2147483648
-# actual   :
-# --
-#
-not ok 7 test_returns_the_number_of_grains_on_the_square_grains_on_square_64
-# (from function `assert_output' in file bats-extra.bash, line 399,
-#  in test file grains.bats, line 52)
-#   `assert_output "9223372036854775808"' failed
-#
-# -- output differs --
-# expected : 9223372036854775808
-# actual   :
-# --
-#
-not ok 8 test_returns_the_number_of_grains_on_the_square_square_0_is_invalid
-# (from function `assert_failure' in file bats-extra.bash, line 193,
-#  in test file grains.bats, line 58)
-#   `assert_failure' failed
-#
-# -- command succeeded, but it was expected to fail --
-# output :
-# --
-#
-not ok 9 test_returns_the_number_of_grains_on_the_square_negative_square_is_invalid
-# (from function `assert_failure' in file bats-extra.bash, line 193,
-#  in test file grains.bats, line 65)
-#   `assert_failure' failed
-#
-# -- command succeeded, but it was expected to fail --
-# output :
-# --
-#
-not ok 10 test_returns_the_number_of_grains_on_the_square_square_greater_than_64_is_invalid
-# (from function `assert_failure' in file bats-extra.bash, line 193,
-#  in test file grains.bats, line 72)
-#   `assert_failure' failed
-#
-# -- command succeeded, but it was expected to fail --
-# output :
-# --
-#
-not ok 11 test_returns_the_total_number_of_grains_on_the_board
-# (from function `assert_output' in file bats-extra.bash, line 399,
-#  in test file grains.bats, line 80)
-#   `assert_output "18446744073709551615"' failed
-#
-# -- output differs --
-# expected : 18446744073709551615
-# actual   :
-# --
-#
+ok 1 test_returns_the_number_of_grains_on_the_square_grains_on_square_1
+ok 2 test_returns_the_number_of_grains_on_the_square_grains_on_square_2
+ok 3 test_returns_the_number_of_grains_on_the_square_grains_on_square_3
+ok 4 test_returns_the_number_of_grains_on_the_square_grains_on_square_4
+ok 5 test_returns_the_number_of_grains_on_the_square_grains_on_square_16
+ok 6 test_returns_the_number_of_grains_on_the_square_grains_on_square_32
+ok 7 test_returns_the_number_of_grains_on_the_square_grains_on_square_64
+ok 8 test_returns_the_number_of_grains_on_the_square_square_0_is_invalid
+ok 9 test_returns_the_number_of_grains_on_the_square_negative_square_is_invalid
+ok 10 test_returns_the_number_of_grains_on_the_square_square_greater_than_64_is_invalid
+ok 11 test_returns_the_total_number_of_grains_on_the_board
