@@ -1,0 +1,16 @@
+bash max integer (2**63 - 1): 9223372036854775807  (19 digits)
+
+Armstrong number containing seven zeroes
+  number           : 186709961001538790100634132976990
+  digits           : 33
+  number / MAX     : 2.024e+13  (exceeds 64-bit max: True)
+  9**33 (max term) : 30903154382632612361920641803529  (exceeds 64-bit max: True)
+  true Armstrong?  : True
+
+The largest and last Armstrong number
+  number           : 115132219018763992565095597973971522401
+  digits           : 39
+  number / MAX     : 1.248e+19  (exceeds 64-bit max: True)
+  9**39 (max term) : 16423203268260658146231467800709255289  (exceeds 64-bit max: True)
+  true Armstrong?  : True
+

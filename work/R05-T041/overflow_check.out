@@ -1,0 +1,18 @@
+bash version : 5.2.21(1)-release
+bash max int : 9223372036854775807 (19 digits)
+max + 1      : -9223372036854775808   <- wraps to the minimum
+
+== Armstrong number containing seven zeroes
+   input    : 186709961001538790100634132976990 (33 digits)
+   9**33   : 4810798710570394889   <- a single digit term already overflows (true value is ~1e33)
+   example.sh output (expected: true):
+     exercises/practice/armstrong-numbers/.meta/example.sh: line 16: [: 66560933741595104606: integer expression expected
+     false
+
+== The largest and last Armstrong number
+   input    : 115132219018763992565095597973971522401 (39 digits)
+   9**39   : -7710839681495117703   <- a single digit term already overflows (true value is ~1e39)
+   example.sh output (expected: true):
+     exercises/practice/armstrong-numbers/.meta/example.sh: line 16: [: -32101389464323632287: integer expression expected
+     false
+
