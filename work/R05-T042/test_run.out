@@ -1,0 +1,6 @@
+ok 1 private key is in range
+ok 2 private key is random
+ok 3 can calculate public key using private key
+ok 4 can calculate public key when given a different private key
+ok 5 can calculate secret key using other's public key
+ok 6 key exchange

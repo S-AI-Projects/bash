@@ -1,0 +1,13 @@
+diff --git a/exercises/practice/diffie-hellman/diffie_hellman.bats b/exercises/practice/diffie-hellman/diffie_hellman.bats
+index 7139d16..69180cc 100644
+--- a/exercises/practice/diffie-hellman/diffie_hellman.bats
++++ b/exercises/practice/diffie-hellman/diffie_hellman.bats
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env bats
+ load bats-extra
+ 
+-# local version: 1.0.0.0
++# generated on 2026-11-15T17:38:48+00:00
+ 
+ # Usage: between $val $low $high
+ # Value is between low (inclusive) and high (exclusive).

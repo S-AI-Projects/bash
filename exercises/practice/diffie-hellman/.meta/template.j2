@@ -1,0 +1,91 @@
+{{ header }}
+
+# Usage: between $val $low $high
+# Value is between low (inclusive) and high (exclusive).
+{#- The "{ " below keeps the trailing space that the committed test file has after the brace. #}
+between() {{ "{ " }}
+    (( $2 <= $1 && $1 < $3 ))
+}
+{%- for case in cases %}
+{%- if case["property"] == "privateKeyIsInRange" %}
+{# Track-specific test name: the canonical description is "private key is greater than 1 and less than p". #}
+@test "private key is in range" {
+    {% if loop.first %}#{% endif %}[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    for i in 5 7 11 13 17 19 23 29 31 27 41 43 47; do
+        run bash {{ solution }} privateKey $i
+        assert_success
+        assert between "$output" 2 "$i"
+    done
+}
+{%- elif case["property"] == "privateKeyIsRandom" %}
+
+@test "{{ case["description"] }}" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    # may fail due to randomness
+    local -i n=10 p=32000
+    for i in $(seq $n); do
+        run bash {{ solution }} privateKey $p
+        assert_success
+        a["$output"]=1
+    done
+    assert_equal {% raw %}${#a[@]}{% endraw %} $n
+}
+{%- elif case["property"] == "publicKey" %}
+
+@test "{{ case["description"] }}" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    expected="{{ case["expected"] }}"
+    local -i p={{ case["input"]["p"] }} g={{ case["input"]["g"] }} private={{ case["input"]["privateKey"] }}
+    run bash {{ solution }} publicKey $p $g $private
+    assert_success
+    assert_output "$expected"
+}
+{%- elif case["property"] == "secret" %}
+{# Track-specific test name: the canonical description is "can calculate secret using other party's public key". #}
+@test "can calculate secret key using other's public key" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    expected="{{ case["expected"] }}"
+    local -i p={{ case["input"]["p"] }} public={{ case["input"]["theirPublicKey"] }} private={{ case["input"]["myPrivateKey"] }}
+    run bash {{ solution }} secret $p $public $private
+    assert_success
+    assert_output "$expected"
+}
+{%- elif case["property"] == "keyExchange" %}
+
+@test "{{ case["description"] }}" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    local -i i p={{ case["input"]["p"] }} g={{ case["input"]["g"] }}
+    local -i alicePublic alicePrivate secret1
+    local -i bobPublic bobPrivate secret2
+
+    # do this a few times (randomness)
+    for i in {1..10}; do
+        run bash {{ solution }} privateKey $p
+        assert_success
+        alicePrivate=$output
+
+        run bash {{ solution }} privateKey $p
+        assert_success
+        bobPrivate=$output
+
+        run bash {{ solution }} publicKey $p $g $alicePrivate
+        assert_success
+        alicePublic=$output
+
+        run bash {{ solution }} publicKey $p $g $bobPrivate
+        assert_success
+        bobPublic=$output
+
+        run bash {{ solution }} secret $p $bobPublic $alicePrivate
+        assert_success
+        secret1=$output
+
+        run bash {{ solution }} secret $p $alicePublic $bobPrivate
+        assert_success
+        secret2=$output
+
+        assert_equal "$secret1" "$secret2"
+    done
+}
+{%- endif %}
+{%- endfor %}
