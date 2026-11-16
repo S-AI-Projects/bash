@@ -7,3 +7,10 @@
     assert_output "{{ case["expected"] }}"
 }
 {% endfor %}
+
+@test "Four of a kind is not a full house (four small, one big)" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run bash {{ solution }} "full house" 3 3 3 3 5
+    assert_success
+    assert_output "0"
+}

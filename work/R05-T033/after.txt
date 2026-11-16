@@ -1,0 +1,11 @@
+control: example.sh passes all 30 tests
+
+m01_flip_yacht_cmp             KILLED by 2 of 30 tests (e.g. Yacht)
+m02_drop_choice_case           KILLED by 2 of 30 tests (e.g. Choice)
+m03_four_of_a_kind_boundary    KILLED by 1 of 30 tests (e.g. Yacht can be scored as Four of a Kind)
+m04_straight_boundary          KILLED by 1 of 30 tests (e.g. Big Straight)
+m05_full_house_two_groups      KILLED by 2 of 30 tests (e.g. Four of a kind is not a full house)
+m06_full_house_accept_four     KILLED by 1 of 30 tests (e.g. Four of a kind is not a full house (four small, one big))
+m07_full_house_not_one         KILLED by 1 of 30 tests (e.g. Four of a kind is not a full house (four small, one big))
+
+killed: 7   survived: 0
