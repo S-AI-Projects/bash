@@ -31,14 +31,23 @@ case ${exercise} in
     *)                   expected=1 ;;
 esac
 # a PCRE: the `\Q...\E` defines a literal segment
+# shellcheck disable=SC2016  # the $ is literal text to match, not an expansion
 skip_re='^\s*#+\s*\Q[[ $BATS_RUN_SKIPPED == "true" ]] || skip\E$'
 num_skip_comments=$(grep -cP "${skip_re}" "${tests}") || true
 (( num_skip_comments == expected )) || die "There should be exactly $expected commented skip directive(s) in ${tests}"
 
 echo "Processing $exercise"
 
+# Back up the stub before overwriting it, and put it back on exit, so any
+# uncommitted work in the stub survives (`git checkout` would discard it).
+# The backup is complete before the trap is set, so cleanup never restores
+# a half-written file over the stub.
+backup=$(mktemp "${TMPDIR:-/tmp}/validate_one_exercise.XXXXXX") || die "Cannot create a temporary file"
+cp "${stub}" "${backup}"
+
 cleanup() {
-    git checkout "${stub}"
+    cp "${backup}" "${stub}"
+    rm -f "${backup}"
 }
 trap cleanup EXIT
 
