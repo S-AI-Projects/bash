@@ -1,0 +1,16 @@
+diff --git a/config.json b/config.json
+index c8ce39f..bd2323d 100644
+--- a/config.json
++++ b/config.json
+@@ -221,7 +221,10 @@
+         "uuid": "93e9a833-d9d2-4d73-b559-2396b8f76446",
+         "practices": [],
+         "prerequisites": [],
+-        "difficulty": 2
++        "difficulty": 2,
++        "topics": [
++          "arrays"
++        ]
+       },
+       {
+         "slug": "resistor-color-duo",
