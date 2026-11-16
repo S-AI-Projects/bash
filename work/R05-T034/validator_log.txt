@@ -1,0 +1,12 @@
+Processing satellite
+1..9
+ok 1 Empty tree
+ok 2 Tree with one item
+ok 3 Tree with many items
+ok 4 Reject traversals of different length
+ok 5 Reject inconsistent traversals of same length
+ok 6 Reject traversals with repeated items
+ok 7 A degenerate binary tree
+ok 8 Another degenerate binary tree
+ok 9 Tree with many more items
+Updated 1 path from the index
