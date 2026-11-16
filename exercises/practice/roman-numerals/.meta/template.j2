@@ -7,3 +7,9 @@
     assert_output "{{ case["expected"] }}"
 }
 {% endfor %}
+@test "444 is CDXLIV" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run bash {{ solution }} 444
+    assert_success
+    assert_output "CDXLIV"
+}

@@ -1,7 +1,7 @@
 #!/usr/bin/env bats
 load bats-extra
 
-# generated on 2026-08-14T05:27:24+00:00
+# generated on 2026-11-16T16:51:36+00:00
 
 @test "1 is I" {
     # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
@@ -192,3 +192,9 @@ load bats-extra
     assert_output "MMMCMXCIX"
 }
 
+@test "444 is CDXLIV" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run bash roman_numerals.sh 444
+    assert_success
+    assert_output "CDXLIV"
+}
