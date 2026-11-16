@@ -1,0 +1,9 @@
+=== Snippet 1: Removing separating hyphens ===
+3598215088
+=== Snippet 2: Format and length validation ===
+Valid format
+Correctly rejected too-long string
+=== Snippet 3: Handling the 'X' check character ===
+Check digit value: 10
+=== Snippet 4: Character iteration and arithmetic evaluation ===
+valid
