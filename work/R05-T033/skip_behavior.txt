@@ -1,0 +1,31 @@
+1..30
+ok 1 Yacht
+ok 2 Not Yacht # skip
+ok 3 Ones # skip
+ok 4 Ones, out of order # skip
+ok 5 No ones # skip
+ok 6 Twos # skip
+ok 7 Fours # skip
+ok 8 Yacht counted as threes # skip
+ok 9 Yacht of 3s counted as fives # skip
+ok 10 Fives # skip
+ok 11 Sixes # skip
+ok 12 Full house two small, three big # skip
+ok 13 Full house three small, two big # skip
+ok 14 Two pair is not a full house # skip
+ok 15 Four of a kind is not a full house # skip
+ok 16 Yacht is not a full house # skip
+ok 17 Four of a Kind # skip
+ok 18 Yacht can be scored as Four of a Kind # skip
+ok 19 Full house is not Four of a Kind # skip
+ok 20 Little Straight # skip
+ok 21 Little Straight as Big Straight # skip
+ok 22 Four in order but not a little straight # skip
+ok 23 No pairs but not a little straight # skip
+ok 24 Minimum is 1, maximum is 5, but not a little straight # skip
+ok 25 Big Straight # skip
+ok 26 Big Straight as little straight # skip
+ok 27 No pairs but not a big straight # skip
+ok 28 Choice # skip
+ok 29 Yacht as choice # skip
+ok 30 Four of a kind is not a full house (four small, one big) # skip

@@ -1,7 +1,7 @@
 #!/usr/bin/env bats
 load bats-extra
 
-# generated on 2026-06-29T16:53:25+00:00
+# generated on 2026-11-16T09:56:17+00:00
 
 @test "Yacht" {
     # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
@@ -204,4 +204,12 @@ load bats-extra
     run bash yacht.sh "choice" 2 2 2 2 2
     assert_success
     assert_output "10"
+}
+
+
+@test "Four of a kind is not a full house (four small, one big)" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run bash yacht.sh "full house" 3 3 3 3 5
+    assert_success
+    assert_output "0"
 }
