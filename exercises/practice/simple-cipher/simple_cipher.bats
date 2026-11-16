@@ -1,13 +1,12 @@
 #!/usr/bin/env bats
 load bats-extra
 
-# local version: 2.0.0.1
-# bash-specific test: Input validation, lower-casing
+# generated on 2026-11-16T09:26:41+00:00
 
-# Random key cipher"
+# Random key cipher
 
-@test  "Can generate a random key" {
-    #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+@test "Can generate a random key" {
+    # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run bash simple_cipher.sh key
     assert_success
     key=$output
@@ -15,7 +14,7 @@ load bats-extra
     [[ "$key" =~ ^[[:lower:]]+$ ]]   # only lowercase letters
 }
 
-@test  "Can encode random" {
+@test "Can encode random" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run bash simple_cipher.sh key
     assert_success
@@ -27,7 +26,7 @@ load bats-extra
     assert_output "${key:0:10}"
 }
 
-@test  "Can decode random" {
+@test "Can decode random" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run bash simple_cipher.sh key
     assert_success
@@ -57,7 +56,7 @@ load bats-extra
 
 # Substitution cipher
 
-@test  "Can encode" {
+@test "Can encode" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     key=abcdefghij
     txt=aaaaaaaaaa
@@ -66,7 +65,7 @@ load bats-extra
     assert_output "$key"
 }
 
-@test  "Can decode" {
+@test "Can decode" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     key=abcdefghij
     txt=abcdefghij
@@ -76,7 +75,7 @@ load bats-extra
     assert_output "$exp"
 }
 
-@test  "Is reversible" {
+@test "Is reversible" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     key=abcdefghij
     txt=abcdefghij
@@ -89,7 +88,7 @@ load bats-extra
     assert_output "$exp"
 }
 
-@test  "Can double shift encode" {
+@test "Can double shift encode" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     key=iamapandabear
     txt=iamapandabear
@@ -99,7 +98,7 @@ load bats-extra
     assert_output "$exp"
 }
 
-@test  "Can wrap on encode"  {
+@test "Can wrap on encode" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     key=abcdefghij
     txt=zzzzzzzzzz
@@ -109,7 +108,7 @@ load bats-extra
     assert_output "$exp"
 }
 
-@test  "Can wrap on decode" {
+@test "Can wrap on decode" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     key=abcdefghij
     txt=zabcdefghi
@@ -119,7 +118,7 @@ load bats-extra
     assert_output "$exp"
 }
 
-@test  "Can encode messages longer than the key" {
+@test "Can encode messages longer than the key" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     key=abc
     txt=iamapandabear
@@ -129,7 +128,7 @@ load bats-extra
     assert_output "$exp"
 }
 
-@test  "Can decode messages longer than the key" {
+@test "Can decode messages longer than the key" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     key=abc
     txt=iboaqcnecbfcr
@@ -138,6 +137,8 @@ load bats-extra
     assert_success
     assert_output "$exp"
 }
+
+# Bash-specific tests
 
 @test "plaintext is lowercased" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip

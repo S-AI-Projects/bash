@@ -1,0 +1,17 @@
+1..16
+ok 1 Can generate a random key
+ok 2 Can encode random # skip
+ok 3 Can decode random # skip
+ok 4 Is reversible random # skip
+ok 5 Can encode # skip
+ok 6 Can decode # skip
+ok 7 Is reversible # skip
+ok 8 Can double shift encode # skip
+ok 9 Can wrap on encode # skip
+ok 10 Can wrap on decode # skip
+ok 11 Can encode messages longer than the key # skip
+ok 12 Can decode messages longer than the key # skip
+ok 13 plaintext is lowercased # skip
+ok 14 ciphertext is lowercased # skip
+ok 15 key must be lowercase # skip
+ok 16 key must be letters # skip
