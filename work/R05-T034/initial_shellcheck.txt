@@ -1,0 +1,112 @@
+
+In exercises/practice/satellite/.meta/example.sh line 19:
+    idx=$( indexOf "$root" "${inorder[@]}" )
+                    ^---^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+    idx=$( indexOf "${root}" "${inorder[@]}" )
+
+
+In exercises/practice/satellite/.meta/example.sh line 22:
+    local leftInorder=(  "${inorder[@]: 0 : $idx}" )
+                                            ^--^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+    local leftInorder=(  "${inorder[@]: 0 : ${idx}}" )
+
+
+In exercises/practice/satellite/.meta/example.sh line 23:
+    local rightInorder=( "${inorder[@]: $idx+1}" )
+                                        ^--^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+    local rightInorder=( "${inorder[@]: ${idx}+1}" )
+
+
+In exercises/practice/satellite/.meta/example.sh line 25:
+    local leftPreorder=(  "${preorder[@]: 1 : $idx}" )
+                                              ^--^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+    local leftPreorder=(  "${preorder[@]: 1 : ${idx}}" )
+
+
+In exercises/practice/satellite/.meta/example.sh line 26:
+    local rightPreorder=( "${preorder[@]: $idx+1}" )
+                                          ^--^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+    local rightPreorder=( "${preorder[@]: ${idx}+1}" )
+
+
+In exercises/practice/satellite/.meta/example.sh line 32:
+        "$root" \
+         ^---^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+        "${root}" \
+
+
+In exercises/practice/satellite/.meta/example.sh line 33:
+        "$( "$func" "${leftPreorder[*]}" "${leftInorder[*]}" )" \
+            ^-- SC2312 (info): Consider invoking this command separately to avoid masking its return value (or use '|| true' to ignore).
+             ^---^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+        "$( "${func}" "${leftPreorder[*]}" "${leftInorder[*]}" )" \
+
+
+In exercises/practice/satellite/.meta/example.sh line 34:
+        "$( "$func" "${rightPreorder[*]}" "${rightInorder[*]}" )"
+            ^-- SC2312 (info): Consider invoking this command separately to avoid masking its return value (or use '|| true' to ignore).
+             ^---^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+        "$( "${func}" "${rightPreorder[*]}" "${rightInorder[*]}" )"
+
+
+In exercises/practice/satellite/.meta/example.sh line 47:
+        if [[ ${seen["$elem"]} ]]; then
+              ^--------------^ SC2244 (style): Prefer explicit -n to check non-empty string (or use =/-ne to check boolean/integer).
+                      ^---^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+        if [[ -n ${seen["${elem}"]} ]]; then
+
+
+In exercises/practice/satellite/.meta/example.sh line 50:
+        seen["$elem"]=1
+              ^---^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+        seen["${elem}"]=1
+
+
+In exercises/practice/satellite/.meta/example.sh line 51:
+        if (( $(indexOf "$elem" "${_inorder[@]}") == -1 )); then
+                ^-- SC2312 (info): Consider invoking this command separately to avoid masking its return value (or use '|| true' to ignore).
+                         ^---^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+        if (( $(indexOf "${elem}" "${_inorder[@]}") == -1 )); then
+
+
+In exercises/practice/satellite/.meta/example.sh line 63:
+        if [[ $needle == "${haystack[i]}" ]]; then
+              ^-----^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+        if [[ ${needle} == "${haystack[i]}" ]]; then
+
+
+In exercises/practice/satellite/.meta/example.sh line 64:
+            echo "$i"
+                  ^-- SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+            echo "${i}"
+
+For more information:
+  https://www.shellcheck.net/wiki/SC2312 -- Consider invoking this command se...
+  https://www.shellcheck.net/wiki/SC2244 -- Prefer explicit -n to check non-e...
+  https://www.shellcheck.net/wiki/SC2250 -- Prefer putting braces around vari...
