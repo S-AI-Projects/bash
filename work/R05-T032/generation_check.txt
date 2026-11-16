@@ -1,0 +1,8 @@
+=== bin/generate_tests --no-pull simple-cipher ===
+Exit code: 0
+
+=== bin/configlet sync -e simple-cipher ===
+Updating cached 'problem-specifications' data...
+Checking exercises...
+The `simple-cipher` exercise has up-to-date docs, filepaths, metadata, and tests!
+Exit code: 0

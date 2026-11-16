@@ -1,0 +1,139 @@
+{{ header }}
+
+# Random key cipher
+
+{% for case in cases if "random" in case.get("scenarios", []) and case["property"] == "key" -%}
+@test "Can generate a random key" {
+    # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run bash {{ solution }} key
+    assert_success
+    key=$output
+{% raw %}    assert [ "${#key}" -ge 100 ]     # at least 100 chars{% endraw %}
+    [[ "$key" =~ ^[[:lower:]]+$ ]]   # only lowercase letters
+}
+
+{% endfor -%}
+{% for case in cases if "random" in case.get("scenarios", []) and case["property"] == "encode" -%}
+@test "Can encode random" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run bash {{ solution }} key
+    assert_success
+    key=$output
+    plaintext="{{ case["input"]["plaintext"] }}"
+    run bash {{ solution }} -k "$key" encode "$plaintext"
+    assert_success
+{% raw %}    assert_equal "${#output}" 10{% endraw %}
+    assert_output "${key:0:10}"
+}
+
+{% endfor -%}
+{% for case in cases if "random" in case.get("scenarios", []) and case["property"] == "decode" and "plaintext" not in case["input"] -%}
+@test "Can decode random" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run bash {{ solution }} key
+    assert_success
+    key=$output
+    plaintext="{{ case["expected"] }}"
+    run bash {{ solution }} -k "$key" decode "${key:0:10}"
+    assert_success
+{% raw %}    assert_equal "${#output}" 10{% endraw %}
+    assert_output "$plaintext"
+}
+
+{% endfor -%}
+{% for case in cases if "random" in case.get("scenarios", []) and case["property"] == "decode" and "plaintext" in case["input"] -%}
+@test "Is reversible random" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run bash {{ solution }} key
+    assert_success
+    key=$output
+
+    plaintext="{{ case["input"]["plaintext"] }}"
+    run bash {{ solution }} -k "$key" encode "$plaintext"
+    assert_success
+    encoded=$output
+
+    run bash {{ solution }} -k "$key" decode "$encoded"
+    assert_success
+    assert_output "$plaintext"
+}
+
+{% endfor -%}
+# Substitution cipher
+
+{% for case in cases if "random" not in case.get("scenarios", []) -%}
+{% if case["property"] == "encode" -%}
+@test "{{ case["description"] }}" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    key={{ case["input"]["key"] }}
+    txt={{ case["input"]["plaintext"] }}
+    {% if case["description"] == "Can encode" -%}
+    run bash {{ solution }} -k "$key" encode "$txt"
+    assert_success
+    assert_output "$key"
+    {%- else -%}
+    exp={{ case["expected"] }}
+    run bash {{ solution }} -k "$key" encode "$txt"
+    assert_success
+    assert_output "$exp"
+    {%- endif %}
+}
+
+{% elif "plaintext" in case["input"] -%}
+@test "Is reversible" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    key={{ case["input"]["key"] }}
+    txt={{ case["input"]["plaintext"] }}
+    exp={{ case["expected"] }}
+    run bash {{ solution }} -k "$key" encode "$txt"
+    assert_success
+    encoded=$output
+    run bash {{ solution }} -k "$key" decode "$encoded"
+    assert_success
+    assert_output "$exp"
+}
+
+{% else -%}
+@test "{{ case["description"] }}" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    key={{ case["input"]["key"] }}
+    txt={{ case["input"]["ciphertext"] }}
+    exp={{ case["expected"] }}
+    run bash {{ solution }} -k "$key" decode "$txt"
+    assert_success
+    assert_output "$exp"
+}
+
+{% endif -%}
+{% endfor -%}
+# Bash-specific tests
+
+@test "plaintext is lowercased" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run bash {{ solution }} -k b encode FOOBAR
+    assert_success
+    assert_output "gppcbs"
+}
+
+@test "ciphertext is lowercased" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run bash {{ solution }} -k b decode GPPCBS
+    assert_success
+    assert_output "foobar"
+}
+
+# errors
+
+@test "key must be lowercase" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run bash {{ solution }} -k ABC encode foo
+    assert_failure
+    assert_output --partial "invalid key"
+}
+
+@test "key must be letters" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run bash {{ solution }} -k 123 encode foo
+    assert_failure
+    assert_output --partial "invalid key"
+}

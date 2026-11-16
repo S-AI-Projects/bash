@@ -1,0 +1,19 @@
+Processing simple-cipher
+1..16
+ok 1 Can generate a random key
+ok 2 Can encode random
+ok 3 Can decode random
+ok 4 Is reversible random
+ok 5 Can encode
+ok 6 Can decode
+ok 7 Is reversible
+ok 8 Can double shift encode
+ok 9 Can wrap on encode
+ok 10 Can wrap on decode
+ok 11 Can encode messages longer than the key
+ok 12 Can decode messages longer than the key
+ok 13 plaintext is lowercased
+ok 14 ciphertext is lowercased
+ok 15 key must be lowercase
+ok 16 key must be letters
+Updated 1 path from the index
