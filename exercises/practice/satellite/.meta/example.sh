@@ -15,23 +15,24 @@ buildTree() {
     fi
 
     local root=${preorder[0]}
-    local idx
+    local -i idx
     idx=$( indexOf "$root" "${inorder[@]}" )
     (( idx == -1 )) && die "should not happen"
 
-    local leftInorder=(  "${inorder[@]: 0 : $idx}" )
-    local rightInorder=( "${inorder[@]: $idx+1}" )
+    local -a leftInorder=(  "${inorder[@]: 0 : $idx}" )
+    local -a rightInorder=( "${inorder[@]: $idx+1}" )
 
-    local leftPreorder=(  "${preorder[@]: 1 : $idx}" )
-    local rightPreorder=( "${preorder[@]: $idx+1}" )
+    local -a leftPreorder=(  "${preorder[@]: 1 : $idx}" )
+    local -a rightPreorder=( "${preorder[@]: $idx+1}" )
 
-    # I hate hardcoding the name of a recursive function
-    local func=${FUNCNAME[0]}
+    local left_tree right_tree
+    left_tree=$( buildTree "${leftPreorder[*]}" "${leftInorder[*]}" )
+    right_tree=$( buildTree "${rightPreorder[*]}" "${rightInorder[*]}" )
 
     printf '{"v": "%s", "l": %s, "r": %s}' \
         "$root" \
-        "$( "$func" "${leftPreorder[*]}" "${leftInorder[*]}" )" \
-        "$( "$func" "${rightPreorder[*]}" "${rightInorder[*]}" )"
+        "${left_tree}" \
+        "${right_tree}"
 }
 
 validate() {
@@ -41,14 +42,17 @@ validate() {
         die "Traversals must have the same length"
     fi
 
-    local -A seen
+    local -A seen=()
+    local elem
+    local -i elem_idx
 
     for elem in "${_preorder[@]}"; do
         if [[ ${seen["$elem"]} ]]; then
             die "Traversals must contain unique items"
         fi
         seen["$elem"]=1
-        if (( $(indexOf "$elem" "${_inorder[@]}") == -1 )); then
+        elem_idx=$( indexOf "$elem" "${_inorder[@]}" )
+        if (( elem_idx == -1 )); then
             die "Traversals must have the same elements"
         fi
     done
@@ -56,8 +60,8 @@ validate() {
 
 indexOf() {
     local needle=$1
-    local haystack=( "${@:2}" )
-    local i
+    local -a haystack=( "${@:2}" )
+    local -i i
 
     for (( i=0; i < ${#haystack[@]}; i++ )); do
         if [[ $needle == "${haystack[i]}" ]]; then
