@@ -1,0 +1,27 @@
+{
+  "introduction": {
+    "authors": [
+      "Dhruv269"
+    ]
+  },
+  "approaches": [
+    {
+      "uuid": "35b0fa13-e782-46d4-b823-e1010c334b67",
+      "slug": "associative-array",
+      "title": "Associative Array",
+      "blurb": "Map each uppercase letter to its score using an associative array.",
+      "authors": [
+        "Dhruv269"
+      ]
+    },
+    {
+      "uuid": "10c11c0e-4d96-4548-b3d2-459d9a00dfbb",
+      "slug": "case-with-letter-groups",
+      "title": "Case with letter groups",
+      "blurb": "Match letters against grouped pattern brackets in a case statement.",
+      "authors": [
+        "Dhruv269"
+      ]
+    }
+  ]
+}
