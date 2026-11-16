@@ -1,0 +1,22 @@
+1..21
+ok 1 valid isbn
+ok 2 invalid isbn check digit
+ok 3 valid isbn with a check digit of 10
+ok 4 check digit is a character other than X
+ok 5 invalid check digit in isbn is not treated as zero
+ok 6 invalid character in isbn is not treated as zero
+ok 7 X is only valid as a check digit
+ok 8 only one check digit is allowed
+ok 9 X is not substituted by the value 10
+ok 10 valid isbn without separating dashes
+ok 11 isbn without separating dashes and X as check digit
+ok 12 isbn without check digit and dashes
+ok 13 too long isbn and no dashes
+ok 14 too short isbn
+ok 15 isbn without check digit
+ok 16 check digit of X should not be used for 0
+ok 17 empty isbn
+ok 18 input is 9 characters
+ok 19 invalid characters are not ignored after checking length
+ok 20 invalid characters are not ignored before checking length
+ok 21 input is too long but contains a valid isbn

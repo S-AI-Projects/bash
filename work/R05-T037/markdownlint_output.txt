@@ -1,0 +1,4 @@
+markdownlint-cli2 v0.24.1 (markdownlint v0.42.1)
+Finding: exercises/practice/isbn-verifier/.docs/instructions.append.md
+Linting: 1 file
+Summary: 0 issues in 0 files
