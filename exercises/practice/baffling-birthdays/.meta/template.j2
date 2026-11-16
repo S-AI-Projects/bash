@@ -1,0 +1,84 @@
+
+{{- header -}}
+{%- for case in cases if case["property"] == "sharedBirthday" %}
+@test "{{ case["descriptions"] | join(" -> ") }}" {
+{%- if loop.first %}
+    #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+{%- else %}
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+{%- endif %}
+    birthdates=({% if case["input"]["birthdates"] | length <= 2 %}{% for birthdate in case["input"]["birthdates"] %}"{{ birthdate }}"{% if not loop.last %} {% endif %}{% endfor %}{% else %}
+{% for birthdate in case["input"]["birthdates"] %}        "{{ birthdate }}"
+{% endfor %}    {% endif %})
+    run bash {{ solution }} shared_birthday "${birthdates[@]}"
+    assert_success
+    assert_output "{{ case["expected"] }}"
+}
+{% endfor -%}
+{% for case in cases if case["property"] == "randomBirthdates" %}{% if case["description"] == "generate requested number of birthdates" %}
+@test "{{ case["descriptions"] | join(" -> ") }}" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    generate=500
+    run bash {{ solution }} random_birthdates "$generate"
+    assert_success
+    num_output_dates=$( wc -w <<< "$output" | tr -d '[:space:]' )
+    assert_equal "$num_output_dates" "$generate"
+}
+{% elif case["description"] == "years are not leap years" %}
+@test "{{ case["descriptions"] | join(" -> ") }}" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    generate=500
+    seen_leap=0
+    run bash {{ solution }} random_birthdates "$generate"
+    assert_success
+    read -d '' -ra output_dates < <(printf '%s\0' "$output")
+    for date in "${output_dates[@]}"; do
+        year=${date:0:4}
+        if (( year % 400 == 0 || (year % 4 == 0 && year % 100 != 0) )); then
+            (( ++seen_leap ))
+        fi
+    done
+    assert_equal "${seen_leap}" 0
+}
+{% elif case["description"] == "months are random" %}
+@test "{{ case["descriptions"] | join(" -> ") }}" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    declare -A seen_month
+    generate=500
+    run bash {{ solution }} random_birthdates "$generate"
+    assert_success
+    read -d '' -ra output_dates < <(printf '%s\0' "$output")
+    for date in "${output_dates[@]}"; do
+        month=${date:5:2}
+
+        seen_month[$month]=true
+    done
+    assert_equal "${{ '{' }}#seen_month[@]}" 12
+}
+{% elif case["description"] == "days are random" %}
+@test "{{ case["descriptions"] | join(" -> ") }}" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    declare -A seen_day
+    generate=500
+    run bash {{ solution }} random_birthdates "$generate"
+    assert_success
+    read -d '' -ra output_dates < <(printf '%s\0' "$output")
+    for date in "${output_dates[@]}"; do
+        day=${date:8}
+
+        seen_day[$day]=true
+    done
+    assert_equal "${{ '{' }}#seen_day[@]}" 31
+}
+{% endif %}{% endfor %}
+# "The expected probability values should be compared using some tolerance to allow for small deviations."
+{% for case in cases if case["property"] == "estimatedProbabilityOfSharedBirthday" %}{% set group_size = case["input"]["groupSize"] %}{{ "\n\n" if not loop.first else "" }}@test "{{ case["descriptions"] | join(" -> ") }}" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    # The expected probability is {{ case["expected"] }}
+    run bash {{ solution }} estimated_probability_of_share_birthday {{ group_size }}
+    assert_success
+{% if group_size == 1 %}    assert_equal "$output" 0
+{% elif group_size == 10 %}    assert_between 9 13
+{% elif group_size == 23 %}    assert_between 47 53
+{% elif group_size == 70 %}    assert_between 98 100
+{% endif %}}{% endfor -%}
