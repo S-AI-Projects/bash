@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+num=${1}
+output=""
+declare -A sounds=([3]="Pling" [5]="Plang" [7]="Plong")
+for factor in 3 5 7; do
+  (( num % factor == 0 )) && output+="${sounds[${factor}]}"
+done
+echo "${output:-${num}}"
