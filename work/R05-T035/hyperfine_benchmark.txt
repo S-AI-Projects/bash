@@ -1,0 +1,10 @@
+Benchmark 1: Original (.meta/example.sh) (154 runs)
+                mean     ±       σ          min     …     max
+  Wall Time     19.1 ms  ±     0.4 ms      18.2 ms  …    20.1 ms
+  Memory         6.9 MiB ±     0.0 MiB      6.8 MiB …     6.9 MiB
+ 
+Benchmark 2: Optimized (work/R05-T035/fast.sh) (305 runs)
+                mean     ±       σ          min     …     max
+  Wall Time      9.7 ms  ±     0.3 ms       9.2 ms  …    10.5 ms           -49.2%  (2.0x faster)
+  Memory         6.8 MiB ±     0.0 MiB      6.8 MiB …     6.9 MiB           -0.6%
+ 

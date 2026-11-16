@@ -1,0 +1,7 @@
+Processing sieve
+1..5
+ok 1 no primes under two
+ok 2 find first prime
+ok 3 find primes up to 10
+ok 4 limit is prime
+ok 5 find primes up to 1000
