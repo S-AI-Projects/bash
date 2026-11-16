@@ -1,0 +1,3 @@
+validator exit status: 1  (non-zero means failure was reported)
+stub restored: yes
+files left in the temp directory:        0

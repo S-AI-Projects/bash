@@ -1,0 +1,40 @@
+# --
+#
+not ok 6 test_encode_encode_numbers
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file affine_cipher.bats, line 44)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output : usage: paste [-s] [-d delimiters] file ...
+# --
+#
+not ok 7 test_encode_encode_deep_thought
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file affine_cipher.bats, line 51)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output : usage: paste [-s] [-d delimiters] file ...
+# --
+#
+not ok 8 test_encode_encode_all_the_letters
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file affine_cipher.bats, line 58)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output : usage: paste [-s] [-d delimiters] file ...
+# --
+#
+ok 9 test_encode_encode_with_a_not_coprime_to_m
+ok 10 test_decode_decode_exercism
+ok 11 test_decode_decode_a_sentence
+ok 12 test_decode_decode_numbers
+ok 13 test_decode_decode_all_the_letters
+ok 14 test_decode_decode_with_no_spaces_in_input
+ok 15 test_decode_decode_with_too_many_spaces
+ok 16 test_decode_decode_with_a_not_coprime_to_m

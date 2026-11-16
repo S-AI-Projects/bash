@@ -1,0 +1,25 @@
+--- git diff BEFORE running the validator
+diff --git a/exercises/practice/hello-world/hello_world.sh b/exercises/practice/hello-world/hello_world.sh
+index 5f126f0..52013e7 100644
+--- a/exercises/practice/hello-world/hello_world.sh
++++ b/exercises/practice/hello-world/hello_world.sh
+@@ -1,3 +1,4 @@
+ #!/usr/bin/env bash
+ 
+ echo "Goodbye, Mars!"
++echo "my uncommitted work"
+--- running the validator
+Processing hello-world
+1..1
+ok 1 test_say_hi
+--- git diff AFTER running the validator
+diff --git a/exercises/practice/hello-world/hello_world.sh b/exercises/practice/hello-world/hello_world.sh
+index 5f126f0..52013e7 100644
+--- a/exercises/practice/hello-world/hello_world.sh
++++ b/exercises/practice/hello-world/hello_world.sh
+@@ -1,3 +1,4 @@
+ #!/usr/bin/env bash
+ 
+ echo "Goodbye, Mars!"
++echo "my uncommitted work"
+--- files left in the temp directory:        0
