@@ -1,0 +1,6 @@
+1..5
+ok 1 no primes under two in 27ms
+ok 2 find first prime in 22ms
+ok 3 find primes up to 10 in 18ms
+ok 4 limit is prime in 20ms
+ok 5 find primes up to 1000 in 35ms

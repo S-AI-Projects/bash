@@ -1,0 +1,20 @@
+
+In - line 15:
+    if ${is_prime[$p]}; then
+                  ^-- SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+    if ${is_prime[${p}]}; then
+
+
+In - line 27:
+        primes+=( $p )
+                  ^-- SC2206 (warning): Quote to prevent word splitting/globbing, or split robustly with mapfile or read -a.
+                  ^-- SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+        primes+=( ${p} )
+
+For more information:
+  https://www.shellcheck.net/wiki/SC2206 -- Quote to prevent word splitting/g...
+  https://www.shellcheck.net/wiki/SC2250 -- Prefer putting braces around vari...

@@ -1,31 +1,46 @@
 #!/usr/bin/env bash
-
+#
 # Sieve of Eratosthenes
 # https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
 
-declare -i limit=$1
+set -o errexit
+set -o nounset
 
-is_prime=()
-for ((i = 2; i <= limit; i++)); do
-    is_prime[i]=true
-done
+#######################################
+# Find all prime numbers up to a given limit using the Sieve of Eratosthenes.
+# Arguments:
+#   Limit integer
+# Outputs:
+#   Space-separated list of prime numbers
+#######################################
+main() {
+  local -i limit="${1:-0}"
+  local -a is_composite=()
+  local -a primes=()
+  local -i p m
 
-for ((p = 2; p <= limit; p++)); do
-    # If this p is prime ...
-    if ${is_prime[$p]}; then
-
-        # ... then mark all multiples as not prime
-        for (( m = 2 * p; m <= limit; m += p )); do
-            is_prime[m]=false
-        done
+  # Sieve odd composite numbers starting from 3 up to sqrt(limit)
+  for (( p = 3; p * p <= limit; p += 2 )); do
+    if (( !is_composite[p] )); then
+      for (( m = p * p; m <= limit; m += 2 * p )); do
+        is_composite[m]=1
+      done
     fi
-done
+  done
 
-primes=()
-for ((p = 2; p <= limit; p++)); do
-    if ${is_prime[p]}; then
-        primes+=( $p )
+  # 2 is the only even prime
+  if (( limit >= 2 )); then
+    primes+=(2)
+  fi
+
+  # Collect odd primes up to limit
+  for (( p = 3; p <= limit; p += 2 )); do
+    if (( !is_composite[p] )); then
+      primes+=("${p}")
     fi
-done
+  done
 
-echo "${primes[*]}"
+  echo "${primes[*]}"
+}
+
+main "${@}"
