@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+num=${1}
+output=""
+(( num % 3 == 0 )) && output+="Pling"
+(( num % 5 == 0 )) && output+="Plang"
+(( num % 7 == 0 )) && output+="Plong"
+echo "${output:-${num}}"

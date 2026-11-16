@@ -1,0 +1,27 @@
+{
+  "introduction": {
+    "authors": [
+      "avbalotra"
+    ]
+  },
+  "approaches": [
+    {
+      "uuid": "74aa019a-a9a0-41a9-87d8-34138b4ec874",
+      "slug": "string-concatenation",
+      "title": "String concatenation",
+      "blurb": "Conditionally append raindrop sounds using arithmetic checks and default parameter expansion.",
+      "authors": [
+        "avbalotra"
+      ]
+    },
+    {
+      "uuid": "36ff17ee-37e6-4212-82ac-a7f671ac054c",
+      "slug": "associative-array",
+      "title": "Associative-array lookup",
+      "blurb": "Map factors to sounds in an associative array and iterate through sorted keys.",
+      "authors": [
+        "avbalotra"
+      ]
+    }
+  ]
+}
