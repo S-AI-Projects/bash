@@ -662,10 +662,10 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 4,
+        "status": "wip",
         "topics": [
           "dates"
-        ],
-        "status": "wip"
+        ]
       },
       {
         "slug": "binary-search",
@@ -1264,6 +1264,14 @@
           "associative_arrays",
           "control_flow_conditionals"
         ]
+      },
+      {
+        "slug": "resistor-color-tolerance",
+        "name": "Resistor Color Tolerance",
+        "uuid": "f9b65aee-0f6e-43e5-9fbf-aadceff7054e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
       }
     ],
     "foregone": [

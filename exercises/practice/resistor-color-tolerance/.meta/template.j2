@@ -1,0 +1,13 @@
+{{ header }}
+{% for case in cases %}
+@test "{{ case["description"] }}" {
+    {% if loop.first %}# {% endif %}[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run bash {{ solution }} "{{ case["input"]["colors"] | join('" "') }}"
+    assert_success
+{%- if "tolerance" in case["expected"] %}
+    assert_output "{{ case["expected"]["value"] }} {{ case["expected"]["unit"] }} {{ case["expected"]["tolerance"] }}"
+{%- else %}
+    assert_output "{{ case["expected"]["value"] }} {{ case["expected"]["unit"] }}"
+{%- endif %}
+}
+{% endfor %}
