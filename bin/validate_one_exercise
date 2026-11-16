@@ -31,6 +31,7 @@ case ${exercise} in
     *)                   expected=1 ;;
 esac
 # a PCRE: the `\Q...\E` defines a literal segment
+# shellcheck disable=SC2016
 skip_re='^\s*#+\s*\Q[[ $BATS_RUN_SKIPPED == "true" ]] || skip\E$'
 num_skip_comments=$(grep -cP "${skip_re}" "${tests}") || true
 (( num_skip_comments == expected )) || die "There should be exactly $expected commented skip directive(s) in ${tests}"
@@ -41,6 +42,16 @@ cleanup() {
     git checkout "${stub}"
 }
 trap cleanup EXIT
+
+# Run ShellCheck on the example solution if installed
+if command -v shellcheck >/dev/null 2>&1; then
+    echo "Running ShellCheck on ${solution}"
+    if ! shellcheck "${solution}"; then
+        echo "Warning: ShellCheck reported issues in ${solution}"
+    fi
+else
+    echo "ShellCheck is not installed, skipping ShellCheck validation"
+fi
 
 # Create implementation file from example
 cp "${solution}" "${stub}"
