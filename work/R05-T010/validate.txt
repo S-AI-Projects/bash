@@ -1,0 +1,11 @@
+Processing matrix
+1..8
+ok 1 test_extract_row_from_one_number_matrix
+ok 2 test_can_extract_row
+ok 3 test_extract_row_where_numbers_have_different_widths
+ok 4 test_can_extract_row_from_non_square_matrix_with_no_corresponding_column
+ok 5 test_extract_column_from_one_number_matrix
+ok 6 test_can_extract_column
+ok 7 test_can_extract_column_from_non_square_matrix_with_no_corresponding_row
+ok 8 test_extract_column_where_numbers_have_different_widths
+Updated 1 path from the index

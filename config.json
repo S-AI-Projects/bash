@@ -443,6 +443,19 @@
         ]
       },
       {
+        "slug": "matrix",
+        "name": "Matrix",
+        "uuid": "2d1e8acf-a760-4504-a127-454fb4806c53",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "topics": [
+          "arrays",
+          "parsing",
+          "strings"
+        ]
+      },
+      {
         "slug": "nucleotide-count",
         "name": "Nucleotide Count",
         "uuid": "28f848c8-56ef-4147-a401-f1617c147b4b",
@@ -662,10 +675,10 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 4,
+        "status": "wip",
         "topics": [
           "dates"
-        ],
-        "status": "wip"
+        ]
       },
       {
         "slug": "binary-search",
