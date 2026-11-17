@@ -1,7 +1,7 @@
 #!/usr/bin/env bats
 load bats-extra
 
-# generated on 2026-06-29T16:53:24+00:00
+# generated on 2026-11-17T19:01:54+00:00
 
 @test "Recognizes 0" {
     # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
@@ -220,4 +220,14 @@ INPUT
     run bash ocr_numbers.sh
     assert_success
     assert_output ""
+}
+
+@test "Input with two lines does not have a valid number of lines" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run bash ocr_numbers.sh << INPUT
+ _ 
+| |
+INPUT
+    assert_failure
+    assert_output "Number of input lines is not a multiple of four"
 }

@@ -21,3 +21,13 @@ INPUT
     assert_success
     assert_output ""
 }
+
+@test "Input with two lines does not have a valid number of lines" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run bash {{ solution }} << INPUT
+ _ 
+| |
+INPUT
+    assert_failure
+    assert_output "Number of input lines is not a multiple of four"
+}
