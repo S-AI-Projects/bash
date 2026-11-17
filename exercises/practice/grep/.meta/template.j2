@@ -1,0 +1,63 @@
+{{ header }}
+
+setup() {
+    cat > iliad.txt << END_ILIAD
+Achilles sing, O Goddess! Peleus' son;
+His wrath pernicious, who ten thousand woes
+Caused to Achaia's host, sent many a soul
+Illustrious into Ades premature,
+And Heroes gave (so stood the will of Jove)
+To dogs and to all ravening fowls a prey,
+When fierce dispute had separated once
+The noble Chief Achilles from the son
+Of Atreus, Agamemnon, King of men.
+END_ILIAD
+    cat > midsummer-night.txt << END_MIDSUMMER
+I do entreat your grace to pardon me.
+I know not by what power I am made bold,
+Nor how it may concern my modesty,
+In such a presence here to plead my thoughts;
+But I beseech your grace that I may know
+The worst that may befall me in this case,
+If I refuse to wed Demetrius.
+END_MIDSUMMER
+    cat > paradise-lost.txt << END_PARADISE
+Of Mans First Disobedience, and the Fruit
+Of that Forbidden Tree, whose mortal tast
+Brought Death into the World, and all our woe,
+With loss of Eden, till one greater Man
+Restore us, and regain the blissful Seat,
+Sing Heav'nly Muse, that on the secret top
+Of Oreb, or of Sinai, didst inspire
+That Shepherd, who first taught the chosen Seed
+END_PARADISE
+}
+
+teardown() {
+    rm iliad.txt midsummer-night.txt paradise-lost.txt
+}
+
+# Test grepping a single file
+{% for case in cases %}
+{%- if loop.index == 15 %}
+# Multiple files
+            
+{% elif loop.index == 9 %}
+
+{% else %}
+{% endif -%}
+@test "{{ case["description"] }}" {
+    {% if loop.first %}#{% endif %}[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    expected="{{ case["expected"] | join("\n") }}"
+    pattern="{{ case["input"]["pattern"] }}"
+{%- if case["description"] == "Multiple files, no matches, various flags" %}
+    flags=(-n -l -i -x)
+{%- else %}
+    flags=({% for f in case["input"]["flags"] %}{{ f }}{% if not loop.last %} {% endif %}{% endfor %}){% if case["description"] in ("One file, several matches, match entire lines flag", "One file, several matches, case-insensitive flag", "One file, several matches, inverted flag") %}        {% endif %}
+{%- endif %}
+    files=({{ case["input"]["files"] | join(" ") }})
+    run bash {{ solution }} "${flags[@]}" "$pattern" "${files[@]}"
+    assert_success
+    assert_output "$expected"
+}{% if not loop.last %}
+{% endif %}{% endfor %}

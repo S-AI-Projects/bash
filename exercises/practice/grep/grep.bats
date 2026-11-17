@@ -1,7 +1,7 @@
 #!/usr/bin/env bats
 load bats-extra
 
-# local version: 1.2.0.0
+# generated on 2026-11-17T18:32:43+00:00
 
 setup() {
     cat > iliad.txt << END_ILIAD
