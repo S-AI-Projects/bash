@@ -1,90 +1,108 @@
 #!/usr/bin/env bash
 
-error () {
-  printf "%s\n" "Invalid input" && exit 1
+# Print an error message and exit with failure.
+error() {
+  printf '%s\n' 'Invalid input'
+  exit 1
 }
 
-check_args () { # validate the arguments
-  [[ -z $1 || ${#1} -ne 1 || $# -ne 1 || $1 != ${1//[![:upper:]]/} ]] && error
+# Validate command-line arguments.
+check_args() {
+  [[ $# -ne 1 || -z "${1}" || ${#1} -ne 1 || "${1}" != "${1//[![:upper:]]/}" ]] && error
 }
 
-pad () {
-  padding=$1
+# Print the given number of spaces.
+pad() {
+  local -r padding="${1}"
 
-  x=1
-  while [[ $x -le $padding ]]; do
-    printf ' ' # pad the line
-    ((x++))
+  local -i x=1
+  while (( x <= padding )); do
+    printf '%s' ' '
+    (( x++ ))
   done
 }
 
-line_a () { # print the first or last line
-  padding=$(( line_width / 2 ))
-  pad $padding
-  printf 'A'
-  pad $padding
-  printf "\n" # get a new line
+# Print the first or last line containing 'A'.
+line_a() {
+  local -r padding=$(( line_width / 2 ))
+  pad "${padding}"
+  printf '%s' 'A'
+  pad "${padding}"
+  printf '\n'
 }
 
-up_to_max () {
-  level=2 # set the level and two padding values
-  int_padding=1 ext_padding=$(( line_width / 2 - 1 ))
-  while [[ $level -le $max_level ]]; do
-    letter="${from_idx_map[$level]}"
-    pad $ext_padding # external
-    printf "%s" "$letter"
-    pad $int_padding # internal
-    printf "%s" "$letter"
-    pad $ext_padding # external
-    printf "\n"
-    ((level++)); ((ext_padding--))
-    int_padding=$(( int_padding + 2 ))
+# Print lines from level 2 up to max_level.
+up_to_max() {
+  local -i level=2
+  local -i int_padding=1
+  local -i ext_padding=$(( line_width / 2 - 1 ))
+  local letter
+
+  while (( level <= max_level )); do
+    letter="${from_idx_map[${level}]}"
+    pad "${ext_padding}"
+    printf '%s' "${letter}"
+    pad "${int_padding}"
+    printf '%s' "${letter}"
+    pad "${ext_padding}"
+    printf '\n'
+    (( level++ ))
+    (( ext_padding-- ))
+    (( int_padding += 2 ))
   done
 }
 
-down_to_last () {
-  level=$(( max_level - 1 )) # print the bottom of the diamond
-  ext_padding=1 int_padding=$(( line_width - 4 ))
-  while [[ $level -ge 2 ]]; do
-    letter="${from_idx_map[$level]}"
-    pad $ext_padding
-    printf "%s" "$letter"
-    pad $int_padding
-    printf "%s" "$letter"
-    pad $ext_padding
-    printf "\n"
-    ((level--)); ((ext_padding++))
-    int_padding=$(( int_padding - 2 ))
+# Print lines from max_level - 1 down to level 2.
+down_to_last() {
+  local -i level=$(( max_level - 1 ))
+  local -i ext_padding=1
+  local -i int_padding=$(( line_width - 4 ))
+  local letter
+
+  while (( level >= 2 )); do
+    letter="${from_idx_map[${level}]}"
+    pad "${ext_padding}"
+    printf '%s' "${letter}"
+    pad "${int_padding}"
+    printf '%s' "${letter}"
+    pad "${ext_padding}"
+    printf '\n'
+    (( level-- ))
+    (( ext_padding++ ))
+    (( int_padding -= 2 ))
   done
 }
 
-main () {
+main() {
   check_args "$@"
 
-  readonly LETTER="$1"
+  local -r letter="${1}"
 
-  # in order not to print two A's
-  [[ $1 == 'A' ]] && printf "%s\n" "A" && exit 0
+  # In order not to print two A's
+  if [[ "${letter}" == 'A' ]]; then
+    printf '%s\n' 'A'
+    exit 0
+  fi
 
-  # make the maps
+  # Make the maps
   declare -A to_idx_map from_idx_map
 
-  i=1
-  for letter in {A..Z}; do
-    to_idx_map[$letter]=$i
-    from_idx_map[$i]="$letter"
-    ((i++))
+  local -i i=1
+  local ch
+  for ch in {A..Z}; do
+    to_idx_map[${ch}]=${i}
+    from_idx_map[${i}]="${ch}"
+    (( i++ ))
   done
 
-  # set initial variables for process
-  readonly max_level=${to_idx_map[$LETTER]}
+  # Set initial variables for process
+  readonly max_level=${to_idx_map[${letter}]}
   readonly line_width=$(( max_level * 2 - 1 ))
 
-  line_a # print the first line
-  up_to_max # print up to $max_level
-  down_to_last # print down to the last line
-  line_a # print the last line
+  line_a
+  up_to_max
+  down_to_last
+  line_a
 }
 
 main "$@"
-
