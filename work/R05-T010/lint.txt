@@ -1,0 +1,10 @@
+The lint command is under development.
+To check your track using the latest linting rules,
+please regularly update configlet and re-run this command.
+
+The `exercises.foregone` array contains the slug `matrix`, but there is an implemented exercise with that slug:
+/Users/ahaanshrivastava/bash/config.json
+
+Configlet detected at least one problem.
+For more information on resolving the problems, please see the documentation:
+https://exercism.org/docs/building/configlet/lint
