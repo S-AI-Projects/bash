@@ -1,0 +1,9 @@
+{{ header }}
+{% for case in cases %}
+{{ case.test_function_start }}
+    {% if loop.first %}# {% endif %}[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run bash {{ solution }} ${{ case.input.string | repr }} {{ case.property }} {{ case.input["index"] }}
+    assert_success
+    assert_output "{{ case.expected | join(" ") }}"
+}
+{% endfor %}
