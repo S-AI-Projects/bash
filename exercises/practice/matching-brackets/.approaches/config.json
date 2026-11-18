@@ -1,0 +1,27 @@
+{
+  "introduction": {
+    "authors": [
+      "Harshit7791"
+    ]
+  },
+  "approaches": [
+    {
+      "uuid": "023f043e-a3c9-45c9-9f4f-643a9f599730",
+      "slug": "array-stack",
+      "title": "Array stack",
+      "blurb": "Use an indexed array as a stack to validate matching pairs.",
+      "authors": [
+        "Harshit7791"
+      ]
+    },
+    {
+      "uuid": "93c2dd8a-a056-4177-9cfa-fc57ff3086b2",
+      "slug": "repeated-pair-removal",
+      "title": "Repeated pair removal",
+      "blurb": "Repeatedly remove adjacent matching pairs using parameter expansion.",
+      "authors": [
+        "Harshit7791"
+      ]
+    }
+  ]
+}
