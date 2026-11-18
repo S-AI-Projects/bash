@@ -1,0 +1,2213 @@
+Processing acronym
+1..10
+ok 1 basic
+ok 2 lowercase words
+ok 3 punctuation
+ok 4 all caps word
+ok 5 punctuation without whitespace
+ok 6 very long abbreviation
+ok 7 consecutive delimiters
+ok 8 apostrophes
+ok 9 underscore emphasis
+ok 10 contains shell globbing character
+Updated 1 path from the index
+
+Processing affine-cipher
+1..16
+ok 1 encode yes
+ok 2 encode no
+ok 3 encode OMG
+ok 4 encode O M G
+ok 5 encode mindblowingly
+ok 6 encode numbers
+ok 7 encode deep thought
+ok 8 encode all the letters
+ok 9 encode with a not coprime to m
+ok 10 decode exercism
+ok 11 decode a sentence
+ok 12 decode numbers
+ok 13 decode all the letters
+ok 14 decode with no spaces in input
+ok 15 decode with too many spaces
+ok 16 decode with a not coprime to m
+Updated 1 path from the index
+
+Processing all-your-base
+1..21
+ok 1 single bit one to decimal
+ok 2 binary to single decimal
+ok 3 single decimal to binary
+ok 4 binary to multiple decimal
+ok 5 decimal to binary
+ok 6 trinary to hexadecimal
+ok 7 hexadecimal to trinary
+ok 8 15-bit integer
+ok 9 empty list
+ok 10 single zero
+ok 11 multiple zeros
+ok 12 leading zeros
+ok 13 input base is one
+ok 14 input base is zero
+ok 15 input base is negative
+ok 16 negative digit
+ok 17 invalid positive digit
+ok 18 output base is one
+ok 19 output base is zero
+ok 20 output base is negative
+ok 21 both bases are negative
+Updated 1 path from the index
+
+Processing allergies
+1..50
+ok 1 testing for eggs allergy:not allergic to anything
+ok 2 testing for eggs allergy:allergic only to eggs
+ok 3 testing for eggs allergy:allergic to eggs and something else
+ok 4 testing for eggs allergy:allergic to something, but not eggs
+ok 5 testing for eggs allergy:allergic to everything
+ok 6 testing for peanuts allergy:not allergic to anything
+ok 7 testing for peanuts allergy:allergic only to peanuts
+ok 8 testing for peanuts allergy:allergic to peanuts and something else
+ok 9 testing for peanuts allergy:allergic to something, but not peanuts
+ok 10 testing for peanuts allergy:allergic to everything
+ok 11 testing for shellfish allergy:not allergic to anything
+ok 12 testing for shellfish allergy:allergic only to shellfish
+ok 13 testing for shellfish allergy:allergic to shellfish and something else
+ok 14 testing for shellfish allergy:allergic to something, but not shellfish
+ok 15 testing for shellfish allergy:allergic to everything
+ok 16 testing for strawberries allergy:not allergic to anything
+ok 17 testing for strawberries allergy:allergic only to strawberries
+ok 18 testing for strawberries allergy:allergic to strawberries and something else
+ok 19 testing for strawberries allergy:allergic to something, but not strawberries
+ok 20 testing for strawberries allergy:allergic to everything
+ok 21 testing for tomatoes allergy:not allergic to anything
+ok 22 testing for tomatoes allergy:allergic only to tomatoes
+ok 23 testing for tomatoes allergy:allergic to tomatoes and something else
+ok 24 testing for tomatoes allergy:allergic to something, but not tomatoes
+ok 25 testing for tomatoes allergy:allergic to everything
+ok 26 testing for chocolate allergy:not allergic to anything
+ok 27 testing for chocolate allergy:allergic only to chocolate
+ok 28 testing for chocolate allergy:allergic to chocolate and something else
+ok 29 testing for chocolate allergy:allergic to something, but not chocolate
+ok 30 testing for chocolate allergy:allergic to everything
+ok 31 testing for pollen allergy:not allergic to anything
+ok 32 testing for pollen allergy:allergic only to pollen
+ok 33 testing for pollen allergy:allergic to pollen and something else
+ok 34 testing for pollen allergy:allergic to something, but not pollen
+ok 35 testing for pollen allergy:allergic to everything
+ok 36 testing for cats allergy:not allergic to anything
+ok 37 testing for cats allergy:allergic only to cats
+ok 38 testing for cats allergy:allergic to cats and something else
+ok 39 testing for cats allergy:allergic to something, but not cats
+ok 40 testing for cats allergy:allergic to everything
+ok 41 list when::no allergies
+ok 42 list when::just eggs
+ok 43 list when::just peanuts
+ok 44 list when::just strawberries
+ok 45 list when::eggs and peanuts
+ok 46 list when::more than eggs but not peanuts
+ok 47 list when::lots of stuff
+ok 48 list when::everything
+ok 49 list when::no allergen score parts
+ok 50 list when::no allergen score parts without highest valid score
+Updated 1 path from the index
+
+Processing anagram
+1..16
+ok 1 no matches
+ok 2 detects two anagrams
+ok 3 does not detect anagram subsets
+ok 4 detects anagram
+ok 5 detects three anagrams
+ok 6 detects multiple anagrams with different case
+ok 7 does not detect non-anagrams with identical checksum
+ok 8 detects anagrams case-insensitively
+ok 9 detects anagrams using case-insensitive subject
+ok 10 detects anagrams using case-insensitive possible matches
+ok 11 does not detect an anagram if the original word is repeated
+ok 12 anagrams must use all letters exactly once
+ok 13 words are not anagrams of themselves
+ok 14 words are not anagrams of themselves even if letter case is partially different
+ok 15 words are not anagrams of themselves even if letter case is completely different
+ok 16 words other than themselves can be anagrams
+Updated 1 path from the index
+
+Processing armstrong-numbers
+1..9
+ok 1 Zero is an Armstrong number
+ok 2 Single-digit numbers are Armstrong numbers
+ok 3 There are no two-digit Armstrong numbers
+ok 4 Three-digit number that is an Armstrong number
+ok 5 Three-digit number that is not an Armstrong number
+ok 6 Four-digit number that is an Armstrong number
+ok 7 Four-digit number that is not an Armstrong number
+ok 8 Seven-digit number that is an Armstrong number
+ok 9 Seven-digit number that is not an Armstrong number
+Updated 1 path from the index
+
+Processing atbash-cipher
+1..14
+ok 1 encode yes
+ok 2 encode no
+ok 3 encode OMG
+ok 4 encode spaces
+ok 5 encode mindblowingly
+ok 6 encode numbers
+ok 7 encode deep thought
+ok 8 encode all the letters
+ok 9 decode exercism
+ok 10 decode a sentence
+ok 11 decode numbers
+ok 12 decode all the letters
+ok 13 decode with too many spaces
+ok 14 decode with no spaces
+Updated 1 path from the index
+
+Processing baffling-birthdays
+1..17
+ok 1 shared birthday -> one birthdate
+ok 2 shared birthday -> two birthdates with same year, month, and day
+ok 3 shared birthday -> two birthdates with same year and month, but different day
+ok 4 shared birthday -> two birthdates with same month and day, but different year
+ok 5 shared birthday -> two birthdates with same year, but different month and day
+ok 6 shared birthday -> two birthdates with different year, month, and day
+ok 7 shared birthday -> multiple birthdates without shared birthday
+ok 8 shared birthday -> multiple birthdates with one shared birthday
+ok 9 shared birthday -> multiple birthdates with more than one shared birthday
+ok 10 random birthdates -> generate requested number of birthdates
+ok 11 random birthdates -> years are not leap years
+ok 12 random birthdates -> months are random
+ok 13 random birthdates -> days are random
+ok 14 estimated probability of at least one shared birthday -> for one person
+ok 15 estimated probability of at least one shared birthday -> among ten people
+ok 16 estimated probability of at least one shared birthday -> among twenty-three people
+ok 17 estimated probability of at least one shared birthday -> among seventy people
+Updated 1 path from the index
+
+Processing beer-song
+1..11
+ok 1 first_generic_verse
+ok 2 3rd_last_generic_verse
+ok 3 2nd_last_generic_verse
+ok 4 penultimate_verse
+ok 5 verse_with_zero_bottles
+ok 6 first_two_verses
+ok 7 last_three_verses
+ok 8 all_verses
+ok 9 no_arguments
+ok 10 too_many_arguments
+ok 11 wrong_order_arguments
+Updated 1 path from the index
+
+Processing binary-search
+1..11
+ok 1 finds a value in an array with one element
+ok 2 finds a value in the middle of an array
+ok 3 finds a value at the beginning of an array
+ok 4 finds a value at the end of an array
+ok 5 finds a value in an array of odd length
+ok 6 finds a value in an array of even length
+ok 7 identifies that a value is not included in the array
+ok 8 a value smaller than the array's smallest value is not found
+ok 9 a value larger than the array's largest value is not found
+ok 10 nothing is found in an empty array
+ok 11 nothing is found when the left and right bounds cross
+Updated 1 path from the index
+
+Processing bob
+1..29
+ok 1 asking a question
+ok 2 shouting
+ok 3 forceful question
+ok 4 silence
+ok 5 stating something
+ok 6 asking a numeric question
+ok 7 asking gibberish
+ok 8 question with no letters
+ok 9 non-letters with question
+ok 10 prattling on
+ok 11 ending with whitespace
+ok 12 multiple line question
+ok 13 shouting gibberish
+ok 14 shouting a statement containing a question mark
+ok 15 shouting numbers
+ok 16 shouting with special characters
+ok 17 shouting with no exclamation mark
+ok 18 prolonged silence
+ok 19 alternate silence
+ok 20 other whitespace
+ok 21 talking forcefully
+ok 22 using acronyms in regular speech
+ok 23 no letters
+ok 24 statement containing question mark
+ok 25 starting with whitespace
+ok 26 non-question ending with whitespace
+ok 27 no input is silence
+ok 28 yelling a filename expansion
+ok 29 asking a filename expansion
+Updated 1 path from the index
+
+Processing bottle-song
+1..10
+ok 1 first generic verse
+ok 2 last generic verse
+ok 3 verse with 2 bottles
+ok 4 verse with 1 bottle
+ok 5 first two verses
+ok 6 last three verses
+ok 7 all verses
+ok 8 no_arguments
+ok 9 too_many_arguments
+ok 10 too_many_verses
+Updated 1 path from the index
+
+Processing bowling
+1..31
+ok 1 should be able to score a game with all zeros
+ok 2 should be able to score a game with no strikes or spares
+ok 3 a spare followed by zeros is worth ten points
+ok 4 points scored in the roll after a spare are counted twice
+ok 5 consecutive spares each get a one roll bonus
+ok 6 a spare in the last frame gets a one roll bonus that is counted once
+ok 7 a strike earns ten points in a frame with a single roll
+ok 8 points scored in the two rolls after a strike are counted twice as a bonus
+ok 9 consecutive strikes each get the two roll bonus
+ok 10 a strike in the last frame gets a two roll bonus that is counted once
+ok 11 rolling a spare with the two roll bonus does not get a bonus roll
+ok 12 strikes with the two roll bonus do not get bonus rolls
+ok 13 last two strikes followed by only last bonus with non strike points
+ok 14 a strike with the one roll bonus after a spare in the last frame does not get a bonus
+ok 15 all strikes is a perfect game
+ok 16 rolls cannot score negative points
+ok 17 a roll cannot score more than 10 points
+ok 18 two rolls in a frame cannot score more than 10 points
+ok 19 bonus roll after a strike in the last frame cannot score more than 10 points
+ok 20 two bonus rolls after a strike in the last frame cannot score more than 10 points
+ok 21 two bonus rolls after a strike in the last frame can score more than 10 points if one is a strike
+ok 22 the second bonus rolls after a strike in the last frame cannot be a strike if the first one is not a strike
+ok 23 second bonus roll after a strike in the last frame cannot score more than 10 points
+ok 24 an unstarted game cannot be scored
+ok 25 an incomplete game cannot be scored
+ok 26 cannot roll if game already has ten frames
+ok 27 bonus rolls for a strike in the last frame must be rolled before score can be calculated
+ok 28 both bonus rolls for a strike in the last frame must be rolled before score can be calculated
+ok 29 bonus roll for a spare in the last frame must be rolled before score can be calculated
+ok 30 cannot roll after bonus roll for spare
+ok 31 cannot roll after bonus rolls for strike
+Updated 1 path from the index
+
+Processing change
+1..13
+ok 1 change for 1 cent
+ok 2 single coin change
+ok 3 multiple coin change
+ok 4 change with Lilliputian Coins
+ok 5 change with Lower Elbonia Coins
+ok 6 large target values
+ok 7 possible change without unit coins available
+ok 8 another possible change without unit coins available
+ok 9 a greedy approach is not optimal
+ok 10 no coins make 0 change
+ok 11 error testing for change smaller than the smallest of coins
+ok 12 error if no combination can add up to target
+ok 13 cannot find negative change values
+Updated 1 path from the index
+
+Processing clock
+1..58
+ok 1 on the hour
+ok 2 past the hour
+ok 3 midnight is zero hours
+ok 4 hour rolls over
+ok 5 hour rolls over continuously
+ok 6 sixty minutes is next hour
+ok 7 minutes roll over
+ok 8 minutes roll over continuously
+ok 9 hour and minutes roll over
+ok 10 hour and minutes roll over continuously
+ok 11 hour and minutes roll over to exactly midnight
+ok 12 negative hour
+ok 13 negative hour rolls over
+ok 14 negative hour rolls over continuously
+ok 15 negative minutes
+ok 16 negative minutes roll over
+ok 17 negative minutes roll over continuously
+ok 18 negative sixty minutes is previous hour
+ok 19 negative hour and minutes both roll over
+ok 20 negative hour and minutes both roll over continuously
+ok 21 add minutes
+ok 22 add no minutes
+ok 23 add to next hour
+ok 24 add more than one hour
+ok 25 add more than two hours with carry
+ok 26 add across midnight
+ok 27 add more than one day (1500 min = 25 hrs)
+ok 28 add more than two days
+ok 29 subtract minutes
+ok 30 subtract to previous hour
+ok 31 subtract more than an hour
+ok 32 subtract across midnight
+ok 33 subtract more than two hours
+ok 34 subtract more than two hours with borrow
+ok 35 subtract more than one day (1500 min = 25 hrs)
+ok 36 subtract more than two days
+ok 37 clocks with same time
+ok 38 clocks a minute apart
+ok 39 clocks an hour apart
+ok 40 clocks with hour overflow
+ok 41 clocks with hour overflow by several days
+ok 42 clocks with negative hour
+ok 43 clocks with negative hour that wraps
+ok 44 clocks with negative hour that wraps multiple times
+ok 45 clocks with minute overflow
+ok 46 clocks with minute overflow by several days
+ok 47 clocks with negative minute
+ok 48 clocks with negative minute that wraps
+ok 49 clocks with negative minute that wraps multiple times
+ok 50 clocks with negative hours and minutes
+ok 51 clocks with negative hours and minutes that wrap
+ok 52 full clock and zeroed clock
+ok 53 no args
+ok 54 too many args
+ok 55 three args
+ok 56 invalid delta
+ok 57 non-numeric args are errors
+ok 58 non-numeric delta errors
+Updated 1 path from the index
+
+Processing collatz-conjecture
+1..6
+ok 1 zero steps for one
+ok 2 divide if even
+ok 3 even and odd steps
+ok 4 large number of even and odd steps
+ok 5 zero is an error
+ok 6 negative value is an error
+Updated 1 path from the index
+
+Processing crypto-square
+1..8
+ok 1 empty plaintext results in an empty ciphertext
+ok 2 normalization results in empty plaintext
+ok 3 Lowercase
+ok 4 Remove spaces
+ok 5 Remove punctuation
+ok 6 9 character plaintext results in 3 chunks of 3 characters
+ok 7 8 character plaintext results in 3 chunks, the last one with a trailing space
+ok 8 54 character plaintext results in 8 chunks, the last two with trailing spaces
+Updated 1 path from the index
+
+Processing darts
+1..17
+ok 1 Missed target
+ok 2 On the outer circle
+ok 3 On the middle circle
+ok 4 On the inner circle
+ok 5 Exactly on center
+ok 6 Near the center
+ok 7 Just within the inner circle
+ok 8 Just outside the inner circle
+ok 9 Just within the middle circle
+ok 10 Just outside the middle circle
+ok 11 Just within the outer circle
+ok 12 Just outside the outer circle
+ok 13 Asymmetric position between the inner and middle circles
+ok 14 invalid args: no args
+ok 15 invalid args: only 1 arg
+ok 16 invalid args: first arg non-numeric
+ok 17 invalid args: second arg non-numeric
+Updated 1 path from the index
+
+Processing diamond
+1..5
+ok 1 Degenerate case with a single 'A' row
+ok 2 Degenerate case with no row containing 3 distinct groups of spaces
+ok 3 Smallest non-degenerate case with odd diamond side length
+ok 4 Smallest non-degenerate case with even diamond side length
+ok 5 Largest possible diamond
+Updated 1 path from the index
+
+Processing difference-of-squares
+1..9
+ok 1 square of sum 1
+ok 2 square of sum 5
+ok 3 square of sum 100
+ok 4 sum of squares 1
+ok 5 sum of squares 5
+ok 6 sum of squares 100
+ok 7 difference of squares 1
+ok 8 difference of squares 5
+ok 9 difference of squares 100
+Updated 1 path from the index
+
+Processing diffie-hellman
+1..6
+ok 1 private key is in range
+ok 2 private key is random
+ok 3 can calculate public key using private key
+ok 4 can calculate public key when given a different private key
+ok 5 can calculate secret key using other's public key
+ok 6 key exchange
+Updated 1 path from the index
+
+Processing dnd-character
+1..18
+ok 1 ability modifier for score 3 is -4
+ok 2 ability modifier for score 4 is -3
+ok 3 ability modifier for score 5 is -3
+ok 4 ability modifier for score 6 is -2
+ok 5 ability modifier for score 7 is -2
+ok 6 ability modifier for score 8 is -1
+ok 7 ability modifier for score 9 is -1
+ok 8 ability modifier for score 10 is 0
+ok 9 ability modifier for score 11 is 0
+ok 10 ability modifier for score 12 is +1
+ok 11 ability modifier for score 13 is +1
+ok 12 ability modifier for score 14 is +2
+ok 13 ability modifier for score 15 is +2
+ok 14 ability modifier for score 16 is +3
+ok 15 ability modifier for score 17 is +3
+ok 16 ability modifier for score 18 is +4
+ok 17 generate a character
+ok 18 validate ability range and hitpoint value
+Updated 1 path from the index
+
+Processing eliuds-eggs
+1..4
+ok 1 0 eggs
+ok 2 1 egg
+ok 3 4 eggs
+ok 4 13 eggs
+Updated 1 path from the index
+
+Processing error-handling
+1..5
+ok 1 correct arguments
+ok 2 one long argument
+ok 3 incorrect arguments
+ok 4 print usage banner with no value given
+ok 5 empty argument
+Updated 1 path from the index
+
+Processing flower-field
+1..12
+ok 1 no columns
+ok 2 no flowers
+ok 3 garden full of flowers
+ok 4 flower surrounded by spaces
+ok 5 space surrounded by flowers
+ok 6 horizontal line
+ok 7 horizontal line, flowers at edges
+ok 8 vertical line
+ok 9 vertical line, flowers at edges
+ok 10 cross
+ok 11 large garden
+ok 12 multiple adjacent flowers
+Updated 1 path from the index
+
+Processing food-chain
+1..13
+ok 1 fly
+ok 2 spider
+ok 3 bird
+ok 4 cat
+ok 5 dog
+ok 6 goat
+ok 7 cow
+ok 8 horse
+ok 9 multiple verses
+ok 10 full song
+ok 11 no_arguments
+ok 12 too_many_arguments
+ok 13 wrong_order_arguments
+Updated 1 path from the index
+
+Processing forth
+1..54
+ok 1 parsing and numbers: numbers just get pushed onto the stack
+ok 2 parsing and numbers: pushes negative numbers onto the stack
+ok 3 addition: can add two numbers
+ok 4 addition: errors if there is nothing on the stack
+ok 5 addition: errors if there is only one value on the stack
+ok 6 addition: more than two values on the stack
+ok 7 subtraction: can subtract two numbers
+ok 8 subtraction: errors if there is nothing on the stack
+ok 9 subtraction: errors if there is only one value on the stack
+ok 10 subtraction: more than two values on the stack
+ok 11 multiplication: can multiply two numbers
+ok 12 multiplication: errors if there is nothing on the stack
+ok 13 multiplication: errors if there is only one value on the stack
+ok 14 multiplication: more than two values on the stack
+ok 15 division: can divide two numbers
+ok 16 division: performs integer division
+ok 17 division: errors if dividing by zero
+ok 18 division: errors if there is nothing on the stack
+ok 19 division: errors if there is only one value on the stack
+ok 20 division: more than two values on the stack
+ok 21 combined arithmetic: addition and subtraction
+ok 22 combined arithmetic: multiplication and division
+ok 23 combined arithmetic: multiplication and addition
+ok 24 combined arithmetic: addition and multiplication
+ok 25 dup: copies a value on the stack
+ok 26 dup: copies the top value on the stack
+ok 27 dup: errors if there is nothing on the stack
+ok 28 drop: removes the top value on the stack if it is the only one
+ok 29 drop: removes the top value on the stack if it is not the only one
+ok 30 drop: errors if there is nothing on the stack
+ok 31 swap: swaps the top two values on the stack if they are the only ones
+ok 32 swap: swaps the top two values on the stack if they are not the only ones
+ok 33 swap: errors if there is nothing on the stack
+ok 34 swap: errors if there is only one value on the stack
+ok 35 over: copies the second element if there are only two
+ok 36 over: copies the second element if there are more than two
+ok 37 over: errors if there is nothing on the stack
+ok 38 over: errors if there is only one value on the stack
+ok 39 user-defined words: can consist of built-in words
+ok 40 user-defined words: execute in the right order
+ok 41 user-defined words: can override other user-defined words
+ok 42 user-defined words: can override built-in words
+ok 43 user-defined words: can override built-in operators
+ok 44 user-defined words: can use different words with the same name
+ok 45 user-defined words: can define word that uses word with the same name
+ok 46 user-defined words: cannot redefine non-negative numbers
+ok 47 user-defined words: cannot redefine negative numbers
+ok 48 user-defined words: errors if executing a non-existent word
+ok 49 case-insensitivity: DUP is case-insensitive
+ok 50 case-insensitivity: DROP is case-insensitive
+ok 51 case-insensitivity: SWAP is case-insensitive
+ok 52 case-insensitivity: OVER is case-insensitive
+ok 53 case-insensitivity: user-defined words are case-insensitive
+ok 54 case-insensitivity: definitions are case-insensitive
+Updated 1 path from the index
+
+Processing game-of-life
+1..8
+ok 1 empty matrix
+ok 2 live cells with zero live neighbors die
+ok 3 live cells with only one live neighbor die
+ok 4 live cells with two live neighbors stay alive
+ok 5 live cells with three live neighbors stay alive
+ok 6 dead cells with three live neighbors become alive
+ok 7 live cells with four or more neighbors die
+ok 8 bigger matrix
+Updated 1 path from the index
+
+Processing gigasecond
+1..5
+ok 1 date only specification of time
+ok 2 second test for date only specification of time
+ok 3 third test for date only specification of time
+ok 4 full time specified
+ok 5 full time with day roll-over
+Updated 1 path from the index
+
+Processing grains
+1..11
+ok 1 grains on square 1
+ok 2 grains on square 2
+ok 3 grains on square 3
+ok 4 grains on square 4
+ok 5 grains on square 16
+ok 6 grains on square 32
+ok 7 grains on square 64
+ok 8 square 0 is invalid
+ok 9 negative square is invalid
+ok 10 square greater than 64 is invalid
+ok 11 returns the total number of grains on the board
+Updated 1 path from the index
+
+Processing grep
+1..25
+ok 1 One file, one match, no flags
+ok 2 One file, one match, print line numbers flag
+ok 3 One file, one match, case-insensitive flag
+ok 4 One file, one match, print file names flag
+ok 5 One file, one match, match entire lines flag
+ok 6 One file, one match, multiple flags
+ok 7 One file, several matches, no flags
+ok 8 One file, several matches, print line numbers flag
+ok 9 One file, several matches, match entire lines flag
+ok 10 One file, several matches, case-insensitive flag
+ok 11 One file, several matches, inverted flag
+ok 12 One file, no matches, various flags
+ok 13 One file, one match, file flag takes precedence over line flag
+ok 14 One file, several matches, inverted and match entire lines flags
+ok 15 Multiple files, one match, no flags
+ok 16 Multiple files, several matches, no flags
+ok 17 Multiple files, several matches, print line numbers flag
+ok 18 Multiple files, one match, print file names flag
+ok 19 Multiple files, several matches, case-insensitive flag
+ok 20 Multiple files, several matches, inverted flag
+ok 21 Multiple files, one match, match entire lines flag
+ok 22 Multiple files, one match, multiple flags
+ok 23 Multiple files, no matches, various flags
+ok 24 Multiple files, several matches, file flag takes precedence over line number flag
+ok 25 Multiple files, several matches, inverted and match entire lines flags
+Updated 1 path from the index
+
+Processing hamming
+1..12
+ok 1 empty strands
+ok 2 single letter identical strands
+ok 3 single letter different strands
+ok 4 long identical strands
+ok 5 long different strands
+ok 6 disallow first strand longer
+ok 7 disallow second strand longer
+ok 8 disallow empty first strand
+ok 9 disallow empty second strand
+ok 10 no input
+ok 11 invalid input
+ok 12 expose subtle '[[ $x == $y ]]' bug
+Updated 1 path from the index
+
+Processing hello-world
+1..1
+ok 1 Say Hi!
+Updated 1 path from the index
+
+Processing house
+1..18
+ok 1 verse one - the house that jack built
+ok 2 verse two - the malt that lay
+ok 3 verse three - the rat that ate
+ok 4 verse four - the cat that killed
+ok 5 verse five - the dog that worried
+ok 6 verse six - the cow with the crumpled horn
+ok 7 verse seven - the maiden all forlorn
+ok 8 verse eight - the man all tattered and torn
+ok 9 verse nine - the priest all shaven and shorn
+ok 10 verse 10 - the rooster that crowed in the morn
+ok 11 verse 11 - the farmer sowing his corn
+ok 12 verse 12 - the horse and the hound and the horn
+ok 13 multiple verses
+ok 14 full rhyme
+ok 15 invalid verse 1
+ok 16 invalid verse 2
+ok 17 invalid verse 3
+ok 18 invalid verse 4
+Updated 1 path from the index
+
+Processing intergalactic-transmission
+1..26
+ok 1 calculate transmit sequences: empty message
+ok 2 calculate transmit sequences: 0x00 is transmitted as 0x0000
+ok 3 calculate transmit sequences: 0x02 is transmitted as 0x0300
+ok 4 calculate transmit sequences: 0x06 is transmitted as 0x0600
+ok 5 calculate transmit sequences: 0x05 is transmitted as 0x0581
+ok 6 calculate transmit sequences: 0x29 is transmitted as 0x2881
+ok 7 calculate transmit sequences: 0xc001c0de is transmitted as 0xc000711be1
+ok 8 calculate transmit sequences: six byte message
+ok 9 calculate transmit sequences: seven byte message
+ok 10 calculate transmit sequences: eight byte message
+ok 11 calculate transmit sequences: twenty byte message
+ok 12 decode received messages: empty message
+ok 13 decode received messages: zero message
+ok 14 decode received messages: 0x0300 is decoded to 0x02
+ok 15 decode received messages: 0x0581 is decoded to 0x05
+ok 16 decode received messages: 0x2881 is decoded to 0x29
+ok 17 decode received messages: first byte has wrong parity
+ok 18 decode received messages: second byte has wrong parity
+ok 19 decode received messages: 0xcf4b00 is decoded to 0xce94
+ok 20 decode received messages: 0xe2566500 is decoded to 0xe2ad90
+ok 21 decode received messages: six byte message
+ok 22 decode received messages: seven byte message
+ok 23 decode received messages: last byte has wrong parity
+ok 24 decode received messages: eight byte message
+ok 25 decode received messages: twenty byte message
+ok 26 decode received messages: wrong parity on 16th byte
+Updated 1 path from the index
+
+Processing isbn-verifier
+1..21
+ok 1 valid isbn
+ok 2 invalid isbn check digit
+ok 3 valid isbn with a check digit of 10
+ok 4 check digit is a character other than X
+ok 5 invalid check digit in isbn is not treated as zero
+ok 6 invalid character in isbn is not treated as zero
+ok 7 X is only valid as a check digit
+ok 8 only one check digit is allowed
+ok 9 X is not substituted by the value 10
+ok 10 valid isbn without separating dashes
+ok 11 isbn without separating dashes and X as check digit
+ok 12 isbn without check digit and dashes
+ok 13 too long isbn and no dashes
+ok 14 too short isbn
+ok 15 isbn without check digit
+ok 16 check digit of X should not be used for 0
+ok 17 empty isbn
+ok 18 input is 9 characters
+ok 19 invalid characters are not ignored after checking length
+ok 20 invalid characters are not ignored before checking length
+ok 21 input is too long but contains a valid isbn
+Updated 1 path from the index
+
+Processing isogram
+1..14
+ok 1 empty string
+ok 2 isogram with only lower case characters
+ok 3 word with one duplicated character
+ok 4 word with one duplicated character from the end of the alphabet
+ok 5 longest reported english isogram
+ok 6 word with duplicated character in mixed case
+ok 7 word with duplicated character in mixed case, lowercase first
+ok 8 hypothetical isogrammic word with hyphen
+ok 9 hypothetical word with duplicated character following hyphen
+ok 10 isogram with duplicated hyphen
+ok 11 made-up name that is an isogram
+ok 12 duplicated character in the middle
+ok 13 same first and last characters
+ok 14 word with duplicated character and with two hyphens
+Updated 1 path from the index
+
+Processing kindergarten-garden
+1..17
+ok 1 garden with single student
+ok 2 different garden with single student
+ok 3 garden with two students
+ok 4 second student's garden
+ok 5 third student's garden
+ok 6 for Alice, first student's garden
+ok 7 for Bob, second student's garden
+ok 8 for Charlie
+ok 9 for David
+ok 10 for Eve
+ok 11 for Fred
+ok 12 for Ginny
+ok 13 for Harriet
+ok 14 for Ileana
+ok 15 for Joseph
+ok 16 for Kincaid, second to last student's garden
+ok 17 for Larry, last student's garden
+Updated 1 path from the index
+
+Processing knapsack
+1..8
+ok 1 no items
+ok 2 one item, too heavy
+ok 3 five items (cannot be greedy by weight)
+ok 4 five items (cannot be greedy by value)
+ok 5 example knapsack
+ok 6 8 items
+ok 7 15 items
+ok 8 error: no arguments
+Updated 1 path from the index
+
+Processing largest-series-product
+1..13
+ok 1 finds the largest product if span equals length
+ok 2 can find the largest product of 2 with numbers in order
+ok 3 can find the largest product of 2
+ok 4 can find the largest product of 3 with numbers in order
+ok 5 can find the largest product of 3
+ok 6 can find the largest product of 5 with numbers in order
+ok 7 can get the largest product of a big number
+ok 8 reports zero if the only digits are zero
+ok 9 reports zero if all spans include zero
+ok 10 rejects span longer than string length
+ok 11 rejects empty string and nonzero span
+ok 12 rejects invalid character in digits
+ok 13 rejects negative span
+Updated 1 path from the index
+
+Processing leap
+1..13
+ok 1 year not divisible by 4 in common year
+ok 2 year divisible by 2, not divisible by 4 in common year
+ok 3 year divisible by 4, not divisible by 100 in leap year
+ok 4 year divisible by 4 and 5 is still a leap year
+ok 5 year divisible by 100, not divisible by 400 in common year
+ok 6 year divisible by 100 but not by 3 is still not a leap year
+ok 7 year divisible by 400 is leap year
+ok 8 year divisible by 400 but not by 125 is still a leap year
+ok 9 year divisible by 200, not divisible by 400 in common year
+ok 10 No input should return an error
+ok 11 Too many arguments should return an error
+ok 12 Float number input should return an error
+ok 13 Alpha input should return an error
+Updated 1 path from the index
+
+Processing line-up
+1..25
+ok 1 format smallest non-exceptional ordinal numeral 4
+ok 2 format greatest single digit non-exceptional ordinal numeral 9
+ok 3 format non-exceptional ordinal numeral 5
+ok 4 format non-exceptional ordinal numeral 6
+ok 5 format non-exceptional ordinal numeral 7
+ok 6 format non-exceptional ordinal numeral 8
+ok 7 format exceptional ordinal numeral 1
+ok 8 format exceptional ordinal numeral 2
+ok 9 format exceptional ordinal numeral 3
+ok 10 format smallest two digit non-exceptional ordinal numeral 10
+ok 11 format non-exceptional ordinal numeral 11
+ok 12 format non-exceptional ordinal numeral 12
+ok 13 format non-exceptional ordinal numeral 13
+ok 14 format exceptional ordinal numeral 21
+ok 15 format exceptional ordinal numeral 22 ending in nd even though it is a multiple of 11
+ok 16 format exceptional ordinal numeral 33 ending in rd even though it is a multiple of 11
+ok 17 format exceptional ordinal numeral 52 ending in nd even though it is a multiple of 13
+ok 18 format exceptional ordinal numeral 62
+ok 19 format non-exceptional ordinal numeral 72 ending in nd even though it is a multiple of 12
+ok 20 format exceptional ordinal numeral 91 ending in st even though it is a multiple of 13
+ok 21 format exceptional ordinal numeral 100
+ok 22 format exceptional ordinal numeral 101
+ok 23 format non-exceptional ordinal numeral 112
+ok 24 format exceptional ordinal numeral 123
+ok 25 format large number 972 ending in nd even though it is a multiple of 12
+Updated 1 path from the index
+
+Processing list-ops
+1..20
+ok 1 append entries to a list and return the new list: empty lists
+ok 2 append entries to a list and return the new list: list to empty list
+ok 3 append entries to a list and return the new list: empty list to list
+ok 4 append entries to a list and return the new list: non-empty lists
+ok 5 filter list returning only values that satisfy the filter function: empty list
+ok 6 filter list returning only values that satisfy the filter function: non-empty list
+ok 7 return a list of elements whose values equal the list value transformed by the mapping function: empty list
+ok 8 return a list of elements whose values equal the list value transformed by the mapping function: non-empty list
+ok 9 folds (reduces) the given list from the left with a function: empty list
+ok 10 folds (reduces) the given list from the left with a function: direction independent function applied to non-empty list
+ok 11 folds (reduces) the given list from the left with a function: direction dependent function applied to non-empty list
+ok 12 folds (reduces) the given list from the right with a function: empty list
+ok 13 folds (reduces) the given list from the right with a function: direction independent function applied to non-empty list
+ok 14 folds (reduces) the given list from the right with a function: direction dependent function applied to non-empty list
+ok 15 reverse the elements of the list: empty list
+ok 16 reverse the elements of the list: non-empty even-length list
+ok 17 reverse the elements of the list: non-empty odd-length list
+ok 18 foldl not just numbers
+ok 19 foldr not just numbers
+ok 20 reverse with special characters
+Updated 1 path from the index
+
+Processing luhn
+1..22
+ok 1 single digit strings can not be valid
+ok 2 a single zero is invalid
+ok 3 a simple valid SIN that remains valid if reversed
+ok 4 a simple valid SIN that becomes invalid if reversed
+ok 5 a valid Canadian SIN
+ok 6 invalid Canadian SIN
+ok 7 invalid credit card
+ok 8 invalid long number with an even remainder
+ok 9 invalid long number with a remainder divisible by 5
+ok 10 valid number with an even number of digits
+ok 11 valid number with an odd number of spaces
+ok 12 valid strings with a non-digit added at the end become invalid
+ok 13 valid strings with punctuation included become invalid
+ok 14 valid strings with symbols included become invalid
+ok 15 single zero with space is invalid
+ok 16 more than a single zero is valid
+ok 17 input digit 9 is correctly converted to output digit 9
+ok 18 very long input is valid
+ok 19 valid luhn with an odd number of digits and non zero first digit
+ok 20 using ascii value for non-doubled non-digit isn't allowed
+ok 21 using ascii value for doubled non-digit isn't allowed
+ok 22 non-numeric, non-space char in the middle with a sum that's divisible by 10 isn't allowed
+Updated 1 path from the index
+
+Processing markdown
+1..17
+ok 1 parses normal text as a paragraph
+ok 2 parsing italics
+ok 3 parsing bold text
+ok 4 mixed normal, italics and bold text
+ok 5 with h1 header level
+ok 6 with h2 header level
+ok 7 with h3 header level
+ok 8 with h4 header level
+ok 9 with h5 header level
+ok 10 with h6 header level
+ok 11 h7 header level is a paragraph
+ok 12 unordered lists
+ok 13 With a little bit of everything
+ok 14 with markdown symbols in the header text that should not be interpreted
+ok 15 with markdown symbols in the list item text that should not be interpreted
+ok 16 with markdown symbols in the paragraph text that should not be interpreted
+ok 17 unordered lists close properly with preceding and following lines
+Updated 1 path from the index
+
+Processing matching-brackets
+1..20
+ok 1 paired square brackets
+ok 2 empty string
+ok 3 unpaired brackets
+ok 4 wrong ordered brackets
+ok 5 wrong closing bracket
+ok 6 paired with whitespace
+ok 7 partially paired brackets
+ok 8 simple nested brackets
+ok 9 several paired brackets
+ok 10 paired and nested brackets
+ok 11 unopened closing brackets
+ok 12 unpaired and nested brackets
+ok 13 paired and wrong nested brackets
+ok 14 paired and wrong nested brackets but innermost are correct
+ok 15 paired and incomplete brackets
+ok 16 too many closing brackets
+ok 17 early unexpected brackets
+ok 18 early mismatched brackets
+ok 19 math expression
+ok 20 complex latex expression
+Updated 1 path from the index
+
+Processing meetup
+1..95
+ok 1 when teenth Monday is the 13th, the first day of the teenth week
+ok 2 when teenth Monday is the 19th, the last day of the teenth week
+ok 3 when teenth Monday is some day in the middle of the teenth week
+ok 4 when teenth Tuesday is the 19th, the last day of the teenth week
+ok 5 when teenth Tuesday is some day in the middle of the teenth week
+ok 6 when teenth Tuesday is the 13th, the first day of the teenth week
+ok 7 when teenth Wednesday is some day in the middle of the teenth week
+ok 8 when teenth Wednesday is the 13th, the first day of the teenth week
+ok 9 when teenth Wednesday is the 19th, the last day of the teenth week
+ok 10 when teenth Thursday is some day in the middle of the teenth week
+ok 11 when teenth Thursday is the 13th, the first day of the teenth week
+ok 12 when teenth Thursday is the 19th, the last day of the teenth week
+ok 13 when teenth Friday is the 19th, the last day of the teenth week
+ok 14 when teenth Friday is some day in the middle of the teenth week
+ok 15 when teenth Friday is the 13th, the first day of the teenth week
+ok 16 when teenth Saturday is some day in the middle of the teenth week
+ok 17 when teenth Saturday is the 13th, the first day of the teenth week
+ok 18 when teenth Saturday is the 19th, the last day of the teenth week
+ok 19 when teenth Sunday is the 19th, the last day of the teenth week
+ok 20 when teenth Sunday is some day in the middle of the teenth week
+ok 21 when teenth Sunday is the 13th, the first day of the teenth week
+ok 22 when first Monday is some day in the middle of the first week
+ok 23 when first Monday is the 1st, the first day of the first week
+ok 24 when first Tuesday is the 7th, the last day of the first week
+ok 25 when first Tuesday is some day in the middle of the first week
+ok 26 when first Wednesday is some day in the middle of the first week
+ok 27 when first Wednesday is the 7th, the last day of the first week
+ok 28 when first Thursday is some day in the middle of the first week
+ok 29 when first Thursday is another day in the middle of the first week
+ok 30 when first Friday is the 1st, the first day of the first week
+ok 31 when first Friday is some day in the middle of the first week
+ok 32 when first Saturday is some day in the middle of the first week
+ok 33 when first Saturday is another day in the middle of the first week
+ok 34 when first Sunday is some day in the middle of the first week
+ok 35 when first Sunday is the 7th, the last day of the first week
+ok 36 when second Monday is some day in the middle of the second week
+ok 37 when second Monday is the 8th, the first day of the second week
+ok 38 when second Tuesday is the 14th, the last day of the second week
+ok 39 when second Tuesday is some day in the middle of the second week
+ok 40 when second Wednesday is some day in the middle of the second week
+ok 41 when second Wednesday is the 14th, the last day of the second week
+ok 42 when second Thursday is some day in the middle of the second week
+ok 43 when second Thursday is another day in the middle of the second week
+ok 44 when second Friday is the 8th, the first day of the second week
+ok 45 when second Friday is some day in the middle of the second week
+ok 46 when second Saturday is some day in the middle of the second week
+ok 47 when second Saturday is another day in the middle of the second week
+ok 48 when second Sunday is some day in the middle of the second week
+ok 49 when second Sunday is the 14th, the last day of the second week
+ok 50 when third Monday is some day in the middle of the third week
+ok 51 when third Monday is the 15th, the first day of the third week
+ok 52 when third Tuesday is the 21st, the last day of the third week
+ok 53 when third Tuesday is some day in the middle of the third week
+ok 54 when third Wednesday is some day in the middle of the third week
+ok 55 when third Wednesday is the 21st, the last day of the third week
+ok 56 when third Thursday is some day in the middle of the third week
+ok 57 when third Thursday is another day in the middle of the third week
+ok 58 when third Friday is the 15th, the first day of the third week
+ok 59 when third Friday is some day in the middle of the third week
+ok 60 when third Saturday is some day in the middle of the third week
+ok 61 when third Saturday is another day in the middle of the third week
+ok 62 when third Sunday is some day in the middle of the third week
+ok 63 when third Sunday is the 21st, the last day of the third week
+ok 64 when fourth Monday is some day in the middle of the fourth week
+ok 65 when fourth Monday is the 22nd, the first day of the fourth week
+ok 66 when fourth Tuesday is the 28th, the last day of the fourth week
+ok 67 when fourth Tuesday is some day in the middle of the fourth week
+ok 68 when fourth Wednesday is some day in the middle of the fourth week
+ok 69 when fourth Wednesday is the 28th, the last day of the fourth week
+ok 70 when fourth Thursday is some day in the middle of the fourth week
+ok 71 when fourth Thursday is another day in the middle of the fourth week
+ok 72 when fourth Friday is the 22nd, the first day of the fourth week
+ok 73 when fourth Friday is some day in the middle of the fourth week
+ok 74 when fourth Saturday is some day in the middle of the fourth week
+ok 75 when fourth Saturday is another day in the middle of the fourth week
+ok 76 when fourth Sunday is some day in the middle of the fourth week
+ok 77 when fourth Sunday is the 28th, the last day of the fourth week
+ok 78 last Monday in a month with four Mondays
+ok 79 last Monday in a month with five Mondays
+ok 80 last Tuesday in a month with four Tuesdays
+ok 81 last Tuesday in another month with four Tuesdays
+ok 82 last Wednesday in a month with five Wednesdays
+ok 83 last Wednesday in a month with four Wednesdays
+ok 84 last Thursday in a month with four Thursdays
+ok 85 last Thursday in a month with five Thursdays
+ok 86 last Friday in a month with five Fridays
+ok 87 last Friday in a month with four Fridays
+ok 88 last Saturday in a month with four Saturdays
+ok 89 last Saturday in another month with four Saturdays
+ok 90 last Sunday in a month with five Sundays
+ok 91 last Sunday in a month with four Sundays
+ok 92 when last Wednesday in February in a leap year is the 29th
+ok 93 last Wednesday in December that is also the last day of the year
+ok 94 when last Sunday in February in a non-leap year is not the 29th
+ok 95 when first Friday is the 7th, the last day of the first week
+Updated 1 path from the index
+
+Processing minesweeper
+1..11
+ok 1 no columns
+ok 2 no mines
+ok 3 minefield with only mines
+ok 4 mine surrounded by spaces
+ok 5 space surrounded by mines
+ok 6 horizontal line
+ok 7 horizontal line, mines at edges
+ok 8 vertical line
+ok 9 vertical line, mines at edges
+ok 10 cross
+ok 11 large minefield
+Updated 1 path from the index
+
+Processing nth-prime
+1..5
+ok 1 first prime
+ok 2 second prime
+ok 3 sixth prime
+ok 4 big prime
+ok 5 there is no zeroth prime
+Updated 1 path from the index
+
+Processing nucleotide-count
+1..5
+ok 1 empty strand
+ok 2 can count one nucleotide in single-character input
+ok 3 strand with repeated nucleotide
+ok 4 strand with multiple nucleotides
+ok 5 strand with invalid nucleotides
+Updated 1 path from the index
+
+Processing ocr-numbers
+1..18
+ok 1 Recognizes 0
+ok 2 Recognizes 1
+ok 3 Unreadable but correctly sized inputs return ?
+ok 4 Input with a number of lines that is not a multiple of four raises an error
+ok 5 Input with a number of columns that is not a multiple of three raises an error
+ok 6 Recognizes 110101100
+ok 7 Garbled numbers in a string are replaced with ?
+ok 8 Recognizes 2
+ok 9 Recognizes 3
+ok 10 Recognizes 4
+ok 11 Recognizes 5
+ok 12 Recognizes 6
+ok 13 Recognizes 7
+ok 14 Recognizes 8
+ok 15 Recognizes 9
+ok 16 Recognizes string of decimal numbers
+ok 17 Numbers separated by empty lines are recognized. Lines are joined by commas.
+ok 18 No input
+Updated 1 path from the index
+
+Processing palindrome-products
+1..14
+ok 1 find the smallest palindrome from single digit factors
+ok 2 find the largest palindrome from single digit factors
+ok 3 find the smallest palindrome from double digit factors
+ok 4 find the largest palindrome from double digit factors
+ok 5 find the smallest palindrome from triple digit factors
+ok 6 find the largest palindrome from triple digit factors
+ok 7 find the smallest palindrome from four digit factors
+ok 8 find the largest palindrome from four digit factors
+ok 9 empty result for smallest if no palindrome in the range
+ok 10 empty result for largest if no palindrome in the range
+ok 11 error result for smallest if min is more than max
+ok 12 error result for largest if min is more than max
+ok 13 smallest product does not use the smallest factor
+ok 14 error result for first param
+Updated 1 path from the index
+
+Processing pangram
+1..10
+ok 1 empty sentence
+ok 2 perfect lower case
+ok 3 only lower case
+ok 4 missing the letter 'x'
+ok 5 missing the letter 'h'
+ok 6 with underscores
+ok 7 with numbers
+ok 8 missing letters replaced by numbers
+ok 9 mixed case and punctuation
+ok 10 a-m and A-M are 26 different characters but not a pangram
+Updated 1 path from the index
+
+Processing pascals-triangle
+1..8
+ok 1 zero rows
+ok 2 single row
+ok 3 two rows
+ok 4 three rows
+ok 5 four rows
+ok 6 five rows
+ok 7 six rows
+ok 8 ten rows
+Updated 1 path from the index
+
+Processing perfect-numbers
+1..14
+ok 1 Smallest perfect number is classified correctly
+ok 2 Medium perfect number is classified correctly
+ok 3 Large perfect number is classified correctly
+ok 4 Smallest abundant number is classified correctly
+ok 5 Medium abundant number is classified correctly
+ok 6 Large abundant number is classified correctly
+ok 7 Perfect square abundant number is classified correctly
+ok 8 Smallest prime deficient number is classified correctly
+ok 9 Smallest non-prime deficient number is classified correctly
+ok 10 Medium deficient number is classified correctly
+ok 11 Large deficient number is classified correctly
+ok 12 Edge case (no factors other than itself) is classified correctly
+ok 13 Zero is rejected (as it is not a positive integer)
+ok 14 Negative integer is rejected (as it is not a positive integer)
+Updated 1 path from the index
+
+Processing phone-number
+1..18
+ok 1 cleans the number
+ok 2 cleans numbers with dots
+ok 3 cleans numbers with multiple spaces
+ok 4 invalid when 9 digits
+ok 5 invalid when 11 digits does not start with a 1
+ok 6 valid when 11 digits and starting with 1
+ok 7 valid when 11 digits and starting with 1 even with punctuation
+ok 8 invalid when more than 11 digits
+ok 9 invalid with letters
+ok 10 invalid with punctuations
+ok 11 invalid if area code starts with 0
+ok 12 invalid if area code starts with 1
+ok 13 invalid if exchange code starts with 0
+ok 14 invalid if exchange code starts with 1
+ok 15 invalid if area code starts with 0 on valid 11-digit number
+ok 16 invalid if area code starts with 1 on valid 11-digit number
+ok 17 invalid if exchange code starts with 0 on valid 11-digit number
+ok 18 invalid if exchange code starts with 1 on valid 11-digit number
+Updated 1 path from the index
+
+Processing pig-latin
+1..24
+ok 1 word beginning with a
+ok 2 word beginning with e
+ok 3 word beginning with i
+ok 4 word beginning with o
+ok 5 word beginning with u
+ok 6 word beginning with a vowel and followed by a qu
+ok 7 word beginning with p
+ok 8 word beginning with k
+ok 9 word beginning with x
+ok 10 word beginning with q without a following u
+ok 11 word beginning with consonant and vowel containing qu
+ok 12 word beginning with ch
+ok 13 word beginning with qu
+ok 14 word beginning with qu and a preceding consonant
+ok 15 word beginning with th
+ok 16 word beginning with thr
+ok 17 word beginning with sch
+ok 18 word beginning with yt
+ok 19 word beginning with xr
+ok 20 y is treated like a consonant at the beginning of a word
+ok 21 y is treated like a vowel at the end of a consonant cluster
+ok 22 y as second letter in two letter word
+ok 23 a whole phrase
+ok 24 shell globbing
+Updated 1 path from the index
+
+Processing poker
+1..37
+ok 1 single hand always wins
+ok 2 highest card out of all hands wins
+ok 3 a tie has multiple winners
+ok 4 multiple hands with the same high cards, tie compares next highest ranked, down to last card
+ok 5 winning high card hand also has the lowest card
+ok 6 one pair beats high card
+ok 7 highest pair wins
+ok 8 both hands have the same pair, high card wins
+ok 9 two pairs beats one pair
+ok 10 both hands have two pairs, highest ranked pair wins
+ok 11 both hands have two pairs, with the same highest ranked pair, tie goes to low pair
+ok 12 both hands have two identically ranked pairs, tie goes to remaining card (kicker)
+ok 13 both hands have two pairs that add to the same value, win goes to highest pair
+ok 14 two pairs first ranked by largest pair
+ok 15 three of a kind beats two pair
+ok 16 both hands have three of a kind, tie goes to highest ranked triplet
+ok 17 with multiple decks, two players can have same three of a kind, ties go to highest remaining cards
+ok 18 a straight beats three of a kind
+ok 19 aces can end a straight (10 J Q K A)
+ok 20 aces can start a straight (A 2 3 4 5)
+ok 21 aces cannot be in the middle of a straight (Q K A 2 3)
+ok 22 both hands with a straight, tie goes to highest ranked card
+ok 23 even though an ace is usually high, a 5-high straight is the lowest-scoring straight
+ok 24 flush beats a straight
+ok 25 both hands have a flush, tie goes to high card, down to the last one if necessary
+ok 26 full house beats a flush
+ok 27 both hands have a full house, tie goes to highest-ranked triplet
+ok 28 with multiple decks, both hands have a full house with the same triplet, tie goes to the pair
+ok 29 four of a kind beats a full house
+ok 30 both hands have four of a kind, tie goes to high quad
+ok 31 with multiple decks, both hands with identical four of a kind, tie determined by kicker
+ok 32 straight flush beats four of a kind
+ok 33 aces can end a straight flush (10 J Q K A)
+ok 34 aces can start a straight flush (A 2 3 4 5)
+ok 35 aces cannot be in the middle of a straight flush (Q K A 2 3)
+ok 36 both hands have a straight flush, tie goes to highest-ranked card
+ok 37 even though an ace is usually high, a 5-high straight flush is the lowest-scoring straight flush
+Updated 1 path from the index
+
+Processing prime-factors
+1..12
+ok 1 no factors
+ok 2 prime number
+ok 3 another prime number
+ok 4 square of a prime
+ok 5 product of first prime
+ok 6 cube of a prime
+ok 7 product of second prime
+ok 8 product of third prime
+ok 9 product of first and second prime
+ok 10 product of primes and non-primes
+ok 11 product of primes
+ok 12 factors include a large prime
+Updated 1 path from the index
+
+Processing protein-translation
+1..31
+ok 1 Empty RNA sequence results in no proteins
+ok 2 Methionine RNA sequence
+ok 3 Phenylalanine RNA sequence 1
+ok 4 Phenylalanine RNA sequence 2
+ok 5 Leucine RNA sequence 1
+ok 6 Leucine RNA sequence 2
+ok 7 Serine RNA sequence 1
+ok 8 Serine RNA sequence 2
+ok 9 Serine RNA sequence 3
+ok 10 Serine RNA sequence 4
+ok 11 Tyrosine RNA sequence 1
+ok 12 Tyrosine RNA sequence 2
+ok 13 Cysteine RNA sequence 1
+ok 14 Cysteine RNA sequence 2
+ok 15 Tryptophan RNA sequence
+ok 16 STOP codon RNA sequence 1
+ok 17 STOP codon RNA sequence 2
+ok 18 STOP codon RNA sequence 3
+ok 19 Sequence of two protein codons translates into proteins
+ok 20 Sequence of two different protein codons translates into proteins
+ok 21 Translate RNA strand into correct protein list
+ok 22 Translation stops if STOP codon at beginning of sequence
+ok 23 Translation stops if STOP codon at end of two-codon sequence
+ok 24 Translation stops if STOP codon at end of three-codon sequence
+ok 25 Translation stops if STOP codon in middle of three-codon sequence
+ok 26 Translation stops if STOP codon in middle of six-codon sequence
+ok 27 Sequence of two non-STOP codons does not translate to a STOP codon
+ok 28 Non-existing codon can't translate
+ok 29 Unknown amino acids, not part of a codon, can't translate
+ok 30 Incomplete RNA sequence can't translate
+ok 31 Incomplete RNA sequence can translate if valid until a STOP codon
+Updated 1 path from the index
+
+Processing proverb
+1..8
+ok 1 zero pieces
+ok 2 one piece
+ok 3 two pieces
+ok 4 three pieces
+ok 5 full proverb
+ok 6 four pieces modernized
+ok 7 items with whitespace
+ok 8 shell globbing character
+Updated 1 path from the index
+
+Processing pythagorean-triplet
+1..7
+ok 1 triplets whose sum is 12
+ok 2 triplets whose sum is 108
+ok 3 triplets whose sum is 1000
+ok 4 no matching triplets for 1001
+ok 5 returns all matching triplets
+ok 6 several matching triplets
+ok 7 triplets for large number # skip
+Updated 1 path from the index
+
+Processing queen-attack
+1..13
+ok 1 queen must have positive row
+ok 2 queen must have row on board
+ok 3 queen must have positive column
+ok 4 queen must have column on board
+ok 5 same position
+ok 6 can not attack
+ok 7 can attack on same row
+ok 8 can attack on same column
+ok 9 can attack on first diagonal
+ok 10 can attack on second diagonal
+ok 11 can attack on third diagonal
+ok 12 can attack on fourth diagonal
+ok 13 cannot attack if falling diagonals are only the same when reflected across the longest falling diagonal
+Updated 1 path from the index
+
+Processing rail-fence-cipher
+1..12
+ok 1 encode with two rails
+ok 2 encode with three rails
+ok 3 encode with ending in the middle
+ok 4 decode with three rails
+ok 5 decode with five rails
+ok 6 decode with six rails
+ok 7 encode with more rails than text
+ok 8 decode with more rails than text
+ok 9 decode the encoded text yields the original
+ok 10 no options
+ok 11 zero rails
+ok 12 negative rails
+Updated 1 path from the index
+
+Processing raindrops
+1..18
+ok 1 the sound for 1 is 1
+ok 2 the sound for 3 is Pling
+ok 3 the sound for 5 is Plang
+ok 4 the sound for 7 is Plong
+ok 5 the sound for 6 is Pling as it has a factor 3
+ok 6 2 to the power 3 does not make a raindrop sound as 3 is the exponent not the base
+ok 7 the sound for 9 is Pling as it has a factor 3
+ok 8 the sound for 10 is Plang as it has a factor 5
+ok 9 the sound for 14 is Plong as it has a factor of 7
+ok 10 the sound for 15 is PlingPlang as it has factors 3 and 5
+ok 11 the sound for 21 is PlingPlong as it has factors 3 and 7
+ok 12 the sound for 25 is Plang as it has a factor 5
+ok 13 the sound for 27 is Pling as it has a factor 3
+ok 14 the sound for 35 is PlangPlong as it has factors 5 and 7
+ok 15 the sound for 49 is Plong as it has a factor 7
+ok 16 the sound for 52 is 52
+ok 17 the sound for 105 is PlingPlangPlong as it has factors 3, 5 and 7
+ok 18 the sound for 3125 is Plang as it has a factor 5
+Updated 1 path from the index
+
+Processing rational-numbers
+1..43
+ok 1 Add two positive rational numbers
+ok 2 Add a positive rational number and a negative rational number
+ok 3 Add two negative rational numbers
+ok 4 Add a rational number to its additive inverse
+ok 5 Subtract two positive rational numbers
+ok 6 Subtract a positive rational number and a negative rational number
+ok 7 Subtract two negative rational numbers
+ok 8 Subtract a rational number from itself
+ok 9 Multiply two positive rational numbers
+ok 10 Multiply a negative rational number by a positive rational number
+ok 11 Multiply two negative rational numbers
+ok 12 Multiply a rational number by its reciprocal
+ok 13 Multiply a rational number by 1
+ok 14 Multiply a rational number by 0
+ok 15 Divide two positive rational numbers
+ok 16 Divide a positive rational number by a negative rational number
+ok 17 Divide two negative rational numbers
+ok 18 Divide a rational number by 1
+ok 19 Absolute value of a positive rational number
+ok 20 Absolute value of a positive rational number with negative numerator and denominator
+ok 21 Absolute value of a negative rational number
+ok 22 Absolute value of a negative rational number with negative denominator
+ok 23 Absolute value of zero
+ok 24 Absolute value of a rational number is reduced to lowest terms
+ok 25 Raise a positive rational number to a positive integer power
+ok 26 Raise a negative rational number to a positive integer power
+ok 27 Raise a positive rational number to a negative integer power
+ok 28 Raise a negative rational number to an even negative integer power
+ok 29 Raise a negative rational number to an odd negative integer power
+ok 30 Raise zero to an integer power
+ok 31 Raise one to an integer power
+ok 32 Raise a positive rational number to the power of zero
+ok 33 Raise a negative rational number to the power of zero
+ok 34 Raise a real number to a positive rational number
+ok 35 Raise a real number to a negative rational number
+ok 36 Raise a real number to a zero rational number
+ok 37 Reduce a positive rational number to lowest terms
+ok 38 Reduce places the minus sign on the numerator
+ok 39 Reduce a negative rational number to lowest terms
+ok 40 Reduce a rational number with a negative denominator to lowest terms
+ok 41 Reduce zero to lowest terms
+ok 42 Reduce an integer to lowest terms
+ok 43 Reduce one to lowest terms
+Updated 1 path from the index
+
+Processing rectangles
+1..14
+ok 1 no rows
+ok 2 no columns
+ok 3 no rectangles
+ok 4 one rectangle
+ok 5 two rectangles without shared parts
+ok 6 five rectangles with shared parts
+ok 7 rectangle of height 1 is counted
+ok 8 rectangle of width 1 is counted
+ok 9 1x1 square is counted
+ok 10 only complete rectangles are counted
+ok 11 rectangles can be of different sizes
+ok 12 corner is required for a rectangle to be complete
+ok 13 large input with many rectangles
+ok 14 rectangles must have four sides
+Updated 1 path from the index
+
+Processing resistor-color
+1..4
+ok 1 Color codes -> Black
+ok 2 Color codes -> White
+ok 3 Color codes -> Orange
+ok 4 Colors
+Updated 1 path from the index
+
+Processing resistor-color-duo
+1..10
+ok 1 Brown and black
+ok 2 Blue and grey
+ok 3 Yellow and violet
+ok 4 White and red
+ok 5 Orange and orange
+ok 6 Ignore additional colors
+ok 7 Black and brown, one-digit
+ok 8 invalid color
+ok 9 one valid color and one invalid color
+ok 10 one invalid color and one valid color
+Updated 1 path from the index
+
+Processing resistor-color-trio
+1..13
+ok 1 Orange and orange and black
+ok 2 Blue and grey and brown
+ok 3 Red and black and red
+ok 4 Green and brown and orange
+ok 5 Yellow and violet and yellow
+ok 6 Blue and violet and blue
+ok 7 Minimum possible value
+ok 8 Maximum possible value
+ok 9 First two colors make an invalid octal number
+ok 10 Ignore extra colors
+ok 11 Invalid first color
+ok 12 Invalid second color
+ok 13 Invalid third color
+Updated 1 path from the index
+
+Processing reverse-string
+1..7
+ok 1 an empty string
+ok 2 a word
+ok 3 a capitalized word
+ok 4 a sentence with punctuation
+ok 5 a palindrome
+ok 6 an even-sized word
+ok 7 avoid globbing
+Updated 1 path from the index
+
+Processing rna-transcription
+1..9
+ok 1 Empty RNA sequence
+ok 2 RNA complement of cytosine is guanine
+ok 3 RNA complement of guanine is cytosine
+ok 4 RNA complement of thymine is adenine
+ok 5 RNA complement of adenine is uracil
+ok 6 RNA complement
+ok 7 Handles invalid character
+ok 8 Handles completely invalid string
+ok 9 Handles partially invalid string
+Updated 1 path from the index
+
+Processing robot-simulator
+1..21
+ok 1 Robots are created with a position and direction
+ok 2 Robots are created with a default position and direction
+ok 3 Negative positions are allowed
+ok 4 changes the direction from north to east
+ok 5 changes the direction from east to south
+ok 6 changes the direction from south to west
+ok 7 changes the direction from west to north
+ok 8 changes the direction from north to west
+ok 9 changes the direction from west to south
+ok 10 changes the direction from south to east
+ok 11 changes the direction from east to north
+ok 12 increases the y coordinate one when facing north
+ok 13 decreases the y coordinate by one when facing south
+ok 14 increases the x coordinate by one when facing east
+ok 15 decreases the x coordinate by one when facing west
+ok 16 instructions to move east and north from README
+ok 17 instructions to move west and north
+ok 18 instructions to move west and south
+ok 19 instructions to move east and north
+ok 20 invalid direction
+ok 21 invalid instructions
+Updated 1 path from the index
+
+Processing roman-numerals
+1..27
+ok 1 1 is I
+ok 2 2 is II
+ok 3 3 is III
+ok 4 4 is IV
+ok 5 5 is V
+ok 6 6 is VI
+ok 7 9 is IX
+ok 8 16 is XVI
+ok 9 27 is XXVII
+ok 10 48 is XLVIII
+ok 11 49 is XLIX
+ok 12 59 is LIX
+ok 13 66 is LXVI
+ok 14 93 is XCIII
+ok 15 141 is CXLI
+ok 16 163 is CLXIII
+ok 17 166 is CLXVI
+ok 18 402 is CDII
+ok 19 575 is DLXXV
+ok 20 666 is DCLXVI
+ok 21 911 is CMXI
+ok 22 1024 is MXXIV
+ok 23 1666 is MDCLXVI
+ok 24 3000 is MMM
+ok 25 3001 is MMMI
+ok 26 3888 is MMMDCCCLXXXVIII
+ok 27 3999 is MMMCMXCIX
+Updated 1 path from the index
+
+Processing rotational-cipher
+1..10
+ok 1 rotate a by 0, same output as input
+ok 2 rotate a by 1
+ok 3 rotate a by 26, same output as input
+ok 4 rotate m by 13
+ok 5 rotate n by 13 with wrap around alphabet
+ok 6 rotate capital letters
+ok 7 rotate spaces
+ok 8 rotate numbers
+ok 9 rotate punctuation
+ok 10 rotate all letters
+Updated 1 path from the index
+
+Processing run-length-encoding
+1..13
+ok 1 run-length encode a string: empty string
+ok 2 run-length encode a string: single characters only are encoded without count
+ok 3 run-length encode a string: string with no single characters
+ok 4 run-length encode a string: single characters mixed with repeated characters
+ok 5 run-length encode a string: multiple whitespace mixed in string
+ok 6 run-length encode a string: lowercase characters
+ok 7 run-length decode a string: empty string
+ok 8 run-length decode a string: single characters only
+ok 9 run-length decode a string: string with no single characters
+ok 10 run-length decode a string: single characters with repeated characters
+ok 11 run-length decode a string: multiple whitespace mixed in string
+ok 12 run-length decode a string: lowercase string
+ok 13 encode and then decode: encode followed by decode gives original string
+Updated 1 path from the index
+
+Processing satellite
+1..9
+ok 1 Empty tree
+ok 2 Tree with one item
+ok 3 Tree with many items
+ok 4 Reject traversals of different length
+ok 5 Reject inconsistent traversals of same length
+ok 6 Reject traversals with repeated items
+ok 7 A degenerate binary tree
+ok 8 Another degenerate binary tree
+ok 9 Tree with many more items
+Updated 1 path from the index
+
+Processing save-the-cow
+1..10
+ok 1 Initially 9 failures are allowed and no letters are guessed
+ok 2 After 10 failures the game is over
+ok 3 Losing with several correct guesses
+ok 4 Feeding a correct letter removes underscores
+ok 5 Feeding a correct letter twice counts as a failure
+ok 6 Guessing a repeated letter reveals all instances
+ok 7 Getting all the letters right makes for a win
+ok 8 Winning on the last guess is still a win
+ok 9 Guessing after a lose is error
+ok 10 Guessing after a win is error
+Updated 1 path from the index
+
+Processing say
+1..19
+ok 1 zero
+ok 2 one
+ok 3 fourteen
+ok 4 twenty
+ok 5 twenty-two
+ok 6 thirty
+ok 7 ninety-nine
+ok 8 one hundred
+ok 9 one hundred twenty-three
+ok 10 two hundred
+ok 11 nine hundred ninety-nine
+ok 12 one thousand
+ok 13 one thousand two hundred thirty-four
+ok 14 one million
+ok 15 one million two thousand three hundred forty-five
+ok 16 one billion
+ok 17 a big number
+ok 18 numbers below zero are out of range
+ok 19 numbers above 999,999,999,999 are out of range
+Updated 1 path from the index
+
+Processing scrabble-score
+1..11
+ok 1 lowercase letter
+ok 2 uppercase letter
+ok 3 valuable letter
+ok 4 short word
+ok 5 short, valuable word
+ok 6 medium word
+ok 7 medium, valuable word
+ok 8 long, mixed-case word
+ok 9 english-like word
+ok 10 empty input
+ok 11 entire alphabet available
+Updated 1 path from the index
+
+Processing secret-handshake
+1..11
+ok 1 wink for 1
+ok 2 double blink for 10
+ok 3 close your eyes for 100
+ok 4 jump for 1000
+ok 5 combine two actions
+ok 6 reverse two actions
+ok 7 reversing one action gives the same action
+ok 8 reversing no actions still gives no actions
+ok 9 all possible actions
+ok 10 reverse all possible actions
+ok 11 do nothing for zero
+Updated 1 path from the index
+
+Processing series
+1..11
+ok 1 slices of one from one
+ok 2 slices of one from two
+ok 3 slices of two
+ok 4 slices of two overlap
+ok 5 slices can include duplicates
+ok 6 slices of a long series
+ok 7 slice length is too large
+ok 8 slice length is way too large
+ok 9 slice length cannot be zero
+ok 10 slice length cannot be negative
+ok 11 empty series is invalid
+Updated 1 path from the index
+
+Processing sieve
+1..5
+ok 1 no primes under two
+ok 2 find first prime
+ok 3 find primes up to 10
+ok 4 limit is prime
+ok 5 find primes up to 1000
+Updated 1 path from the index
+
+Processing simple-cipher
+1..16
+ok 1 Can generate a random key
+ok 2 Can encode random
+ok 3 Can decode random
+ok 4 Is reversible random
+ok 5 Can encode
+ok 6 Can decode
+ok 7 Is reversible
+ok 8 Can double shift encode
+ok 9 Can wrap on encode
+ok 10 Can wrap on decode
+ok 11 Can encode messages longer than the key
+ok 12 Can decode messages longer than the key
+ok 13 plaintext is lowercased
+ok 14 ciphertext is lowercased
+ok 15 key must be lowercase
+ok 16 key must be letters
+Updated 1 path from the index
+
+Processing space-age
+1..9
+ok 1 age on Earth
+ok 2 age on Mercury
+ok 3 age on Venus
+ok 4 age on Mars
+ok 5 age on Jupiter
+ok 6 age on Saturn
+ok 7 age on Uranus
+ok 8 age on Neptune
+ok 9 invalid planet causes error
+Updated 1 path from the index
+
+Processing spiral-matrix
+1..6
+ok 1 empty spiral
+ok 2 trivial spiral
+ok 3 spiral of size 2
+ok 4 spiral of size 3
+ok 5 spiral of size 4
+ok 6 spiral of size 5
+Updated 1 path from the index
+
+Processing square-root
+1..6
+ok 1 root of 1
+ok 2 root of 4
+ok 3 root of 25
+ok 4 root of 81
+ok 5 root of 196
+ok 6 root of 65025
+Updated 1 path from the index
+
+Processing sublist
+1..18
+not ok 1 empty lists
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file sublist.bats, line 12)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output : BROKEN
+# --
+#
+not ok 2 empty list within non empty list
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file sublist.bats, line 19)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output : BROKEN
+# --
+#
+not ok 3 non empty list contains empty list
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file sublist.bats, line 26)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output : BROKEN
+# --
+#
+not ok 4 list equals itself
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file sublist.bats, line 33)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output : BROKEN
+# --
+#
+not ok 5 different lists
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file sublist.bats, line 40)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output : BROKEN
+# --
+#
+not ok 6 false start
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file sublist.bats, line 47)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output : BROKEN
+# --
+#
+not ok 7 consecutive
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file sublist.bats, line 54)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output : BROKEN
+# --
+#
+not ok 8 sublist at start
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file sublist.bats, line 61)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output : BROKEN
+# --
+#
+not ok 9 sublist in middle
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file sublist.bats, line 68)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output : BROKEN
+# --
+#
+not ok 10 sublist at end
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file sublist.bats, line 75)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output : BROKEN
+# --
+#
+not ok 11 at start of superlist
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file sublist.bats, line 82)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output : BROKEN
+# --
+#
+not ok 12 in middle of superlist
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file sublist.bats, line 89)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output : BROKEN
+# --
+#
+not ok 13 at end of superlist
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file sublist.bats, line 96)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output : BROKEN
+# --
+#
+not ok 14 first list missing element from second list
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file sublist.bats, line 103)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output : BROKEN
+# --
+#
+not ok 15 second list missing element from first list
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file sublist.bats, line 110)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output : BROKEN
+# --
+#
+not ok 16 first list missing additional digits from second list
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file sublist.bats, line 117)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output : BROKEN
+# --
+#
+not ok 17 order matters to a list
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file sublist.bats, line 124)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output : BROKEN
+# --
+#
+not ok 18 same digits but different numbers
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file sublist.bats, line 131)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output : BROKEN
+# --
+#
+Updated 1 path from the index
+
+Processing sum-of-multiples
+1..16
+ok 1 no multiples within limit
+ok 2 one factor has multiples within limit
+ok 3 more than one multiple within limit
+ok 4 more than one factor with multiples within limit
+ok 5 each multiple is only counted once
+ok 6 a much larger limit
+ok 7 three factors
+ok 8 factors not relatively prime
+ok 9 some pairs of factors relatively prime and some not
+ok 10 one factor is a multiple of another
+ok 11 much larger factors
+ok 12 all numbers are multiples of 1
+ok 13 no factors means an empty sum
+ok 14 the only multiple of 0 is 0
+ok 15 the factor 0 does not affect the sum of multiples of other factors
+ok 16 solutions using include-exclude must extend to cardinality greater than 3
+Updated 1 path from the index
+
+Processing swift-scheduling
+1..17
+ok 1 NOW translates to two hours later
+ok 2 ASAP before one in the afternoon translates to today at five in the afternoon
+ok 3 ASAP at one in the afternoon translates to tomorrow at one in the afternoon
+ok 4 ASAP after one in the afternoon translates to tomorrow at one in the afternoon
+ok 5 EOW on Monday translates to Friday at five in the afternoon
+ok 6 EOW on Tuesday translates to Friday at five in the afternoon
+ok 7 EOW on Wednesday translates to Friday at five in the afternoon
+ok 8 EOW on Thursday translates to Sunday at eight in the evening
+ok 9 EOW on Friday translates to Sunday at eight in the evening
+ok 10 EOW translates to leap day
+ok 11 2M before the second month of this year translates to the first workday of the second month of this year
+ok 12 11M in the eleventh month translates to the first workday of the eleventh month of next year
+ok 13 4M in the ninth month translates to the first workday of the fourth month of next year
+ok 14 Q1 in the first quarter translates to the last workday of the first quarter of this year
+ok 15 Q4 in the second quarter translates to the last workday of the fourth quarter of this year
+ok 16 Q3 in the fourth quarter translates to the last workday of the third quarter of next year
+ok 17 Q2 starting in the last month of the second quarter translates to the last workday of the second quarter of this year
+Updated 1 path from the index
+
+Processing tournament
+1..14
+ok 1 just the header if no input
+ok 2 a win is three points, a loss is zero points
+ok 3 With a file: a win is three points, a loss is zero points
+ok 4 a win can also be expressed as a loss
+ok 5 a different team can win
+ok 6 a draw is one point each
+ok 7 There can be more than one match
+ok 8 There can be more than one winner
+ok 9 There can be more than two teams
+ok 10 typical input
+ok 11 incomplete competition (not all pairs have played)
+ok 12 With a file: incomplete competition (not all pairs have played)
+ok 13 ties broken alphabetically
+ok 14 ensure points sorted numerically
+Updated 1 path from the index
+
+Processing transpose
+1..12
+ok 1 empty string
+ok 2 two characters in a row
+ok 3 two characters in a column
+ok 4 simple
+ok 5 single line
+ok 6 first line longer than second line
+ok 7 second line longer than first line
+ok 8 mixed line length
+ok 9 square
+ok 10 rectangle
+ok 11 triangle
+ok 12 jagged triangle
+Updated 1 path from the index
+
+Processing triangle
+1..21
+ok 1 equilateral triangle: all sides are equal
+ok 2 equilateral triangle: any side is unequal
+ok 3 equilateral triangle: no sides are equal
+ok 4 equilateral triangle: all zero sides is not a triangle
+ok 5 equilateral triangle: sides may be floats
+ok 6 isosceles triangle: last two sides are equal
+ok 7 isosceles triangle: first two sides are equal
+ok 8 isosceles triangle: first and last sides are equal
+ok 9 isosceles triangle: equilateral triangles are also isosceles
+ok 10 isosceles triangle: no sides are equal
+ok 11 isosceles triangle: first triangle inequality violation
+ok 12 isosceles triangle: second triangle inequality violation
+ok 13 isosceles triangle: third triangle inequality violation
+ok 14 isosceles triangle: sides may be floats
+ok 15 scalene triangle: no sides are equal
+ok 16 scalene triangle: all sides are equal
+ok 17 scalene triangle: first and second sides are equal
+ok 18 scalene triangle: first and third sides are equal
+ok 19 scalene triangle: second and third sides are equal
+ok 20 scalene triangle: may not violate triangle inequality
+ok 21 scalene triangle: sides may be floats
+Updated 1 path from the index
+
+Processing twelve-days
+1..15
+ok 1 first day a partridge in a pear tree
+ok 2 second day two turtle doves
+ok 3 third day three french hens
+ok 4 fourth day four calling birds
+ok 5 fifth day five gold rings
+ok 6 sixth day six geese-a-laying
+ok 7 seventh day seven swans-a-swimming
+ok 8 eighth day eight maids-a-milking
+ok 9 ninth day nine ladies dancing
+ok 10 tenth day ten lords-a-leaping
+ok 11 eleventh day eleven pipers piping
+ok 12 twelfth day twelve drummers drumming
+ok 13 recites first three verses of the song
+ok 14 recites three verses from the middle of the song
+ok 15 recites the whole song
+Updated 1 path from the index
+
+Processing two-bucket
+1..11
+ok 1 Measure using bucket one of size 3 and bucket two of size 5 - start with bucket one
+ok 2 Measure using bucket one of size 3 and bucket two of size 5 - start with bucket two
+ok 3 Measure using bucket one of size 7 and bucket two of size 11 - start with bucket one
+ok 4 Measure using bucket one of size 7 and bucket two of size 11 - start with bucket two
+ok 5 Measure one step using bucket one of size 1 and bucket two of size 3 - start with bucket two
+ok 6 Measure using bucket one of size 2 and bucket two of size 3 - start with bucket one and end with bucket two
+ok 7 Measure using bucket one much bigger than bucket two
+ok 8 Measure using bucket one much smaller than bucket two
+ok 9 Not possible to reach the goal
+ok 10 With the same buckets but a different goal, then it is possible
+ok 11 Goal larger than both buckets is impossible
+Updated 1 path from the index
+
+Processing two-fer
+1..5
+ok 1 no name given
+ok 2 a name given
+ok 3 another name given
+ok 4 handle arg with spaces
+ok 5 handle arg with glob char
+Updated 1 path from the index
+
+Processing variable-length-quantity
+1..32
+ok 1 zero
+ok 2 arbitrary single byte
+ok 3 asymmetric single byte
+ok 4 largest single byte
+ok 5 smallest double byte
+ok 6 arbitrary double byte
+ok 7 asymmetric double byte
+ok 8 largest double byte
+ok 9 smallest triple byte
+ok 10 arbitrary triple byte
+ok 11 asymmetric triple byte
+ok 12 largest triple byte
+ok 13 smallest quadruple byte
+ok 14 arbitrary quadruple byte
+ok 15 asymmetric quadruple byte
+ok 16 largest quadruple byte
+ok 17 smallest quintuple byte
+ok 18 arbitrary quintuple byte
+ok 19 asymmetric quintuple byte
+ok 20 maximum 32-bit integer input
+ok 21 two single-byte values
+ok 22 two multi-byte values
+ok 23 many multi-byte values
+ok 24 one byte
+ok 25 two bytes
+ok 26 three bytes
+ok 27 four bytes
+ok 28 maximum 32-bit integer
+ok 29 incomplete sequence causes error
+ok 30 incomplete sequence causes error, even if value is zero
+ok 31 multiple values
+ok 32 invalid subcommand
+Updated 1 path from the index
+
+Processing word-count
+1..15
+ok 1 count one word
+ok 2 count one of each word
+ok 3 multiple occurrences of a word
+ok 4 handles cramped lists
+ok 5 handles expanded lists
+ok 6 ignore punctuation
+ok 7 include numbers
+ok 8 normalize case
+ok 9 with apostrophes
+ok 10 with quotations
+ok 11 substrings from the beginning
+ok 12 multiple spaces not detected as a word
+ok 13 alternating word separators not detected as a word
+ok 14 quotation for word with apostrophe
+ok 15 contains shell globbing character
+Updated 1 path from the index
+
+Processing wordy
+1..29
+ok 1 just a number
+ok 2 just a zero
+ok 3 just a negative number
+ok 4 addition
+ok 5 addition with a left hand zero
+ok 6 addition with a right hand zero
+ok 7 more addition
+ok 8 addition with negative numbers
+ok 9 large addition
+ok 10 subtraction
+ok 11 multiplication
+ok 12 division
+ok 13 multiple additions
+ok 14 addition and subtraction
+ok 15 multiple subtraction
+ok 16 subtraction then addition
+ok 17 multiple multiplication
+ok 18 addition and multiplication
+ok 19 multiple division
+ok 20 unknown operation
+ok 21 Non math question
+ok 22 reject problem missing an operand
+ok 23 reject problem with no operands or operators
+ok 24 reject two operations in a row
+ok 25 reject two numbers in a row
+ok 26 reject postfix notation
+ok 27 reject prefix notation
+ok 28 strict left to right, ignores typical order of operations
+ok 29 reject problem with no operands
+Updated 1 path from the index
+
+Processing yacht
+1..29
+ok 1 Yacht
+ok 2 Not Yacht
+ok 3 Ones
+ok 4 Ones, out of order
+ok 5 No ones
+ok 6 Twos
+ok 7 Fours
+ok 8 Yacht counted as threes
+ok 9 Yacht of 3s counted as fives
+ok 10 Fives
+ok 11 Sixes
+ok 12 Full house two small, three big
+ok 13 Full house three small, two big
+ok 14 Two pair is not a full house
+ok 15 Four of a kind is not a full house
+ok 16 Yacht is not a full house
+ok 17 Four of a Kind
+ok 18 Yacht can be scored as Four of a Kind
+ok 19 Full house is not Four of a Kind
+ok 20 Little Straight
+ok 21 Little Straight as Big Straight
+ok 22 Four in order but not a little straight
+ok 23 No pairs but not a little straight
+ok 24 Minimum is 1, maximum is 5, but not a little straight
+ok 25 Big Straight
+ok 26 Big Straight as little straight
+ok 27 No pairs but not a big straight
+ok 28 Choice
+ok 29 Yacht as choice
+Updated 1 path from the index
+
+99 passed, 1 failed
+Failed exercises:
+  - sublist
+EXIT_CODE: 1
