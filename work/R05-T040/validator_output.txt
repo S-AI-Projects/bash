@@ -1,0 +1,15 @@
+Processing high-scores
+1..12
+ok 1 List of scores
+ok 2 Latest score
+ok 3 Personal best
+ok 4 Personal top three from a list of scores
+ok 5 Personal top highest to lowest
+ok 6 Personal top when there is a tie
+ok 7 Personal top when there are less than 3
+ok 8 Personal top when there is only one
+ok 9 Latest score after personal top scores
+ok 10 Scores after personal top scores
+ok 11 Latest score after personal best
+ok 12 Scores after personal best
+Updated 1 path from the index
