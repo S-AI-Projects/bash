@@ -1,20 +1,22 @@
 #!/usr/bin/env bash
 
 declare -ir perimeter=$1
-declare -i a b c
+declare -i a b c numerator denominator
 
-# A brute force solution.
-# Note that the smallest pythagorean triangle is {3,4,5}
-# We'll use those edges in the loop boundaries
-# to save a little bit of time.
+for (( a = 3; a < perimeter / 3; a++ )); do
+    numerator=$(( perimeter * (perimeter - 2 * a) ))
+    denominator=$(( 2 * (perimeter - a) ))
 
-for (( c = perimeter - 3 - 4; c >= 5; c-- )); do
-    for (( b = c - 1; b >= 4; b-- )); do
-        a=$(( perimeter - c - b ))
-        if  (( 3 <= a && a < b )) &&
-            (( a*a + b*b == c*c ))
-        then
-            echo "$a,$b,$c"
+    if (( numerator % denominator != 0 )); then
+        continue
+    fi
+
+    b=$(( numerator / denominator ))
+    c=$(( perimeter - a - b ))
+
+    if (( a < b && b < c )); then
+        if (( a * a + b * b == c * c )); then
+            echo "${a},${b},${c}"
         fi
-    done
+    fi
 done
