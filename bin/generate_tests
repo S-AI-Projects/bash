@@ -162,7 +162,18 @@ def argparser() -> argparse.ArgumentParser:
 
 def main():
     """Main entrypoint."""
-    specs = problem_spec_dir()
+    try:
+        specs = problem_spec_dir()
+    except LookupError:
+        print(
+            "Could not find problem-specifications repository.\n"
+            "You can fetch it using configlet:\n"
+            "    bin/configlet sync\n"
+            "or by cloning the repository:\n"
+            "    git clone https://github.com/exercism/problem-specifications",
+            file=sys.stderr,
+        )
+        sys.exit(1)
     args = argparser().parse_args()
     if args.pull:
         subprocess.check_call(["git", "pull"], cwd=specs)
