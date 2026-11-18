@@ -1,0 +1,35 @@
+{{ header }}
+{% for case in cases %}
+@test "{{ case["description"] }}" {
+    {% if loop.first %}# {% endif %}[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+{%- if case["property"] == "latestAfterTopThree" %}
+    run bash {{ solution }} personalTopThree {{ case["input"]["scores"] | join(" ") }}
+    run bash {{ solution }} latest {{ case["input"]["scores"] | join(" ") }}
+    assert_success
+    assert_output "{{ case["expected"] }}"
+{%- elif case["property"] == "scoresAfterTopThree" %}
+    run bash {{ solution }} personalTopThree {{ case["input"]["scores"] | join(" ") }}
+    run bash {{ solution }} scores {{ case["input"]["scores"] | join(" ") }}
+    assert_success
+    assert_output "{{ case["expected"] | join(" ") }}"
+{%- elif case["property"] == "latestAfterBest" %}
+    run bash {{ solution }} personalBest {{ case["input"]["scores"] | join(" ") }}
+    run bash {{ solution }} latest {{ case["input"]["scores"] | join(" ") }}
+    assert_success
+    assert_output "{{ case["expected"] }}"
+{%- elif case["property"] == "scoresAfterBest" %}
+    run bash {{ solution }} personalBest {{ case["input"]["scores"] | join(" ") }}
+    run bash {{ solution }} scores {{ case["input"]["scores"] | join(" ") }}
+    assert_success
+    assert_output "{{ case["expected"] | join(" ") }}"
+{%- elif case["property"] in ["scores", "personalTopThree"] %}
+    run bash {{ solution }} {{ case["property"] }} {{ case["input"]["scores"] | join(" ") }}
+    assert_success
+    assert_output "{{ case["expected"] | join(" ") }}"
+{%- else %}
+    run bash {{ solution }} {{ case["property"] }} {{ case["input"]["scores"] | join(" ") }}
+    assert_success
+    assert_output "{{ case["expected"] }}"
+{%- endif %}
+}
+{% endfor %}

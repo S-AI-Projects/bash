@@ -146,6 +146,18 @@
         ]
       },
       {
+        "slug": "high-scores",
+        "name": "High Scores",
+        "uuid": "e15e6cc7-8b3c-4e55-b26b-697ad6d7c0df",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2,
+        "topics": [
+          "arrays",
+          "sorting"
+        ]
+      },
+      {
         "slug": "house",
         "name": "House",
         "uuid": "a3440914-aeb5-4490-b63a-a9b078c65552",
@@ -1281,7 +1293,6 @@
       "flatten-array",
       "go-counting",
       "grade-school",
-      "high-scores",
       "killer-sudoku-helper",
       "ledger",
       "lens-person",
