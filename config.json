@@ -662,10 +662,10 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 4,
+        "status": "wip",
         "topics": [
           "dates"
-        ],
-        "status": "wip"
+        ]
       },
       {
         "slug": "binary-search",
@@ -1263,6 +1263,18 @@
         "topics": [
           "associative_arrays",
           "control_flow_conditionals"
+        ]
+      },
+      {
+        "slug": "piecing-it-together",
+        "name": "Piecing It Together",
+        "uuid": "633f34af-45e6-416c-8091-bea7f7c14f80",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5,
+        "topics": [
+          "control_flow_conditionals",
+          "math"
         ]
       }
     ],

@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "Harshit7791"
+  ],
+  "files": {
+    "solution": [
+      "piecing_it_together.sh"
+    ],
+    "test": [
+      "piecing_it_together.bats"
+    ],
+    "example": [
+      ".meta/example.sh"
+    ]
+  },
+  "blurb": "Fill in missing jigsaw puzzle details from partial data",
+  "source": "atk just started another 1000-pieces jigsaw puzzle when this idea hit him",
+  "source_url": "https://github.com/exercism/problem-specifications/pull/2554"
+}

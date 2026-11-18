@@ -1,0 +1,18 @@
+{{ header }}
+{% for case in cases %}
+@test "{{ case["description"] }}" {
+    {% if loop.first %}# {% endif %}[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run bash {{ solution }} {%- for k, v in case["input"].items() %} {{ k }}={{ v }}{%- endfor %}
+{%- if case["expect_error"] %}
+    assert_failure
+    assert_output --partial "{{ case["expect_error_msg"] }}"
+{%- else %}
+    expectedJson=$(cat << END_JSON
+{{ case["expected"] | tojson(separators=None, indent=4) | indent(4, first=True) }}
+END_JSON
+)
+    # compare without spaces
+    [[ "${output//[[:space:]]/}" == "${expectedJson//[[:space:]]/}" ]]
+{%- endif %}
+}
+{%- endfor %}
