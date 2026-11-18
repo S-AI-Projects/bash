@@ -541,6 +541,7 @@
         "topics": [
           "arrays",
           "control_flow_conditionals",
+          "control_flow_loops",
           "math"
         ]
       },
