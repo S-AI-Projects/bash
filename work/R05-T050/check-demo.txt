@@ -1,0 +1,40 @@
+=== bin/validate_one_exercise exercises/practice/etl ===
+Processing etl
+1..4
+ok 1 single letter
+ok 2 single score with multiple letters
+ok 3 multiple scores with multiple letters
+ok 4 multiple scores with differing numbers of letters
+Updated 1 path from the index
+validate exit:0
+
+=== bin/configlet lint (configlet 4.0.1) ===
+Basic linting finished successfully:
+
+=== bin/generate_tests --no-pull etl (re-run, should change nothing) ===
+generate exit:0
+?? work/
+
+=== shellcheck .meta/example.sh ===
+shellcheck exit:0
+
+=== example run by hand ===
+a: 1
+a: 1
+d: 2
+e: 1
+g: 2
+
+=== git diff main --stat ===
+ config.json                                        |  18 +-
+ .../practice/etl/.docs/instructions.append.md      |  23 +
+ exercises/practice/etl/.docs/instructions.md       |  27 +
+ exercises/practice/etl/.docs/introduction.md       |  16 +
+ exercises/practice/etl/.meta/config.json           |  19 +
+ exercises/practice/etl/.meta/example.sh            |  22 +
+ exercises/practice/etl/.meta/template.j2           |  12 +
+ exercises/practice/etl/.meta/tests.toml            |  22 +
+ exercises/practice/etl/bats-extra.bash             | 642 +++++++++++++++++++++
+ exercises/practice/etl/etl.bats                    |  69 +++
+ exercises/practice/etl/etl.sh                      |  24 +
+ 11 files changed, 891 insertions(+), 3 deletions(-)

@@ -1,0 +1,12 @@
+{{ header }}
+{% for case in cases %}
+@test "{{ case["descriptions"] | join(": ") }}" {
+    {% if loop.first %}# {% endif %}[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run bash {{ solution }}{% for score, letters in case["input"]["legacy"].items() %} "{{ score }}:{{ letters | join(",") }}"{% endfor %}
+    assert_success
+{%- for letter, score in case["expected"].items() %}
+    assert_line "{{ letter }}: {{ score }}"
+{%- endfor %}
+    assert_equal "${{ "{" }}#lines[@]}" {{ case["expected"] | length }}
+}
+{% endfor %}

@@ -662,10 +662,10 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 4,
+        "status": "wip",
         "topics": [
           "dates"
-        ],
-        "status": "wip"
+        ]
       },
       {
         "slug": "binary-search",
@@ -1264,6 +1264,19 @@
           "associative_arrays",
           "control_flow_conditionals"
         ]
+      },
+      {
+        "slug": "etl",
+        "name": "ETL",
+        "uuid": "263ab7e8-41d9-4a27-a7c7-299c59fbe02e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4,
+        "topics": [
+          "control_flow_loops",
+          "string_transformation",
+          "strings"
+        ]
       }
     ],
     "foregone": [
@@ -1277,7 +1290,6 @@
       "custom-set",
       "dominoes",
       "dot-dsl",
-      "etl",
       "flatten-array",
       "go-counting",
       "grade-school",
