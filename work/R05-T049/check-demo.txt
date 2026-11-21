@@ -1,0 +1,45 @@
+=== ruff ===
+All checks passed!
+ruff exit:0
+
+=== --check clean (run-length-encoding) ===
+exit:0
+
+=== Demo: hand edit bats ===
+exercises/practice/run-length-encoding/run_length_encoding.bats
+exit:1
+=== Demo: revert ===
+exit:0
+
+=== --check several ===
+exit:0
+
+=== generate several (no --check) ===
+exit:0
+ M bin/generate_tests
+?? work/
+
+=== --check ALL ===
+exit:0
+
+=== shellcheck (automated check from issue) ===
+
+In bin/validate_one_exercise line 34:
+skip_re='^\s*#+\s*\Q[[ $BATS_RUN_SKIPPED == "true" ]] || skip\E$'
+        ^-- SC2016 (info): Expressions don't expand in single quotes, use double quotes for that.
+
+For more information:
+  https://www.shellcheck.net/wiki/SC2016 -- Expressions don't expand in singl...
+shellcheck exit:1 (pre-existing SC2016 in validate_one_exercise, also on clean main)
+
+=== validate_one_exercise run-length-encoding ===
+ok 9 run-length decode a string: string with no single characters
+ok 10 run-length decode a string: single characters with repeated characters
+ok 11 run-length decode a string: multiple whitespace mixed in string
+ok 12 run-length decode a string: lowercase string
+ok 13 encode and then decode: encode followed by decode gives original string
+Updated 1 path from the index
+
+=== git diff --stat ===
+ bin/generate_tests | 43 +++++++++++++++++++++++++++++++++++++------
+ 1 file changed, 37 insertions(+), 6 deletions(-)

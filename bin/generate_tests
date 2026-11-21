@@ -104,8 +104,13 @@ def bool_to_str(obj):
     return obj
 
 
-def generate(specs: pathlib.Path, exercise: pathlib.Path) -> None:
-    """Generate and write test file for a given spec and exercise."""
+def test_file_path(exercise: pathlib.Path) -> pathlib.Path:
+    """Return the generated test file for an exercise."""
+    return exercise / json.loads((exercise / ".meta/config.json").read_text())["files"]["test"][0]
+
+
+def render_test(specs: pathlib.Path, exercise: pathlib.Path) -> str:
+    """Render the test file for a given spec and exercise, without writing it."""
     cases = get_cases(specs, exercise)
     for case in cases:
         case["expected"] = bool_to_str(case["expected"])
@@ -127,21 +132,35 @@ def generate(specs: pathlib.Path, exercise: pathlib.Path) -> None:
     # Render the template.
     try:
         template = jinja_env(exercise).get_template("template.j2")
-        out = template.render(data)
+        return template.render(data)
     except jinja2.exceptions.TemplateAssertionError as e:
         e.add_note(f"Error rendering template for {exercise.name}")
         raise
 
+
+def generate(specs: pathlib.Path, exercise: pathlib.Path, check: bool = False) -> bool:
+    """Generate and write test file for a given spec and exercise.
+
+    Return True if the committed test file is up to date, False otherwise.
+    In check mode, never write the file.
+    """
+    out = render_test(specs, exercise)
+    test_file = test_file_path(exercise)
+
     # Check for changes or the lack thereof.
-    test_file = exercise / json.loads((exercise / ".meta/config.json").read_text())["files"]["test"][0]
+    # The "generated on" timestamp changes on every render, so ignore it.
     if test_file.exists():
         old_content = [i for i in test_file.read_text().strip().splitlines() if "generated on" not in i]
         new_content = [i for i in out.splitlines() if "generated on" not in i]
         if old_content == new_content:
-            return
+            return True
+
+    if check:
+        return False
 
     # Write the test file.
     test_file.write_text(out + "\n")
+    return True
 
 
 def argparser() -> argparse.ArgumentParser:
@@ -151,6 +170,11 @@ def argparser() -> argparse.ArgumentParser:
         action="store_false",
         dest="pull",
         help="Do not run `git pull` on the problem specs repo",
+    )
+    parser.add_argument(
+        "--check",
+        action="store_true",
+        help="Check if generated test files are up to date without writing them; exit 1 and list every out-of-date file, 0 otherwise",
     )
     parser.add_argument(
         "exercises",
@@ -184,11 +208,18 @@ def main():
             out.append(path)
         exercises = out
 
+    out_of_date = []
     for exercise in exercises:
         exercise_path = pathlib.Path(exercise)
         if not exercise_path.exists():
             raise ValueError(f"Exercise {exercise_path} does not exist")
-        generate(specs, exercise_path)
+        if not generate(specs, exercise_path, check=args.check) and args.check:
+            out_of_date.append(test_file_path(exercise_path))
+
+    if out_of_date:
+        for test_file in out_of_date:
+            print(test_file)
+        sys.exit(1)
 
 
 if __name__ == "__main__":
