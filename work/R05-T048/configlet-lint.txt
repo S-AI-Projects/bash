@@ -1,0 +1,50 @@
+The lint command is under development.
+To check your track using the latest linting rules,
+please regularly update configlet and re-run this command.
+
+Basic linting finished successfully:
+- config.json exists and is valid JSON
+- config.json has these valid fields:
+    language, slug, active, blurb, version, status, online_editor, key_features, tags
+- Every concept has the required .md files
+- Every concept has a valid links.json file
+- Every concept has a valid .meta/config.json file
+- Every concept exercise has the required .md files
+- Every concept exercise has a valid .meta/config.json file
+- Every practice exercise has the required .md files
+- Every practice exercise has a valid .meta/config.json file
+- Every approach and article is valid
+- Required track docs are present
+- Required shared exercise docs are present
+lint exit: 0
+--- validate_one_exercise ---
+Processing intergalactic-transmission
+1..26
+ok 1 calculate transmit sequences: empty message
+ok 2 calculate transmit sequences: 0x00 is transmitted as 0x0000
+ok 3 calculate transmit sequences: 0x02 is transmitted as 0x0300
+ok 4 calculate transmit sequences: 0x06 is transmitted as 0x0600
+ok 5 calculate transmit sequences: 0x05 is transmitted as 0x0581
+ok 6 calculate transmit sequences: 0x29 is transmitted as 0x2881
+ok 7 calculate transmit sequences: 0xc001c0de is transmitted as 0xc000711be1
+ok 8 calculate transmit sequences: six byte message
+ok 9 calculate transmit sequences: seven byte message
+ok 10 calculate transmit sequences: eight byte message
+ok 11 calculate transmit sequences: twenty byte message
+ok 12 decode received messages: empty message
+ok 13 decode received messages: zero message
+ok 14 decode received messages: 0x0300 is decoded to 0x02
+ok 15 decode received messages: 0x0581 is decoded to 0x05
+ok 16 decode received messages: 0x2881 is decoded to 0x29
+ok 17 decode received messages: first byte has wrong parity
+ok 18 decode received messages: second byte has wrong parity
+ok 19 decode received messages: 0xcf4b00 is decoded to 0xce94
+ok 20 decode received messages: 0xe2566500 is decoded to 0xe2ad90
+ok 21 decode received messages: six byte message
+ok 22 decode received messages: seven byte message
+ok 23 decode received messages: last byte has wrong parity
+ok 24 decode received messages: eight byte message
+ok 25 decode received messages: twenty byte message
+ok 26 decode received messages: wrong parity on 16th byte
+Updated 1 path from the index
+validate exit: 0

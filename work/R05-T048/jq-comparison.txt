@@ -1,0 +1,100 @@
+# Task R05-T048 — jq comparison
+# Commands run in ~/workspace/s-ai/bash on branch student/e26b07f0874/R05-T048
+
+$ jq -r '.exercises.practice[] | select(.difficulty==5) | .slug' config.json
+atbash-cipher
+crypto-square
+diffie-hellman
+flower-field
+food-chain
+grep
+intergalactic-transmission
+minesweeper
+rational-numbers
+robot-simulator
+run-length-encoding
+say
+simple-cipher
+tournament
+transpose
+
+$ jq '.exercises.practice[] | select(.slug=="intergalactic-transmission")' config.json
+{
+  "slug": "intergalactic-transmission",
+  "name": "Intergalactic Transmission",
+  "uuid": "b1874a8b-ebc7-4a1b-802f-8f0a6feaa59d",
+  "practices": [],
+  "prerequisites": [],
+  "difficulty": 5,
+  "topics": [
+    "bitwise_operations",
+    "parity"
+  ]
+}
+
+$ jq -e '.exercises.practice[] | select(.slug=="intergalactic-transmission") | .topics | length > 0' config.json
+true
+--- comparators ---
+== atbash-cipher ==
+{
+  "slug": "atbash-cipher",
+  "name": "Atbash Cipher",
+  "uuid": "5bff4fe1-6330-4730-b586-dcc5438c02ee",
+  "practices": [],
+  "prerequisites": [],
+  "difficulty": 5,
+  "topics": [
+    "cryptography",
+    "pattern_matching",
+    "strings"
+  ]
+}
+example.sh lines: 14
+bats @test count: 14
+== crypto-square ==
+{
+  "slug": "crypto-square",
+  "name": "Crypto Square",
+  "uuid": "6892fa27-c275-4601-98e9-8e3a55153033",
+  "practices": [],
+  "prerequisites": [],
+  "difficulty": 5,
+  "topics": [
+    "arrays",
+    "cryptography",
+    "math",
+    "transformation"
+  ]
+}
+example.sh lines: 29
+bats @test count: 8
+== diffie-hellman ==
+{
+  "slug": "diffie-hellman",
+  "name": "Diffie-Hellman",
+  "uuid": "14b7ad3a-f3b7-4104-ba4d-3acca25cbb3f",
+  "practices": [],
+  "prerequisites": [],
+  "difficulty": 5,
+  "topics": [
+    "math",
+    "randomness"
+  ]
+}
+example.sh lines: 40
+bats @test count: 6
+== intergalactic-transmission ==
+{
+  "slug": "intergalactic-transmission",
+  "name": "Intergalactic Transmission",
+  "uuid": "b1874a8b-ebc7-4a1b-802f-8f0a6feaa59d",
+  "practices": [],
+  "prerequisites": [],
+  "difficulty": 5,
+  "topics": [
+    "bitwise_operations",
+    "parity"
+  ]
+}
+example.sh lines: 72
+bats @test count: 26

@@ -878,7 +878,11 @@
         "uuid": "b1874a8b-ebc7-4a1b-802f-8f0a6feaa59d",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 5
+        "difficulty": 5,
+        "topics": [
+          "bitwise_operations",
+          "parity"
+        ]
       },
       {
         "slug": "minesweeper",

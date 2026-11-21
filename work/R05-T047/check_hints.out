@@ -1,0 +1,22 @@
+1. examples in the hints
+  example 1: ok  expected ['bonono', 'bonana']  got ['bonono', 'bonana']
+  example 2: ok  expected ['xx']  got ['xx']
+  example 3: ok  expected ['hippo']  got ['hippo']
+  example 4: ok  expected ['abcabc: ok', 'abcxabc: bad']  got ['abcabc: ok', 'abcxabc: bad']
+  example 5: ok  expected ['oops', 'status: 3']  got ['oops', 'status: 3']
+  5 examples run
+2. spoiler check (the hints must not contain the solution)
+  ok: no DNA/RNA mapping in the file
+  hints (### sections): 4
+3. reference solutions and the traps
+  solution_tr: 9 ok, 0 not ok
+  solution_substitution: 9 ok, 0 not ok
+  trap_chained_substitution: 6 ok, 3 not ok (must fail)
+  trap_print_before_validating: 6 ok, 3 not ok (must fail)
+4. markdownlint
+  markdownlint-cli2 v0.23.2 (markdownlint v0.41.1)
+  Finding: /tmp/claude-0/-home-claude/475d28ea-3ce9-58f7-889c-d107c1ee1296/scratchpad/bashrepo/exercises/practice/rna-transcription/.docs/instructions.append.md
+  Linting: 1 file
+  Summary: 0 issues in 0 files
+
+ALL CHECKS PASSED
