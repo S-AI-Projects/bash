@@ -19,3 +19,14 @@
 {%- endif %}
 }
 {% endfor %}
+
+@test "tenth-frame bonus rolls validate nine-pin combinations" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run bash {{ solution }} 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10 9 2
+    assert_failure
+    assert_output --partial "Pin count exceeds pins on the lane"
+
+    run bash {{ solution }} 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9 1 10
+    assert_success
+    assert_output "20"
+}

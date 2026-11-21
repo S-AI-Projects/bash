@@ -1,7 +1,7 @@
 #!/usr/bin/env bats
 load bats-extra
 
-# generated on 2026-06-29T16:53:24+00:00
+# generated on 2026-11-16T19:38:55+00:00
 # The canonical cases call for the implementation of
 # _methods_ `score` and `roll`. That's not feasible for a
 # shell script. We'll just pass in all the individual rolls
@@ -223,4 +223,16 @@ load bats-extra
     run bash bowling.sh 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10 3 2 2
     assert_failure
     assert_output --partial "Cannot roll after game is over"
+}
+
+
+@test "tenth-frame bonus rolls validate nine-pin combinations" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run bash bowling.sh 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10 9 2
+    assert_failure
+    assert_output --partial "Pin count exceeds pins on the lane"
+
+    run bash bowling.sh 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9 1 10
+    assert_success
+    assert_output "20"
 }
