@@ -1,0 +1,27 @@
+{
+  "introduction": {
+    "authors": [
+      "HemantAsur"
+    ]
+  },
+  "approaches": [
+    {
+      "uuid": "6b82f87b-7cff-4437-8428-517931d81330",
+      "slug": "lowercase-and-loop",
+      "title": "Lowercase and loop",
+      "blurb": "Lowercase the phrase, then loop over its letters and remember the ones already seen.",
+      "authors": [
+        "HemantAsur"
+      ]
+    },
+    {
+      "uuid": "7fb62a19-eddc-4a20-ba32-d638b2aa2a30",
+      "slug": "tr-sort-uniq",
+      "title": "tr, sort and uniq",
+      "blurb": "Use external tools: tr keeps the letters, sort groups them, and uniq -d reports repeats.",
+      "authors": [
+        "HemantAsur"
+      ]
+    }
+  ]
+}

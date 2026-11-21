@@ -1,0 +1,9 @@
+=== timing (300 runs each, 'Emily Jung Schwartzkopf' and a long phrase) ===
+phrase: 'Emily Jung Schwartzkopf'
+  lowercase-and-loop     median   1.73 ms   (min 1.59, p95 2.32)
+  tr-sort-uniq           median   4.97 ms   (min 4.63, p95 6.03)
+  reference example.sh   median   1.76 ms   (min 1.56, p95 2.39)
+phrase: 'the quick brown fox jumps over the lazy dog'
+  lowercase-and-loop     median   1.74 ms   (min 1.59, p95 2.54)
+  tr-sort-uniq           median   5.38 ms   (min 4.45, p95 6.76)
+  reference example.sh   median   1.79 ms   (min 1.57, p95 2.45)

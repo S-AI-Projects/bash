@@ -1,0 +1,7 @@
+repeated=$(
+    tr -cd '[:alpha:]' <<< "${1,,}" |
+    fold -w1 |
+    sort |
+    uniq -d
+)
+[[ -z $repeated ]] && echo true || echo false

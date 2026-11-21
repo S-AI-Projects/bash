@@ -1,0 +1,8 @@
+phrase=${1,,}
+for (( i = 0; i < ${#phrase}; i++ )); do
+    char=${phrase:i:1}
+    [[ $char == [[:lower:]] ]] || continue
+    [[ $seen == *"$char"* ]] && { echo false; exit; }
+    seen+=$char
+done
+echo true

@@ -1,0 +1,9 @@
+isogram.bats has 14 tests
+baseline: .meta/example.sh
+  14 run, 0 failed
+approach: lowercase-and-loop
+  14 run, 0 failed
+approach: tr-sort-uniq
+  14 run, 0 failed
+
+ALL CHECKS PASSED
