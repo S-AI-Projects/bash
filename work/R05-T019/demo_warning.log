@@ -1,0 +1,50 @@
+=== Setting up scratch copy of exercises/practice/house ===
+
+=== Baseline: running validator on unmodified house exercise ===
+Processing house
+1..18
+ok 1 verse one - the house that jack built
+ok 2 verse two - the malt that lay
+ok 3 verse three - the rat that ate
+ok 4 verse four - the cat that killed
+ok 5 verse five - the dog that worried
+ok 6 verse six - the cow with the crumpled horn
+ok 7 verse seven - the maiden all forlorn
+ok 8 verse eight - the man all tattered and torn
+ok 9 verse nine - the priest all shaven and shorn
+ok 10 verse 10 - the rooster that crowed in the morn
+ok 11 verse 11 - the farmer sowing his corn
+ok 12 verse 12 - the horse and the hound and the horn
+ok 13 multiple verses
+ok 14 full rhyme
+ok 15 invalid verse 1
+ok 16 invalid verse 2
+ok 17 invalid verse 3
+ok 18 invalid verse 4
+Updated 1 path from the index
+
+=== Mutating house.bats: deliberately rename 'full rhyme' test ===
+
+=== Running validator on mutated scratch copy (warning expected) ===
+warning: house test not found in house.bats: full rhyme
+Processing house
+1..18
+ok 1 verse one - the house that jack built
+ok 2 verse two - the malt that lay
+ok 3 verse three - the rat that ate
+ok 4 verse four - the cat that killed
+ok 5 verse five - the dog that worried
+ok 6 verse six - the cow with the crumpled horn
+ok 7 verse seven - the maiden all forlorn
+ok 8 verse eight - the man all tattered and torn
+ok 9 verse nine - the priest all shaven and shorn
+ok 10 verse 10 - the rooster that crowed in the morn
+ok 11 verse 11 - the farmer sowing his corn
+ok 12 verse 12 - the horse and the hound and the horn
+ok 13 multiple verses
+ok 14 deliberately renamed rhyme
+ok 15 invalid verse 1
+ok 16 invalid verse 2
+ok 17 invalid verse 3
+ok 18 invalid verse 4
+Updated 1 path from the index
