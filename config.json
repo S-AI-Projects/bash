@@ -662,10 +662,10 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 4,
+        "status": "wip",
         "topics": [
           "dates"
-        ],
-        "status": "wip"
+        ]
       },
       {
         "slug": "binary-search",
@@ -1264,6 +1264,18 @@
           "associative_arrays",
           "control_flow_conditionals"
         ]
+      },
+      {
+        "slug": "saddle-points",
+        "name": "Saddle Points",
+        "uuid": "475df1f8-851b-4124-ae41-a230c63ca7e7",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5,
+        "topics": [
+          "arrays",
+          "control_flow_loops"
+        ]
       }
     ],
     "foregone": [
@@ -1293,7 +1305,6 @@
       "pov",
       "react",
       "rest-api",
-      "saddle-points",
       "sgf-parsing",
       "simple-linked-list",
       "strain",
