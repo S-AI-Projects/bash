@@ -416,7 +416,12 @@
         "uuid": "6846adfc-3c98-42be-8fe1-ad3119f95de1",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 3,
+        "topics": [
+          "bitwise_operations",
+          "integers",
+          "loops"
+        ]
       },
       {
         "slug": "isogram",
