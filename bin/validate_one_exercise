@@ -30,10 +30,46 @@ case ${exercise} in
     hello-world)         expected=0 ;;
     *)                   expected=1 ;;
 esac
+# shellcheck disable=SC2016
 # a PCRE: the `\Q...\E` defines a literal segment
 skip_re='^\s*#+\s*\Q[[ $BATS_RUN_SKIPPED == "true" ]] || skip\E$'
 num_skip_comments=$(grep -cP "${skip_re}" "${tests}") || true
 (( num_skip_comments == expected )) || die "There should be exactly $expected commented skip directive(s) in ${tests}"
+
+# Check tests.toml coverage if present
+tests_toml=./.meta/tests.toml
+if [[ -f ${tests_toml} ]]; then
+    while IFS= read -r desc; do
+        [[ -z "${desc}" ]] && continue
+        last_desc="${desc##* -> }"
+        if ! grep -qF "${desc}" "${tests}" && ! grep -qF "${last_desc}" "${tests}"; then
+            echo "warning: ${exercise} test not found in ${tests}: ${desc}"
+        fi
+    done < <(
+        awk '
+            BEGIN { in_case = 0; desc = ""; inc = 1 }
+            /^\[.*\]/ {
+                if (in_case && desc != "" && inc == 1) print desc
+                in_case = 1; desc = ""; inc = 1
+                next
+            }
+            /^[[:space:]]*description[[:space:]]*=[[:space:]]*"/ {
+                s = $0
+                sub(/^[[:space:]]*description[[:space:]]*=[[:space:]]*"/, "", s)
+                sub(/".*$/, "", s)
+                desc = s
+                next
+            }
+            /^[[:space:]]*include[[:space:]]*=[[:space:]]*false/ {
+                inc = 0
+                next
+            }
+            END {
+                if (in_case && desc != "" && inc == 1) print desc
+            }
+        ' "${tests_toml}"
+    )
+fi
 
 echo "Processing $exercise"
 
