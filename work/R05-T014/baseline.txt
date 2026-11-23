@@ -1,0 +1,869 @@
+=== Baseline line count ===
+     178 exercises/practice/poker/.meta/example.sh
+
+=== Baseline ShellCheck ===
+
+In exercises/practice/poker/.meta/example.sh line 11:
+        validate "$hand" || die "invalid hand"
+                  ^---^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+        validate "${hand}" || die "invalid hand"
+
+
+In exercises/practice/poker/.meta/example.sh line 12:
+        value[$hand]=$( evaluate "$hand" )
+              ^---^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+                                  ^---^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+        value[${hand}]=$( evaluate "${hand}" )
+
+
+In exercises/practice/poker/.meta/example.sh line 19:
+        (( val > max )) && max=$val
+                               ^--^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+        (( val > max )) && max=${val}
+
+
+In exercises/practice/poker/.meta/example.sh line 23:
+        (( max == value[$hand] )) && echo "$hand" || true
+                        ^---^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+                                           ^---^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+        (( max == value[${hand}] )) && echo "${hand}" || true
+
+
+In exercises/practice/poker/.meta/example.sh line 27:
+die() { echo "$*" >&2; exit $FAILURE; }
+                            ^------^ SC2248 (style): Prefer double quoting even when variables don't contain special characters.
+                            ^------^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+die() { echo "$*" >&2; exit "${FAILURE}"; }
+
+
+In exercises/practice/poker/.meta/example.sh line 31:
+    local re="^$card( $card){4}$"
+               ^---^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+                      ^---^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+    local re="^${card}( ${card}){4}$"
+
+
+In exercises/practice/poker/.meta/example.sh line 32:
+    [[ $1 =~ $re ]]
+             ^-^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+    [[ $1 =~ ${re} ]]
+
+
+In exercises/practice/poker/.meta/example.sh line 70:
+        for card in $cards; do  #unquoted
+                    ^----^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+        for card in ${cards}; do  #unquoted
+
+
+In exercises/practice/poker/.meta/example.sh line 71:
+            cardvalue $card
+            ^-------------^ SC2312 (info): Consider invoking this command separately to avoid masking its return value (or use '|| true' to ignore).
+                      ^---^ SC2086 (info): Double quote to prevent globbing and word splitting.
+                      ^---^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+            cardvalue "${card}"
+
+
+In exercises/practice/poker/.meta/example.sh line 72:
+        done | sort -nr
+               ^------^ SC2312 (info): Consider invoking this command separately to avoid masking its return value (or use '|| true' to ignore).
+
+
+In exercises/practice/poker/.meta/example.sh line 76:
+    if tiebreaker=$( is_5_of_a_kind ${values[@]} ); then
+                                    ^----------^ SC2068 (error): Double quote array expansions to avoid re-splitting elements.
+
+
+In exercises/practice/poker/.meta/example.sh line 78:
+    elif tiebreaker=$( is_straight_flush "$cards" ${values[@]} ); then
+                                          ^----^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+                                                  ^----------^ SC2068 (error): Double quote array expansions to avoid re-splitting elements.
+
+Did you mean:
+    elif tiebreaker=$( is_straight_flush "${cards}" ${values[@]} ); then
+
+
+In exercises/practice/poker/.meta/example.sh line 80:
+    elif tiebreaker=$( is_4_of_a_kind ${values[@]} ); then
+                                      ^----------^ SC2068 (error): Double quote array expansions to avoid re-splitting elements.
+
+
+In exercises/practice/poker/.meta/example.sh line 82:
+    elif tiebreaker=$( is_full_house ${values[@]} ); then
+                                     ^----------^ SC2068 (error): Double quote array expansions to avoid re-splitting elements.
+
+
+In exercises/practice/poker/.meta/example.sh line 84:
+    elif tiebreaker=$( is_flush "$cards" ${values[@]} ); then
+                                 ^----^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+                                         ^----------^ SC2068 (error): Double quote array expansions to avoid re-splitting elements.
+
+Did you mean:
+    elif tiebreaker=$( is_flush "${cards}" ${values[@]} ); then
+
+
+In exercises/practice/poker/.meta/example.sh line 86:
+    elif tiebreaker=$( is_straight ${values[@]} ); then
+                                   ^----------^ SC2068 (error): Double quote array expansions to avoid re-splitting elements.
+
+
+In exercises/practice/poker/.meta/example.sh line 88:
+    elif tiebreaker=$( is_3_of_a_kind ${values[@]} ); then
+                                      ^----------^ SC2068 (error): Double quote array expansions to avoid re-splitting elements.
+
+
+In exercises/practice/poker/.meta/example.sh line 90:
+    elif tiebreaker=$( is_2_pairs ${values[@]} ); then
+                                  ^----------^ SC2068 (error): Double quote array expansions to avoid re-splitting elements.
+
+
+In exercises/practice/poker/.meta/example.sh line 92:
+    elif tiebreaker=$( is_1_pair ${values[@]} ); then
+                                 ^----------^ SC2068 (error): Double quote array expansions to avoid re-splitting elements.
+
+
+In exercises/practice/poker/.meta/example.sh line 96:
+        tiebreaker=$(ranking ${values[@]})
+                             ^----------^ SC2068 (error): Double quote array expansions to avoid re-splitting elements.
+
+
+In exercises/practice/poker/.meta/example.sh line 104:
+    case $face in
+         ^---^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+    case ${face} in
+
+
+In exercises/practice/poker/.meta/example.sh line 109:
+        *) echo $face ;;
+                ^---^ SC2086 (info): Double quote to prevent globbing and word splitting.
+                ^---^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+        *) echo "${face}" ;;
+
+
+In exercises/practice/poker/.meta/example.sh line 116:
+    echo $(( 10#$value ))
+                ^----^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+    echo $(( 10#${value} ))
+
+
+In exercises/practice/poker/.meta/example.sh line 119:
+is_5_of_a_kind() { has_grouping "5" $@; }
+                                    ^-- SC2068 (error): Double quote array expansions to avoid re-splitting elements.
+
+
+In exercises/practice/poker/.meta/example.sh line 120:
+is_4_of_a_kind() { has_grouping "4 1" $@; }
+                                      ^-- SC2068 (error): Double quote array expansions to avoid re-splitting elements.
+
+
+In exercises/practice/poker/.meta/example.sh line 121:
+is_3_of_a_kind() { has_grouping "3 1 1" $@; }
+                                        ^-- SC2068 (error): Double quote array expansions to avoid re-splitting elements.
+
+
+In exercises/practice/poker/.meta/example.sh line 122:
+is_full_house()  { has_grouping "3 2" $@; }
+                                      ^-- SC2068 (error): Double quote array expansions to avoid re-splitting elements.
+
+
+In exercises/practice/poker/.meta/example.sh line 123:
+is_2_pairs()     { has_grouping "2 2 1" $@; }
+                                        ^-- SC2068 (error): Double quote array expansions to avoid re-splitting elements.
+
+
+In exercises/practice/poker/.meta/example.sh line 124:
+is_1_pair()      { has_grouping "2 1 1 1" $@; }
+                                          ^-- SC2068 (error): Double quote array expansions to avoid re-splitting elements.
+
+
+In exercises/practice/poker/.meta/example.sh line 129:
+    local n=$(printf "%s\n" $cards | grep -o '.$' | sort -u | wc -l)
+          ^-- SC2155 (warning): Declare and assign separately to avoid masking return values.
+                            ^----^ SC2086 (info): Double quote to prevent globbing and word splitting.
+                            ^----^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+    local n=$(printf "%s\n" "${cards}" | grep -o '.$' | sort -u | wc -l)
+
+
+In exercises/practice/poker/.meta/example.sh line 131:
+        ranking $@
+                ^-- SC2068 (error): Double quote array expansions to avoid re-splitting elements.
+
+
+In exercises/practice/poker/.meta/example.sh line 132:
+        return $SUCCESS
+               ^------^ SC2248 (style): Prefer double quoting even when variables don't contain special characters.
+               ^------^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+        return "${SUCCESS}"
+
+
+In exercises/practice/poker/.meta/example.sh line 134:
+    return $FAILURE
+           ^------^ SC2248 (style): Prefer double quoting even when variables don't contain special characters.
+           ^------^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+    return "${FAILURE}"
+
+
+In exercises/practice/poker/.meta/example.sh line 141:
+        return $SUCCESS
+               ^------^ SC2248 (style): Prefer double quoting even when variables don't contain special characters.
+               ^------^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+        return "${SUCCESS}"
+
+
+In exercises/practice/poker/.meta/example.sh line 145:
+            (( v == ${!i} + 1 )) || return $FAILURE
+                                           ^------^ SC2248 (style): Prefer double quoting even when variables don't contain special characters.
+                                           ^------^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+            (( v == ${!i} + 1 )) || return "${FAILURE}"
+
+
+In exercises/practice/poker/.meta/example.sh line 148:
+        ranking $@
+                ^-- SC2068 (error): Double quote array expansions to avoid re-splitting elements.
+
+
+In exercises/practice/poker/.meta/example.sh line 149:
+        return $SUCCESS
+               ^------^ SC2248 (style): Prefer double quoting even when variables don't contain special characters.
+               ^------^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+        return "${SUCCESS}"
+
+
+In exercises/practice/poker/.meta/example.sh line 155:
+    is_flush "$cards" $@ >/dev/null && is_straight $@
+              ^----^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+                      ^-- SC2068 (error): Double quote array expansions to avoid re-splitting elements.
+                                                   ^-- SC2068 (error): Double quote array expansions to avoid re-splitting elements.
+
+Did you mean:
+    is_flush "${cards}" $@ >/dev/null && is_straight $@
+
+
+In exercises/practice/poker/.meta/example.sh line 162:
+    while read g v; do
+          ^--^ SC2162 (info): read without -r will mangle backslashes.
+
+
+In exercises/practice/poker/.meta/example.sh line 163:
+        groups+=($g)
+                 ^-- SC2206 (warning): Quote to prevent word splitting/globbing, or split robustly with mapfile or read -a.
+                 ^-- SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+        groups+=(${g})
+
+
+In exercises/practice/poker/.meta/example.sh line 164:
+        values+=($v)
+                 ^-- SC2206 (warning): Quote to prevent word splitting/globbing, or split robustly with mapfile or read -a.
+                 ^-- SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+        values+=(${v})
+
+
+In exercises/practice/poker/.meta/example.sh line 167:
+        sort -nr |
+        ^------^ SC2312 (info): Consider invoking this command separately to avoid masking its return value (or use '|| true' to ignore).
+
+
+In exercises/practice/poker/.meta/example.sh line 168:
+        uniq -c |
+        ^-----^ SC2312 (info): Consider invoking this command separately to avoid masking its return value (or use '|| true' to ignore).
+
+
+In exercises/practice/poker/.meta/example.sh line 169:
+        sort -k1,1nr -k2,2nr
+        ^------------------^ SC2312 (info): Consider invoking this command separately to avoid masking its return value (or use '|| true' to ignore).
+
+
+In exercises/practice/poker/.meta/example.sh line 171:
+    if [[ "${groups[*]}" = "$groupings" ]]; then
+                            ^--------^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+    if [[ "${groups[*]}" = "${groupings}" ]]; then
+
+
+In exercises/practice/poker/.meta/example.sh line 172:
+        ranking ${values[@]}
+                ^----------^ SC2068 (error): Double quote array expansions to avoid re-splitting elements.
+
+
+In exercises/practice/poker/.meta/example.sh line 173:
+        return $SUCCESS
+               ^------^ SC2248 (style): Prefer double quoting even when variables don't contain special characters.
+               ^------^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+        return "${SUCCESS}"
+
+
+In exercises/practice/poker/.meta/example.sh line 175:
+    return $FAILURE
+           ^------^ SC2248 (style): Prefer double quoting even when variables don't contain special characters.
+           ^------^ SC2250 (style): Prefer putting braces around variable references even when not strictly required.
+
+Did you mean:
+    return "${FAILURE}"
+
+For more information:
+  https://www.shellcheck.net/wiki/SC2068 -- Double quote array expansions to ...
+  https://www.shellcheck.net/wiki/SC2155 -- Declare and assign separately to ...
+  https://www.shellcheck.net/wiki/SC2206 -- Quote to prevent word splitting/g...
+
+=== Baseline Bats Timing ===
+1..37
+not ok 1 single hand always wins in 53ms
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file poker.bats, line 9)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output (4 lines):
+#   poker.sh: line 8: local: -A: invalid option
+#   local: usage: local name[=value] ...
+#   poker.sh: line 69: readarray: command not found
+#   poker.sh: line 12: 4S: value too great for base (error token is "4S")
+# --
+#
+not ok 2 highest card out of all hands wins in 54ms
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file poker.bats, line 17)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output (4 lines):
+#   poker.sh: line 8: local: -A: invalid option
+#   local: usage: local name[=value] ...
+#   poker.sh: line 69: readarray: command not found
+#   poker.sh: line 12: 4D: value too great for base (error token is "4D")
+# --
+#
+not ok 3 a tie has multiple winners in 52ms
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file poker.bats, line 25)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output (4 lines):
+#   poker.sh: line 8: local: -A: invalid option
+#   local: usage: local name[=value] ...
+#   poker.sh: line 69: readarray: command not found
+#   poker.sh: line 12: 4D: value too great for base (error token is "4D")
+# --
+#
+not ok 4 multiple hands with the same high cards, tie compares next highest ranked, down to last card in 55ms
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file poker.bats, line 34)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output (4 lines):
+#   poker.sh: line 8: local: -A: invalid option
+#   local: usage: local name[=value] ...
+#   poker.sh: line 69: readarray: command not found
+#   poker.sh: line 12: 3S: value too great for base (error token is "3S")
+# --
+#
+not ok 5 winning high card hand also has the lowest card in 54ms
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file poker.bats, line 42)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output (4 lines):
+#   poker.sh: line 8: local: -A: invalid option
+#   local: usage: local name[=value] ...
+#   poker.sh: line 69: readarray: command not found
+#   poker.sh: line 12: 2S: value too great for base (error token is "2S")
+# --
+#
+not ok 6 one pair beats high card in 55ms
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file poker.bats, line 50)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output (4 lines):
+#   poker.sh: line 8: local: -A: invalid option
+#   local: usage: local name[=value] ...
+#   poker.sh: line 69: readarray: command not found
+#   poker.sh: line 12: 4S: value too great for base (error token is "4S")
+# --
+#
+not ok 7 highest pair wins in 56ms
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file poker.bats, line 58)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output (4 lines):
+#   poker.sh: line 8: local: -A: invalid option
+#   local: usage: local name[=value] ...
+#   poker.sh: line 69: readarray: command not found
+#   poker.sh: line 12: 4S: value too great for base (error token is "4S")
+# --
+#
+not ok 8 both hands have the same pair, high card wins in 56ms
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file poker.bats, line 66)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output (4 lines):
+#   poker.sh: line 8: local: -A: invalid option
+#   local: usage: local name[=value] ...
+#   poker.sh: line 69: readarray: command not found
+#   poker.sh: line 12: 4H: value too great for base (error token is "4H")
+# --
+#
+not ok 9 two pairs beats one pair in 54ms
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file poker.bats, line 74)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output (4 lines):
+#   poker.sh: line 8: local: -A: invalid option
+#   local: usage: local name[=value] ...
+#   poker.sh: line 69: readarray: command not found
+#   poker.sh: line 12: 2S: value too great for base (error token is "2S")
+# --
+#
+not ok 10 both hands have two pairs, highest ranked pair wins in 56ms
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file poker.bats, line 82)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output (4 lines):
+#   poker.sh: line 8: local: -A: invalid option
+#   local: usage: local name[=value] ...
+#   poker.sh: line 69: readarray: command not found
+#   poker.sh: line 12: 2S: value too great for base (error token is "2S")
+# --
+#
+not ok 11 both hands have two pairs, with the same highest ranked pair, tie goes to low pair in 53ms
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file poker.bats, line 90)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output (4 lines):
+#   poker.sh: line 8: local: -A: invalid option
+#   local: usage: local name[=value] ...
+#   poker.sh: line 69: readarray: command not found
+#   poker.sh: line 12: 2S: value too great for base (error token is "2S")
+# --
+#
+not ok 12 both hands have two identically ranked pairs, tie goes to remaining card (kicker) in 53ms
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file poker.bats, line 98)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output (4 lines):
+#   poker.sh: line 8: local: -A: invalid option
+#   local: usage: local name[=value] ...
+#   poker.sh: line 69: readarray: command not found
+#   poker.sh: line 12: JD QH JS 8D: value too great for base (error token is "8D")
+# --
+#
+not ok 13 both hands have two pairs that add to the same value, win goes to highest pair in 54ms
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file poker.bats, line 106)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output (4 lines):
+#   poker.sh: line 8: local: -A: invalid option
+#   local: usage: local name[=value] ...
+#   poker.sh: line 69: readarray: command not found
+#   poker.sh: line 12: 6S: value too great for base (error token is "6S")
+# --
+#
+not ok 14 two pairs first ranked by largest pair in 54ms
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file poker.bats, line 114)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output (4 lines):
+#   poker.sh: line 8: local: -A: invalid option
+#   local: usage: local name[=value] ...
+#   poker.sh: line 69: readarray: command not found
+#   poker.sh: line 12: 5C: value too great for base (error token is "5C")
+# --
+#
+not ok 15 three of a kind beats two pair in 60ms
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file poker.bats, line 122)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output (4 lines):
+#   poker.sh: line 8: local: -A: invalid option
+#   local: usage: local name[=value] ...
+#   poker.sh: line 69: readarray: command not found
+#   poker.sh: line 12: 2S: value too great for base (error token is "2S")
+# --
+#
+not ok 16 both hands have three of a kind, tie goes to highest ranked triplet in 53ms
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file poker.bats, line 130)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output (4 lines):
+#   poker.sh: line 8: local: -A: invalid option
+#   local: usage: local name[=value] ...
+#   poker.sh: line 69: readarray: command not found
+#   poker.sh: line 12: 2S: value too great for base (error token is "2S")
+# --
+#
+not ok 17 with multiple decks, two players can have same three of a kind, ties go to highest remaining cards in 53ms
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file poker.bats, line 138)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output (4 lines):
+#   poker.sh: line 8: local: -A: invalid option
+#   local: usage: local name[=value] ...
+#   poker.sh: line 69: readarray: command not found
+#   poker.sh: line 12: 5S: value too great for base (error token is "5S")
+# --
+#
+not ok 18 a straight beats three of a kind in 52ms
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file poker.bats, line 146)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output (4 lines):
+#   poker.sh: line 8: local: -A: invalid option
+#   local: usage: local name[=value] ...
+#   poker.sh: line 69: readarray: command not found
+#   poker.sh: line 12: 4S: value too great for base (error token is "4S")
+# --
+#
+not ok 19 aces can end a straight (10 J Q K A) in 52ms
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file poker.bats, line 154)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output (4 lines):
+#   poker.sh: line 8: local: -A: invalid option
+#   local: usage: local name[=value] ...
+#   poker.sh: line 69: readarray: command not found
+#   poker.sh: line 12: 4S: value too great for base (error token is "4S")
+# --
+#
+not ok 20 aces can start a straight (A 2 3 4 5) in 54ms
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file poker.bats, line 162)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output (4 lines):
+#   poker.sh: line 8: local: -A: invalid option
+#   local: usage: local name[=value] ...
+#   poker.sh: line 69: readarray: command not found
+#   poker.sh: line 12: 4S: value too great for base (error token is "4S")
+# --
+#
+not ok 21 aces cannot be in the middle of a straight (Q K A 2 3) in 52ms
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file poker.bats, line 170)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output (4 lines):
+#   poker.sh: line 8: local: -A: invalid option
+#   local: usage: local name[=value] ...
+#   poker.sh: line 69: readarray: command not found
+#   poker.sh: line 12: 2C: value too great for base (error token is "2C")
+# --
+#
+not ok 22 both hands with a straight, tie goes to highest ranked card in 54ms
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file poker.bats, line 178)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output (4 lines):
+#   poker.sh: line 8: local: -A: invalid option
+#   local: usage: local name[=value] ...
+#   poker.sh: line 69: readarray: command not found
+#   poker.sh: line 12: 4S: value too great for base (error token is "4S")
+# --
+#
+not ok 23 even though an ace is usually high, a 5-high straight is the lowest-scoring straight in 53ms
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file poker.bats, line 186)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output (4 lines):
+#   poker.sh: line 8: local: -A: invalid option
+#   local: usage: local name[=value] ...
+#   poker.sh: line 69: readarray: command not found
+#   poker.sh: line 12: 2H: value too great for base (error token is "2H")
+# --
+#
+not ok 24 flush beats a straight in 55ms
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file poker.bats, line 194)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output (4 lines):
+#   poker.sh: line 8: local: -A: invalid option
+#   local: usage: local name[=value] ...
+#   poker.sh: line 69: readarray: command not found
+#   poker.sh: line 12: 4C: value too great for base (error token is "4C")
+# --
+#
+not ok 25 both hands have a flush, tie goes to high card, down to the last one if necessary in 45ms
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file poker.bats, line 202)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output (4 lines):
+#   poker.sh: line 8: local: -A: invalid option
+#   local: usage: local name[=value] ...
+#   poker.sh: line 69: readarray: command not found
+#   poker.sh: line 12: 2H: value too great for base (error token is "2H")
+# --
+#
+not ok 26 full house beats a flush in 45ms
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file poker.bats, line 210)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output (4 lines):
+#   poker.sh: line 8: local: -A: invalid option
+#   local: usage: local name[=value] ...
+#   poker.sh: line 69: readarray: command not found
+#   poker.sh: line 12: 3H: value too great for base (error token is "3H")
+# --
+#
+not ok 27 both hands have a full house, tie goes to highest-ranked triplet in 53ms
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file poker.bats, line 218)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output (4 lines):
+#   poker.sh: line 8: local: -A: invalid option
+#   local: usage: local name[=value] ...
+#   poker.sh: line 69: readarray: command not found
+#   poker.sh: line 12: 4H: value too great for base (error token is "4H")
+# --
+#
+not ok 28 with multiple decks, both hands have a full house with the same triplet, tie goes to the pair in 53ms
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file poker.bats, line 226)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output (4 lines):
+#   poker.sh: line 8: local: -A: invalid option
+#   local: usage: local name[=value] ...
+#   poker.sh: line 69: readarray: command not found
+#   poker.sh: line 12: 5H: value too great for base (error token is "5H")
+# --
+#
+not ok 29 four of a kind beats a full house in 53ms
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file poker.bats, line 234)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output (4 lines):
+#   poker.sh: line 8: local: -A: invalid option
+#   local: usage: local name[=value] ...
+#   poker.sh: line 69: readarray: command not found
+#   poker.sh: line 12: 4S: value too great for base (error token is "4S")
+# --
+#
+not ok 30 both hands have four of a kind, tie goes to high quad in 56ms
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file poker.bats, line 242)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output (4 lines):
+#   poker.sh: line 8: local: -A: invalid option
+#   local: usage: local name[=value] ...
+#   poker.sh: line 69: readarray: command not found
+#   poker.sh: line 12: 2S: value too great for base (error token is "2S")
+# --
+#
+not ok 31 with multiple decks, both hands with identical four of a kind, tie determined by kicker in 53ms
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file poker.bats, line 250)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output (4 lines):
+#   poker.sh: line 8: local: -A: invalid option
+#   local: usage: local name[=value] ...
+#   poker.sh: line 69: readarray: command not found
+#   poker.sh: line 12: 3S: value too great for base (error token is "3S")
+# --
+#
+not ok 32 straight flush beats four of a kind in 53ms
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file poker.bats, line 258)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output (4 lines):
+#   poker.sh: line 8: local: -A: invalid option
+#   local: usage: local name[=value] ...
+#   poker.sh: line 69: readarray: command not found
+#   poker.sh: line 12: 4S: value too great for base (error token is "4S")
+# --
+#
+not ok 33 aces can end a straight flush (10 J Q K A) in 54ms
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file poker.bats, line 266)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output (4 lines):
+#   poker.sh: line 8: local: -A: invalid option
+#   local: usage: local name[=value] ...
+#   poker.sh: line 69: readarray: command not found
+#   poker.sh: line 12: KC AH AS AD AC: syntax error in expression (error token is "AH AS AD AC")
+# --
+#
+not ok 34 aces can start a straight flush (A 2 3 4 5) in 52ms
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file poker.bats, line 274)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output (4 lines):
+#   poker.sh: line 8: local: -A: invalid option
+#   local: usage: local name[=value] ...
+#   poker.sh: line 69: readarray: command not found
+#   poker.sh: line 12: KS AH AS AD AC: syntax error in expression (error token is "AH AS AD AC")
+# --
+#
+not ok 35 aces cannot be in the middle of a straight flush (Q K A 2 3) in 44ms
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file poker.bats, line 282)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output (4 lines):
+#   poker.sh: line 8: local: -A: invalid option
+#   local: usage: local name[=value] ...
+#   poker.sh: line 69: readarray: command not found
+#   poker.sh: line 12: 2C: value too great for base (error token is "2C")
+# --
+#
+not ok 36 both hands have a straight flush, tie goes to highest-ranked card in 47ms
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file poker.bats, line 290)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output (4 lines):
+#   poker.sh: line 8: local: -A: invalid option
+#   local: usage: local name[=value] ...
+#   poker.sh: line 69: readarray: command not found
+#   poker.sh: line 12: 4H: value too great for base (error token is "4H")
+# --
+#
+not ok 37 even though an ace is usually high, a 5-high straight flush is the lowest-scoring straight flush in 46ms
+# (from function `assert_success' in file bats-extra.bash, line 414,
+#  in test file poker.bats, line 298)
+#   `assert_success' failed
+#
+# -- command failed --
+# status : 1
+# output (4 lines):
+#   poker.sh: line 8: local: -A: invalid option
+#   local: usage: local name[=value] ...
+#   poker.sh: line 69: readarray: command not found
+#   poker.sh: line 12: 2H: value too great for base (error token is "2H")
+# --
+#

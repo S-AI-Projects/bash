@@ -1,178 +1,198 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 # external tools used: sort, grep, wc, uniq
 
-declare -ri SUCCESS=0 FAILURE=1
+declare -ri SUCCESS=0
+declare -ri FAILURE=1
 
 main() {
-    local -A value
+    local -A hand_scores=()
 
+    local hand
     for hand in "$@"; do
-        validate "$hand" || die "invalid hand"
-        value[$hand]=$( evaluate "$hand" )
+        validate "${hand}" || die "invalid hand"
+        local evaluated_score
+        evaluated_score=$(evaluate "${hand}")
+        hand_scores["${hand}"]="${evaluated_score}"
     done
-    # Now that we've validated the contents of the hand,
-    # we can be really relaxed about quoting.
 
     local -i max=-1
-    for val in "${value[@]}"; do
-        (( val > max )) && max=$val
+    local -i val
+    for val in "${hand_scores[@]}"; do
+        if (( val > max )); then
+            max=${val}
+        fi
     done
 
-    for hand in "${!value[@]}"; do
-        (( max == value[$hand] )) && echo "$hand" || true
+    for hand in "${!hand_scores[@]}"; do
+        if (( max == hand_scores["${hand}"] )); then
+            echo "${hand}"
+        fi
     done
 }
 
-die() { echo "$*" >&2; exit $FAILURE; }
+die() {
+    echo "$*" >&2
+    exit "${FAILURE}"
+}
 
 validate() {
     local card="1?[234567890JQKA][HCSD]"
-    local re="^$card( $card){4}$"
-    [[ $1 =~ $re ]]
+    local re="^${card}( ${card}){4}$"
+    [[ $1 =~ ${re} ]]
 }
 
-# Assign a numeric value to this hand.
-#
-# This is trickier than first glance. We can say that
-# a 5-of-a-kind hand has the "highest value", but two
-# hands each with 5-of-a-kind need some way to break the tie.
-# Even worse, consider two hands of the worst value (no
-# straight, no flush, no pairs). We may have to compare
-# all cards in each hand to determine which is the better
-# hand.
-#
-# I assign each hand a "value" and a "ranking". For example:
-# - the hand "AH AS AD AC AH" has the value 9 * 10^11 (5 of
-#   a kind), and the ranking "14" (face value of Ace)
-# - the hand "4H 4H 5C 6C JD" has the value 1 * 10^11 (one
-#   pair) and the ranking "4110605" (starts with 4, and
-#   other face values descending
-#
-# The hand value is so big so that the value and the ranking
-# can be combined into a single integer value. Given these
-# hands:
-# a) JH 10H 9H 2S 2C
-# b) JD 10D 8D 2C 2S
-#
-# The both have hand value 1 * 10^11 = 100000000000
-# Ranking of hand (a) is "2111009"
-# Ranking of hand (a) is "2111008"
-# Evaluated value of (a) is 100002111009
-# Evaluated value of (b) is 100002111008
-# So it's a simple numeric comparison to determine the winner.
-
-evaluate() {
-    local cards=$1
-
-    local -a values
-    readarray -t values < <(
-        for card in $cards; do  #unquoted
-            cardvalue $card
-        done | sort -nr
-    )
-
-    local -i tiebreaker hand_value
-    if tiebreaker=$( is_5_of_a_kind ${values[@]} ); then
-        hand_value=9
-    elif tiebreaker=$( is_straight_flush "$cards" ${values[@]} ); then
-        hand_value=8
-    elif tiebreaker=$( is_4_of_a_kind ${values[@]} ); then
-        hand_value=7
-    elif tiebreaker=$( is_full_house ${values[@]} ); then
-        hand_value=6
-    elif tiebreaker=$( is_flush "$cards" ${values[@]} ); then
-        hand_value=5
-    elif tiebreaker=$( is_straight ${values[@]} ); then
-        hand_value=4
-    elif tiebreaker=$( is_3_of_a_kind ${values[@]} ); then
-        hand_value=3
-    elif tiebreaker=$( is_2_pairs ${values[@]} ); then
-        hand_value=2
-    elif tiebreaker=$( is_1_pair ${values[@]} ); then
-        hand_value=1
-    else
-        hand_value=0
-        tiebreaker=$(ranking ${values[@]})
-    fi
-
-    echo $(( hand_value * 10**11 + tiebreaker ))
-}
-
-cardvalue() {
-    local face=${1%[HSCD]}
-    case $face in
+card_value() {
+    local face="${1%[HSCD]}"
+    case "${face}" in
         A) echo 14 ;;
         K) echo 13 ;;
         Q) echo 12 ;;
         J) echo 11 ;;
-        *) echo $face ;;
+        *) echo "${face}" ;;
     esac
 }
 
 ranking() {
-    local value
-    printf -v value "%02d" "$@"
-    echo $(( 10#$value ))
+    local formatted_rank=""
+    printf -v formatted_rank "%02d" "$@"
+    echo "$(( 10#${formatted_rank} ))"
 }
 
-is_5_of_a_kind() { has_grouping "5" $@; }
-is_4_of_a_kind() { has_grouping "4 1" $@; }
-is_3_of_a_kind() { has_grouping "3 1 1" $@; }
-is_full_house()  { has_grouping "3 2" $@; }
-is_2_pairs()     { has_grouping "2 2 1" $@; }
-is_1_pair()      { has_grouping "2 1 1 1" $@; }
+is_5_of_a_kind() {
+    has_grouping "5" "$@"
+}
 
+is_4_of_a_kind() {
+    has_grouping "4 1" "$@"
+}
+
+is_3_of_a_kind() {
+    has_grouping "3 1 1" "$@"
+}
+
+is_full_house() {
+    has_grouping "3 2" "$@"
+}
+
+is_2_pairs() {
+    has_grouping "2 2 1" "$@"
+}
+
+is_1_pair() {
+    has_grouping "2 1 1 1" "$@"
+}
+
+# shellcheck disable=SC2312
 is_flush() {
-    local cards=$1; shift
-    # this _could_ be done in pure bash
-    local n=$(printf "%s\n" $cards | grep -o '.$' | sort -u | wc -l)
-    if (( n == 1 )); then
-        ranking $@
-        return $SUCCESS
+    local cards="$1"
+    shift
+    local -a card_arr=()
+    read -ra card_arr <<< "${cards}"
+    local -i num_suits
+    num_suits=$(printf "%s\n" "${card_arr[@]}" | grep -o ".$" | sort -u | wc -l)
+    if (( num_suits == 1 )); then
+        ranking "$@"
+        return "${SUCCESS}"
     fi
-    return $FAILURE
+    return "${FAILURE}"
 }
 
 is_straight() {
     if [[ "$*" == "14 5 4 3 2" ]]; then
-        # 5-high straight
         ranking 5 4 3 2 1
-        return $SUCCESS
-    else
-        v=$1
-        for i in {2..5}; do
-            (( v == ${!i} + 1 )) || return $FAILURE
-            v=${!i}
-        done
-        ranking $@
-        return $SUCCESS
+        return "${SUCCESS}"
     fi
+
+    local -i prev=$1
+    local -i idx
+    for idx in {2..5}; do
+        local -i curr=${!idx}
+        (( prev == curr + 1 )) || return "${FAILURE}"
+        prev=${curr}
+    done
+    ranking "$@"
+    return "${SUCCESS}"
 }
 
 is_straight_flush() {
-    local cards=$1; shift
-    is_flush "$cards" $@ >/dev/null && is_straight $@
+    local cards="$1"
+    shift
+    is_flush "${cards}" "$@" >/dev/null && is_straight "$@"
 }
 
+# shellcheck disable=SC2312
 has_grouping() {
-    local groupings=$1
+    local groupings="$1"
     shift
-    local -a groups values
-    while read g v; do
-        groups+=($g)
-        values+=($v)
-    done < <(
-        printf "%s\n" "$@" |
-        sort -nr |
-        uniq -c |
-        sort -k1,1nr -k2,2nr
-    )
-    if [[ "${groups[*]}" = "$groupings" ]]; then
-        ranking ${values[@]}
-        return $SUCCESS
+    local -a groups=() values=()
+    local g="" v=""
+    local grouped_output
+    grouped_output=$(printf "%s\n" "$@" | sort -nr | uniq -c | sort -k1,1nr -k2,2nr)
+    while read -r g v; do
+        groups+=("${g}")
+        values+=("${v}")
+    done <<< "${grouped_output}"
+
+    if [[ "${groups[*]}" == "${groupings}" ]]; then
+        ranking "${values[@]}"
+        return "${SUCCESS}"
     fi
-    return $FAILURE
+    return "${FAILURE}"
+}
+
+classify_hand_rank() {
+    local cards="$1"
+    shift
+    local -a values=("$@")
+    local -i tiebreaker=0
+
+    if tiebreaker=$(is_5_of_a_kind "${values[@]}"); then
+        echo "9 ${tiebreaker}"
+    elif tiebreaker=$(is_straight_flush "${cards}" "${values[@]}"); then
+        echo "8 ${tiebreaker}"
+    elif tiebreaker=$(is_4_of_a_kind "${values[@]}"); then
+        echo "7 ${tiebreaker}"
+    elif tiebreaker=$(is_full_house "${values[@]}"); then
+        echo "6 ${tiebreaker}"
+    elif tiebreaker=$(is_flush "${cards}" "${values[@]}"); then
+        echo "5 ${tiebreaker}"
+    elif tiebreaker=$(is_straight "${values[@]}"); then
+        echo "4 ${tiebreaker}"
+    elif tiebreaker=$(is_3_of_a_kind "${values[@]}"); then
+        echo "3 ${tiebreaker}"
+    elif tiebreaker=$(is_2_pairs "${values[@]}"); then
+        echo "2 ${tiebreaker}"
+    elif tiebreaker=$(is_1_pair "${values[@]}"); then
+        echo "1 ${tiebreaker}"
+    else
+        tiebreaker=$(ranking "${values[@]}")
+        echo "0 ${tiebreaker}"
+    fi
+}
+
+# shellcheck disable=SC2312
+evaluate() {
+    local cards="$1"
+
+    local -a card_arr=()
+    read -ra card_arr <<< "${cards}"
+    local -a values=()
+    local card
+    local card_vals
+    card_vals=$(
+        for card in "${card_arr[@]}"; do
+            card_value "${card}"
+        done | sort -nr
+    )
+    readarray -t values <<< "${card_vals}"
+
+    local classification
+    classification=$(classify_hand_rank "${cards}" "${values[@]}")
+    local -i hand_rank=0 tiebreaker=0
+    read -r hand_rank tiebreaker <<< "${classification}"
+
+    echo "$(( hand_rank * 10**11 + tiebreaker ))"
 }
 
 main "$@"
