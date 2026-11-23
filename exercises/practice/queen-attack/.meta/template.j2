@@ -1,0 +1,28 @@
+{{ header }}
+
+# Test creation of Queens with invalid positions
+{% for case in cases if case["property"] == "create" and case["expect_error"] %}
+@test "{{ case["description"] }}" {
+    {% if loop.first %}#{% endif %}[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run  bash {{ solution }} -w {{ case["input"]["queen"]["position"]["row"] }},{{ case["input"]["queen"]["position"]["column"] }} -b 7,7
+    assert_failure
+    assert_output --partial "{{ case["expect_error_msg"] }}"
+}
+{% endfor %}
+@test "same position" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run  bash {{ solution }} -w 7,7 -b 7,7
+    assert_failure
+    assert_output --partial "same position"
+}
+
+
+# Test the ability of one queen to attack another
+{% for case in cases if case["property"] == "canAttack" %}
+@test "{{ "can not attack" if case["description"] == "cannot attack" else case["description"] }}" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run bash {{ solution }} -w {{ case["input"]["white_queen"]["position"]["row"] }},{{ case["input"]["white_queen"]["position"]["column"] }} -b {{ case["input"]["black_queen"]["position"]["row"] }},{{ case["input"]["black_queen"]["position"]["column"] }}
+    assert_success 
+    assert_output "{{ case["expected"] }}"
+}{% if not loop.last %}
+{% endif %}{% endfor %}
