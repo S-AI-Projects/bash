@@ -6,7 +6,7 @@ This exercise requires formatting a string with an optional name argument and a 
 
 ## Default Value Parameter Expansion
 
-The most idiomatic approach is to make use of the [default value parameter expansion][default-value].
+The most idiomatic approach is to make use of the [default value parameter expansion][approach-parameter-expansion].
 
 ```bash
 echo "One for ${1-you}, one for me."
@@ -16,6 +16,7 @@ echo "One for ${1-you}, one for me."
 
 The best way to test the number of arguments is to test that number directly, by testing the special `$#` variable.
 Since `$#` is a number, the arithmetic test operator should be used.
+For more details, see the [Argument count approach][approach-argument-count].
 
 ```bash
 if (( $# == 0 )); then
@@ -87,3 +88,5 @@ printf 'One for %s, one for me.\n' "${name}"
 [arithmetic]: https://wiki.bash-hackers.org/syntax/ccmd/arithmetic_eval
 [conditional]: https://wiki.bash-hackers.org/syntax/ccmd/conditional_expression
 [default-value]: https://wiki.bash-hackers.org/syntax/pe#use_a_default_value
+[approach-parameter-expansion]: /tracks/bash/exercises/two-fer/approaches/parameter-expansion
+[approach-argument-count]: /tracks/bash/exercises/two-fer/approaches/argument-count
