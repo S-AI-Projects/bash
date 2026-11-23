@@ -1,0 +1,6 @@
+1..5
+ok 1 first prime in 12ms
+ok 2 second prime in 13ms
+ok 3 sixth prime in 12ms
+ok 4 big prime in 433ms
+ok 5 there is no zeroth prime in 10ms

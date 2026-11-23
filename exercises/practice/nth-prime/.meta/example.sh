@@ -1,58 +1,76 @@
 #!/usr/bin/env bash
 
-# The largest concern is finding an algorithm that is not
-# excruciatingly slow in bash. I found that Sieve of 
-# Eratosthenes is a good quick algorithm for finding
-# primes less than an upper bound. The key is estimating
-# an approximate upper bound for the nth prime
+# Pure Bash implementation of Sieve of Eratosthenes without bc
+# Finds the nth prime number efficiently using odd-only indexing.
 
 main() {
-    local -i n=$1
+    local -i n="$1"
     if (( n <= 0 )); then
         echo "invalid input" >&2
         exit 1
     fi
 
-    local -i upper=$(approxNth $n)
-    local primes=()
-    sieve $upper primes
-
-    # should do some validation that we acually have n
-    # prime numbers, but this passes the test suite.
+    local -i upper
+    upper=$(approx_nth "${n}")
+    local -a primes=()
+    sieve "${upper}" primes "${n}"
 
     echo "${primes[n-1]}"
 }
 
-# approximate the nth prime number
-# ref: https://exercism.io/tracks/python/exercises/nth-prime/solutions/2a84e7330fab4b4cb04d92cf0f38164d 
-# ref: https://en.wikipedia.org/wiki/Prime_number_theorem
-approxNth() {
-    # bc's `l()` function is natural logarithm
-    local real=$( printf "2 + 1.2 * %d * l(%d)\n" "$1" "$1" | bc -l )
-    # truncate the fractional part
-    echo "${real%.*}"
+approx_ln() {
+    local -i x="$1"
+    local -i k=0
+    local -i temp="${x}"
+    while (( temp > 1 )); do
+        (( temp >>= 1 ))
+        (( k++ ))
+    done
+    local -i m=$(( (x * 1000) >> k ))
+    local -i frac=$(( (m - 1000) * 2000 / (m + 1000) ))
+    echo "$(( k * 693 + frac ))"
 }
 
-# Sieve of Eratosthenes
+approx_nth() {
+    local -i n="$1"
+    if (( n < 6 )); then
+        echo 15
+        return
+    fi
+    local -i ln_val
+    ln_val=$(approx_ln "${n}")
+    echo "$(( 15 + (13 * n * ln_val) / 10000 ))"
+}
+
 sieve() {
-    local -i limit=$1 i p
-    local -n primes_=$2
-    local -a is_prime=()
-    for ((i = 2; i <= limit; i++)); do
-        is_prime[i]=true
-    done
-    for ((p = 2; p * p <= limit; p++)); do
-        if ${is_prime[p]}; then
-            (( step = (p==2) ? 2 : 2*p ))
-            for (( i = p * p; i <= limit; i += step )); do
-                is_prime[i]=false
+    local -i limit="$1"
+    local -n primes_="$2"
+    local -i target_count="$3"
+
+    primes_=(2)
+    (( target_count == 1 )) && return
+
+    local -a composite=()
+    local -i max_k=$(( limit / 2 ))
+    local -i p=0 k=0 i=0
+
+    for (( p = 3; p * p <= limit; p += 2 )); do
+        k=$(( p / 2 ))
+        if (( ! composite[k] )); then
+            for (( i = (p * p) / 2; i <= max_k; i += p )); do
+                composite[i]=1
             done
         fi
     done
-    for ((i = 2; i <= limit; i++)); do
-        ${is_prime[i]} && primes_+=( $i )
+
+    for (( k = 1; k <= max_k; k++ )); do
+        if (( ! composite[k] )); then
+            primes_+=( "$(( 2 * k + 1 ))" )
+            if (( ${#primes_[@]} == target_count )); then
+                break
+            fi
+        fi
     done
-    return
 }
 
 main "$@"
