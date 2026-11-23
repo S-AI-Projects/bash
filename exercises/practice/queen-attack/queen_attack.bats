@@ -1,7 +1,7 @@
 #!/usr/bin/env bats
 load bats-extra
 
-# local version: 2.3.0.0
+# generated on 2026-11-23T13:53:32+00:00
 
 # Test creation of Queens with invalid positions
 
