@@ -15,3 +15,12 @@
 {%- endif %}
 }
 {% endfor %}
+
+# Track-specific test: verify score with higher-order bits (> 512)
+@test 'list when::ignore non allergen score parts above 512' {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run bash {{ solution }} 513 list
+
+    assert_success
+    assert_output "eggs"
+}

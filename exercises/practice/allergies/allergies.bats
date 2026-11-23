@@ -1,7 +1,7 @@
 #!/usr/bin/env bats
 load bats-extra
 
-# generated on 2026-06-29T16:53:24+00:00
+# generated on 2026-11-23T14:05:55+00:00
 
 @test 'testing for eggs allergy:not allergic to anything' {
     # [[ $BATS_RUN_SKIPPED == "true" ]] || skip
@@ -398,6 +398,16 @@ load bats-extra
 @test 'list when::no allergen score parts without highest valid score' {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
     run bash allergies.sh 257 list
+
+    assert_success
+    assert_output "eggs"
+}
+
+
+# Track-specific test: verify score with higher-order bits (> 512)
+@test 'list when::ignore non allergen score parts above 512' {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run bash allergies.sh 513 list
 
     assert_success
     assert_output "eggs"
