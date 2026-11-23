@@ -1,0 +1,28 @@
+=== 1. ShellCheck Verification ===
+ShellCheck: PASS (0 warnings)
+
+=== 2. Configlet Lint ===
+The lint command is under development.
+To check your track using the latest linting rules,
+please regularly update configlet and re-run this command.
+
+Missing file:
+/Users/ruhaann__17/Desktop/arya/docs/SIGN_UP_SNIPPET.txt
+
+Configlet detected at least one problem.
+For more information on resolving the problems, please see the documentation:
+https://exercism.org/docs/building/configlet/lint
+
+=== 3. Exercise Validation (bin/validate_one_exercise) ===
+Processing saddle-points
+1..9
+ok 1 Can identify single saddle point
+ok 2 Can identify that empty matrix has no saddle points
+ok 3 Can identify lack of saddle points when there are none
+ok 4 Can identify multiple saddle points in a column
+ok 5 Can identify multiple saddle points in a row
+ok 6 Can identify saddle point in bottom right corner
+ok 7 Can identify saddle points in a non square matrix
+ok 8 Can identify that saddle points in a single column matrix are those with the minimum value
+ok 9 Can identify that saddle points in a single row matrix are those with the maximum value
+Updated 1 path from the index

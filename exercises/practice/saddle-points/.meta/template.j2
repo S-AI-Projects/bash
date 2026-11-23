@@ -1,0 +1,24 @@
+{{ header }}
+
+{% for case in cases %}
+@test "{{ case["description"] }}" {
+    {% if loop.first %}# {% endif %}[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+{%- if case.input.matrix == [[]] or case.input.matrix == [] %}
+    run bash {{ solution }}
+{%- else %}
+    run bash {{ solution }} {%- for row in case.input.matrix %} "{{ row | join(" ") }}"{%- endfor %}
+{%- endif %}
+    assert_success
+{%- if case.expected | length == 0 %}
+    assert_output ""
+{%- else %}
+    expected=$(cat <<'EXPECTED'
+{%- for pt in case.expected | sort(attribute='column') | sort(attribute='row') %}
+row {{ pt.row }}, column {{ pt.column }}
+{%- endfor %}
+EXPECTED
+)
+    assert_output "$expected"
+{%- endif %}
+}
+{% endfor %}
