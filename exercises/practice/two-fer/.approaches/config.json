@@ -2,6 +2,29 @@
   "introduction": {
     "authors": [
       "IsaacG"
+    ],
+    "contributors": [
+      "aryaprajapati66"
     ]
-  }
+  },
+  "approaches": [
+    {
+      "uuid": "5474a7e4-eb10-49c2-9bc9-fb0006d51f53",
+      "slug": "parameter-expansion",
+      "title": "Parameter expansion",
+      "blurb": "Use default value parameter expansion.",
+      "authors": [
+        "aryaprajapati66"
+      ]
+    },
+    {
+      "uuid": "27634425-d433-4b58-ad80-db7b7840cf49",
+      "slug": "argument-count",
+      "title": "Argument count",
+      "blurb": "Check the number of positional parameters directly.",
+      "authors": [
+        "aryaprajapati66"
+      ]
+    }
+  ]
 }
